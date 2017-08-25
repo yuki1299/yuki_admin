@@ -13,15 +13,7 @@
 
   <tbody>
     <% @active.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.status %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Adicionar à Espera', change_project_path(project, status: "Aguardando Resposta"), method: :put %></td>
-        <td><%= link_to 'Adicionar aos Finalizados', change_project_path(project, status: "Finalizado"), method: :put %></td>
-      </tr>
+      <%= render :partial => @active %>
     <% end %>
   </tbody>
 </table>
@@ -41,15 +33,7 @@
 
   <tbody>
     <% @waiting.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.status %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Adicionar aos Ativos', change_project_path(project, status: "Ativo"), method: :put %></td>
-        <td><%= link_to 'Adicionar aos Finalizados', change_project_path(project, status: "Finalizado"), method: :put %></td>
-      </tr>
+      <%= render :partial => @waiting %>
     <% end %>
   </tbody>
 </table>
@@ -69,15 +53,7 @@
 
   <tbody>
     <% @finished.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.status %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Adicionar aos Ativos', change_project_path(project, status: "Ativo"), method: :put %></td>
-        <td><%= link_to 'Adicionar à Espera', change_project_path(project, status: "Aguardando Resposta"), method: :put %></td>
-      </tr>
+      <%= render :partial => @finished %>
     <% end %>
   </tbody>
 </table>

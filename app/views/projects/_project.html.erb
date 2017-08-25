@@ -1,0 +1,21 @@
+<tr>
+  <td><%= project.name %></td>
+  <td><%= project.status %></td>
+  <td><%= link_to 'Show', project %></td>
+  <td><%= link_to 'Edit', edit_project_path(project) %></td>
+  <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+  <% if project.status == "Ativo" %>
+    <td><%= link_to 'Adicionar aos Finalizados', change_project_path(project, status: "Finalizado"), method: :put %></td>
+
+    <td><%= link_to 'Adicionar à Espera', change_project_path(project, status: "Aguardando Resposta"), method: :put %></td>
+  <% elsif project.status == "Aguardando Resposta" %>
+    <td><%= link_to 'Adicionar aos Ativos', change_project_path(project, status: "Ativo"), method: :put %></td>
+
+    <td><%= link_to 'Adicionar aos Finalizados', change_project_path(project, status: "Finalizado"), method: :put %></td>
+  <% else %>
+    <td><%= link_to 'Adicionar aos Ativos', change_project_path(project, status: "Ativo"), method: :put %></td>
+
+    <td><%= link_to 'Adicionar à Espera', change_project_path(project, status: "Aguardando Resposta"), method: :put %></td>
+  <% end %>
+</tr>
