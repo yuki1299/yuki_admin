@@ -1,63 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-4">
+    <h2 class="text-center">Ativos</h2>
+    <%= render @active %>
+  </div>
 
-<h1>Ativos</h1>
+  <div class="col-md-4">
+    <h2 class="text-center">Aguardando Resposta</h2>
+    <%= render @waiting %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @active.each do |project| %>
-      <%= render :partial => @active %>
-    <% end %>
-  </tbody>
-</table>
+  <div class="col-md-4">
+    <h2 class="text-center">Finalizados</h2>
+    <%= render @finished %>
+  </div>
+</div>
 
 <br>
 
-<h1>Aguardando Resposta</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th colspan="5"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @waiting.each do |project| %>
-      <%= render :partial => @waiting %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<h1>Finalizados</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @finished.each do |project| %>
-      <%= render :partial => @finished %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'Novo Projeto', new_project_path %>
