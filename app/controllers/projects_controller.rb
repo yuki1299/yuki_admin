@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :change]
 
   # GET /projects
   # GET /projects.json
@@ -61,6 +61,13 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def change 
+    @project.update_attributes(status: params[:status])
+    respond_to do |format|
+      format.html {redirect_to projects_path, notice: 'Projeto Atualizado'}
     end
   end
 
