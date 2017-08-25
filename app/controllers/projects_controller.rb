@@ -1,11 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :change]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = current_user.projects
+    @active   = current_user.projects.where(status: "Ativo")
+    @waiting  = current_user.projects.where(status: "Aguardando Resposta")
+    @finished = current_user.projects.where(status: "Finalizado")
   end
 
   # GET /projects/1
@@ -62,6 +64,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def change 
+    @project.update_attributes(status: params[:status])
+    respond_to do |format|
+      format.html {redirect_to projects_path, notice: 'Projeto Atualizado'}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
@@ -70,6 +79,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:name, :status)
     end
 end

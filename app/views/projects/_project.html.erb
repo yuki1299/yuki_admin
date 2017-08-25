@@ -1,0 +1,27 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+  <%= link_to edit_project_path(project) do %>
+    criado <%= time_ago_in_words(project.created_at) %> atrás
+  <% end %>
+  </div>
+
+  <div class="panel-body">
+    <%= project.name %>
+  </div>
+
+  <div class="panel-footer text-center">
+    <% if project.status == "Ativo" %>
+      <td><%= link_to "<i class='fa fa-plus-circle'></i> Finalizados".html_safe, change_project_path(project, status: "Finalizado"), method: :put, :class => "btn btn-info btn-md btn-block" %></td>
+
+      <td><%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %></td>
+    <% elsif project.status == "Aguardando Resposta" %>
+      <td><%= link_to "<i class='fa fa-plus-circle'></i> Ativos".html_safe, change_project_path(project, status: "Ativo"), method: :put, :class => "btn btn-info btn-md btn-block" %></td>
+
+      <td><%= link_to "<i class='fa fa-plus-circle'></i> Finalizados".html_safe, change_project_path(project, status: "Finalizado"), method: :put, :class => "btn btn-info btn-md btn-block" %></td>
+    <% else %>
+      <td><%= link_to "<i class='fa fa-plus-circle'></i> Ativos".html_safe, change_project_path(project, status: "Ativo"), method: :put, :class => "btn btn-info btn-md btn-block" %></td>
+
+      <td><%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %></td>
+    <% end %>
+  </div>
+</div>

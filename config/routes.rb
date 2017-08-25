@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'about' => "pages#about"
+  get 'test'  => "pages#test"
 
-  resources :projects
+  resources :projects do
+    member do
+      put :change
+    end
+  end
 end
