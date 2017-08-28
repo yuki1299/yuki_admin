@@ -3,6 +3,8 @@
   <%= link_to edit_project_path(project) do %>
     criado <%= time_ago_in_words(project.created_at) %> atrás
   <% end %>
+
+  <%= link_to "x", project_path(project) , method: :delete, data: {confirm: "Deseja mesmo excluir este projeto?"}, :class => "pull-right" %>
   </div>
 
   <div class="panel-body">
