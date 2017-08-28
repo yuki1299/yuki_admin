@@ -30,11 +30,14 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# YUKI ADMIN GEMS
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'auto_html'
+gem 'auto_html-contrib'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
