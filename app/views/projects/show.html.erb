@@ -1,15 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-info show-project-page">
+  <div class="panel-heading">
+    <p id="notice"><%= notice %></p>
+  </div>
+  
+  <div class="panel-body">
+    <p>
+      <strong>Name:</strong>
+      <%= @project.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+    <p>
+      <strong>Status:</strong>
+      <%= @project.status %>
+    </p>
+  </div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @project.status %>
-</p>
-
-
-<%= link_to 'Editar', edit_project_path(@project) %> |
-<%= link_to 'Voltar', projects_path %>
+  <div class="panel-footer text-center">
+    <%= link_to 'Editar', edit_project_path(@project), :class => "btn btn-primary btn-block" %>
+    <%= link_to 'Voltar', projects_path, :class => "btn btn-primary btn-block" %>
+  </div>
+</div>
