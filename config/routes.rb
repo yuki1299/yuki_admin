@@ -21,4 +21,18 @@ Rails.application.routes.draw do
       put :change
     end
   end
+
+  namespace :clients do
+    resources :projects do
+      member do
+        put :change
+      end
+    end
+  end
+
+  namespace :workers do
+    get '/projects', to: 'projects#index'
+    get '/projects:id', to: 'projects#show'
+  end
+    
 end
