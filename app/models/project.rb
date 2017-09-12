@@ -1,6 +1,9 @@
 class Project < ApplicationRecord
   belongs_to :user
 
+  has_many :project_testers
+  has_many :testers, through: :project_testers
+
   validates :user_id, presence: true
   validates :name, presence: true
 

@@ -29,6 +29,10 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.new(project_params)
 
+    Tester.all.each do |tester|
+      @project.project_testers.create(project: @project, tester: tester)
+    end
+
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Projeto criado com sucesso' }
