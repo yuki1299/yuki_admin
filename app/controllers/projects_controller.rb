@@ -29,14 +29,10 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.new(project_params)
 
-    Tester.all.each do |tester|
-      @project.project_testers.create(project: @project, tester: tester)
-    end
-
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Projeto criado com sucesso' }
-        format.json { render :show, status: :created, location: @project }
+        format.json { render :show, :objective, status: :created, location: @project }
       else
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -50,7 +46,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.json { render :show, status: :ok, location: @project }
+        format.json { render :show, :objective, status: :ok, location: @project }
       else
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
