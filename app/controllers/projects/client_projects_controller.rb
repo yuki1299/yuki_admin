@@ -1,4 +1,4 @@
-class Clients::ProjectsController < ApplicationController
+class Projects::ClientProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy, :change]
 
@@ -31,8 +31,10 @@ class Clients::ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        
-        format.html { redirect_to @project, notice: 'Projeto criado com sucesso' }
+        Tester.all.each do |tester|
+          @project.project_testers.create(project: @project, tester: tester)
+        end
+        format.html { redirect_to [:projects_client, @project], notice: 'Projeto criado com sucesso' }
         format.json { render :show, objective: :created, status: :created, location: @project }
       else
         format.html { render :new }
@@ -46,7 +48,7 @@ class Clients::ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Projeto atualizado com sucesso' }
+        format.html { redirect_to [:projects_client, @project], notice: 'Projeto atualizado com sucesso' }
         format.json { render :show, objective: :ok, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -68,7 +70,7 @@ class Clients::ProjectsController < ApplicationController
   def change 
     @project.update_attributes(status: params[:status])
     respond_to do |format|
-      format.html {redirect_to projects_path, notice: 'Projeto Atualizado'}
+      format.html {redirect_to new_projects_client_project_path, notice: 'Projeto Atualizado'}
     end
   end
 

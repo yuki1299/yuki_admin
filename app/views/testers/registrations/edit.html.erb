@@ -5,6 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email" %>
+    <%= f.input :age, required: true, label: false, placeholder: "Idade" %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

@@ -36,6 +36,17 @@ class Testers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  protect_from_forgery with: :exception
+
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+      def configure_permitted_parameters
+          devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :age])
+          devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :password, :current_password, :age])
+      end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.

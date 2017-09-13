@@ -1,13 +1,13 @@
-class Workers::ProjectsController < ApplicationController
+class Projects::WorkerProjectsController < ApplicationController
   before_action :authenticate_tester!
   before_action :set_project, only: [:show]
 
   # GET /projects
   # GET /projects.json
   def index
-    @active   = current_user.projects.where(status: "Ativo")
-    @waiting  = current_user.projects.where(status: "Aguardando Resposta")
-    @finished = current_user.projects.where(status: "Finalizado")
+    @projects_pending   = current_tester.project_testers.pending
+    @projects_finisheds = current_tester.project_testers.finished
+    @projects = current_tester.project_testers
   end
 
   # GET /projects/1

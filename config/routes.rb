@@ -14,25 +14,14 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'tipo_de_usuário' => "pages#user_type", as: :user_type
-  get 'test'  => "pages#test"
+  get 'test'            => "pages#test"
 
-  resources :projects do
-    member do
-      put :change
-    end
-  end
-
-  namespace :clients do
-    resources :projects do
+  namespace :projects do
+    resources :client_projects do
       member do
         put :change
       end
     end
+    resources :worker_projects, only: [:index, :show]
   end
-
-  namespace :workers do
-    get '/projects', to: 'projects#index'
-    get '/projects:id', to: 'projects#show'
-  end
-    
 end
