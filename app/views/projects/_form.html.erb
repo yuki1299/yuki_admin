@@ -1,9 +1,0 @@
-<%= simple_form_for(@project, html: {class: "form-signin"}) do |f| %>
-  <%= f.error_notification %>
-
-
-    <%= f.input :name, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "Nome" %>
-
-    <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Criar Projeto", 'data-disable-with' => "Criar Projeto" %>
-    <%= link_to 'Voltar', projects_path, :class => "btn btn-primary btn-block btn-lg" %>
-<% end %>
