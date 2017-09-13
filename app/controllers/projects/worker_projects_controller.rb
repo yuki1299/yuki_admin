@@ -13,6 +13,9 @@ class Projects::WorkerProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project_tester =  current_tester.project_testers.where(project_id: @project.id).pending.first
+    
+    @project_tester.finish! if @project_tester.present?
   end
 
   private

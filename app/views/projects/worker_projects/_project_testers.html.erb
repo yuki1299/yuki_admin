@@ -1,0 +1,17 @@
+<% project = project_testers.project %>
+
+<div class="panel panel-info">
+
+  <div class="panel-body">
+    <strong> URL: </strong>
+    <%= raw(project.name_html) %>
+    <strong> Objetivo: </strong>
+    <%= project.objective %>
+  </div>
+
+  <div class="panel-footer text-center">
+    <% if project.status == "Ativo" %>
+      <%= link_to "<i class='fa fa-plus-circle'></i> Vizualizar".html_safe, projects_worker_project_path(project), :class => "btn btn-info btn-md btn-block" %>
+    <% end %>
+  </div>
+</div>
