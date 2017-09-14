@@ -60,9 +60,9 @@ class Projects::ClientProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @project.destroy
+    [:projects_client, @project.destroy]
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'Projeto apagado com sucesso' }
+      format.html { redirect_to projects_client_projects_path, notice: 'Projeto apagado com sucesso' }
       format.json { head :no_content }
     end
   end
