@@ -1,8 +1,12 @@
 class Project < ApplicationRecord
   belongs_to :user
 
-  has_many :project_testers
+  has_many :project_testers, dependent: :destroy
   has_many :testers, through: :project_testers
+  has_many :asks
+  has_many :tasks
+  has_many :credits
+  has_many :publics
 
   validates :user_id, presence: true
   validates :name, presence: true

@@ -1,4 +1,4 @@
-class Projects::ClientProjectsController < ApplicationController
+class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: [:show, :edit, :update, :destroy, :change]
 
@@ -34,7 +34,7 @@ class Projects::ClientProjectsController < ApplicationController
         Tester.all.each do |tester|
           @project.project_testers.create(project: @project, tester: tester)
         end
-        format.html { redirect_to [:projects_client, @project], notice: 'Projeto criado com sucesso' }
+        format.html { redirect_to @project, notice: 'Projeto criado com sucesso' }
         format.json { render :show, objective: :created, status: :created, location: @project }
       else
         format.html { render :new }
@@ -48,10 +48,10 @@ class Projects::ClientProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to [:projects_client, @project], notice: 'Projeto atualizado com sucesso' }
+        format.html { redirect_to @project, notice: 'Projeto atualizado com sucesso' }
         format.json { render :show, objective: :ok, status: :ok, location: @project }
       else
-        format.html { render :edit }
+        format.html { render :edit, alert: 'Não foi possível atualizar o seu projeto' }
         format.json { render json: @project.errors, status: :unprocessable_entity }
       end
     end
@@ -60,17 +60,23 @@ class Projects::ClientProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    [:projects_client, @project.destroy]
-    respond_to do |format|
-      format.html { redirect_to projects_client_projects_path, notice: 'Projeto apagado com sucesso' }
-      format.json { head :no_content }
+    if @project.destroy
+      respond_to do |format|
+        format.html { redirect_to projects_path, notice: 'Projeto apagado com sucesso' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to projects_path, alert: 'Não foi possível apagar o projeto' }
+        format.json { head :no_content }
+      end
     end
   end
 
   def change 
     @project.update_attributes(status: params[:status])
     respond_to do |format|
-      format.html {redirect_to new_projects_client_project_path, notice: 'Projeto Atualizado'}
+      format.html {redirect_to projects_path, notice: 'Projeto Atualizado'}
     end
   end
 
