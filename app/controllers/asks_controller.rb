@@ -2,6 +2,7 @@ class AsksController < ApplicationController
   before_action :set_project
   before_action :set_ask, only: [:show, :edit, :update, :destroy, :change]
 
+
   def index
     @asks = @project.asks
   end
@@ -14,9 +15,9 @@ class AsksController < ApplicationController
     @ask = @project.asks.new(ask_params)
 
     if @ask.save
-      redirect_to project_publics_path(@project), notice: "Perguntas criadas com sucesso"
+      redirect_to new_project_public_path(@project), notice: "Perguntas criadas com sucesso"
     else
-      redirect_to project_asks_path(@project), alert: "Não foi possível cadastrar as perguntas"
+      redirect_to new_project_ask_path(@project), alert: "Não foi possível cadastrar as perguntas"
     end
   end
 
@@ -50,6 +51,6 @@ class AsksController < ApplicationController
   end
 
   def ask_params
-    params.require(:ask).permit(:type, :question)
+    params.require(:ask).permit(:ask_type, :question)
   end
 end

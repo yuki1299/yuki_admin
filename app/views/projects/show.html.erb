@@ -5,18 +5,23 @@
   
   <div class="panel-body">
     <p>
-      <strong>Name:</strong>
+      <strong>Título do teste</strong>
       <%= @project.name %>
     </p>
 
     <p>
-      <strong>Objetivo:</strong>
-      <%= @project.objective %>
+      <strong>O que vai testar?</strong>
+      <%= @project.test_platform %>
+    </p>
+
+    <p>
+      <strong>Url</strong>
+      <%= @project.url %>
     </p>
   </div>
 
   <div class="panel-footer text-center">
-    <%= link_to 'Editar', edit_project_path(@project), :class => "btn btn-primary btn-block" %>
+    <%= link_to 'Continuar para tarefas', edit_project_task_path(@project), :class => "btn btn-primary btn-block" %>
     <%= link_to 'Voltar', projects_path, :class => "btn btn-primary btn-block" %>
   </div>
 </div>

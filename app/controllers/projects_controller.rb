@@ -34,8 +34,8 @@ class ProjectsController < ApplicationController
         Tester.all.each do |tester|
           @project.project_testers.create(project: @project, tester: tester)
         end
-        format.html { redirect_to @project, notice: 'Projeto criado com sucesso' }
-        format.json { render :show, objective: :created, status: :created, location: @project }
+        format.html { redirect_to new_project_task_path(@project), notice: 'Projeto criado com sucesso' }
+        format.json { render :show, url: :created, status: :created, location: @project }
       else
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -48,8 +48,8 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Projeto atualizado com sucesso' }
-        format.json { render :show, objective: :ok, status: :ok, location: @project }
+        format.html { redirect_to new_project_task_path(@project), notice: 'Projeto atualizado com sucesso' }
+        format.json { render :show, url: :ok, status: :ok, location: @project }
       else
         format.html { render :edit, alert: 'Não foi possível atualizar o seu projeto' }
         format.json { render json: @project.errors, status: :unprocessable_entity }
@@ -88,6 +88,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :status, :objective)
+      params.require(:project).permit(:name, :test_platform, :url, :status)
     end
 end
