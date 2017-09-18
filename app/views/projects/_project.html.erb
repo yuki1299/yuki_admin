@@ -1,0 +1,24 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+  <%= link_to edit_project_path(project) do %>
+    criado há <%= time_ago_in_words(project.created_at) %> atrás
+  <% end %>
+
+  <%= link_to "x", project_path(project) , method: :delete, data: {confirm: "Deseja mesmo excluir este projeto?"}, :class => "pull-right" %>
+  </div>
+
+  <div class="panel-body">
+    <strong> Título do teste </strong>
+    <%= raw(project.name_html) %>
+    <strong> O que vai testar? </strong>
+    <%= project.test_platform %>
+    <strong> URL </strong>
+    <%= project.url %>
+  </div>
+
+  <div class="panel-footer text-center">
+    <%= link_to "<i class='fa fa-plus-circle'></i> Finalizados".html_safe, change_project_path(project, status: "Ativo"), method: :put, :class => "btn btn-info btn-md btn-block" %>
+
+    <%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %>
+  </div>
+</div>

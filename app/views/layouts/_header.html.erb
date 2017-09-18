@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li>
-            <%= link_to("Dashboard", projects_client_projects_path) %>
+            <%= link_to("Dashboard", projects_path) %>
           </li>
           <li>
             <%= link_to("Configurações", edit_user_registration_path) %>
@@ -24,7 +24,7 @@
           </li>
         <% elsif current_tester %>
           <li>
-            <%= link_to("Dashboard", projects_worker_projects_path) %>
+            <%= link_to("Dashboard", worker_projects_path) %>
           </li>
           <li>
             <%= link_to("Configurações", edit_tester_registration_path) %>

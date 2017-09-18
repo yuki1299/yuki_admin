@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912150244) do
+ActiveRecord::Schema.define(version: 20170918172341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "asks", force: :cascade do |t|
+    t.string   "ask_type"
+    t.string   "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "project_id"
+    t.index ["project_id"], name: "index_asks_on_project_id", using: :btree
+  end
+
+  create_table "credits", force: :cascade do |t|
+    t.integer  "participants"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "project_id"
+    t.index ["project_id"], name: "index_credits_on_project_id", using: :btree
+  end
 
   create_table "project_testers", force: :cascade do |t|
     t.integer  "project_id"
@@ -27,12 +44,37 @@ ActiveRecord::Schema.define(version: 20170912150244) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "user_id"
-    t.string   "status",     default: "Ativo"
+    t.string   "status",        default: "Ativo"
     t.text     "name_html"
+    t.string   "url"
+    t.string   "test_platform"
+  end
+
+  create_table "publics", force: :cascade do |t|
+    t.integer  "age_range_start"
+    t.integer  "age_range_end"
+    t.string   "gender"
+    t.string   "schooling"
+    t.string   "locale"
+    t.string   "role"
+    t.string   "kind_of_disability"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "project_id"
+    t.index ["project_id"], name: "index_publics_on_project_id", using: :btree
+  end
+
+  create_table "tasks", force: :cascade do |t|
     t.string   "objective"
+    t.string   "url"
+    t.string   "cenary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "project_id"
+    t.index ["project_id"], name: "index_tasks_on_project_id", using: :btree
   end
 
   create_table "testers", force: :cascade do |t|
@@ -70,4 +112,8 @@ ActiveRecord::Schema.define(version: 20170912150244) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "asks", "projects"
+  add_foreign_key "credits", "projects"
+  add_foreign_key "publics", "projects"
+  add_foreign_key "tasks", "projects"
 end

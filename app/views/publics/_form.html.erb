@@ -1,0 +1,14 @@
+<%= simple_form_for(@public, html: {class: "form-signin"}, url: project_publics_path) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :age_range_start, label: "De:", required: true, autofocus: true, input_html: {class: "form-control"}%>
+  <%= f.input :age_range_end, label: "Até", required: true, autofocus: true, input_html: {class: "form-control"}%>
+  <%= f.input :gender, label: "Sexo", required: true, autofocus: true, input_html: {class: "form-control"}%>
+  <%= f.input :schooling, label: "Escolaridade", required: true, autofocus: true, input_html: {class: "form-control"}%>
+  <%= f.input :locale, label: "Localidade", required: true, autofocus: true, input_html: {class: "form-control"}%>
+  <%= f.input :role, label: "Profissão", required: true, autofocus: true, input_html: {class: "form-control"}%>
+  <%= f.input :kind_of_disability, label: "Pessoas com deficiência", required: true, autofocus: true, input_html: {class: "form-control"}%>
+
+  <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Continuar para créditos", 'data-disable-with' => "..." %>
+  <%= link_to 'Voltar', new_project_ask_path, :class => "btn btn-primary btn-block btn-lg" %>
+<% end %>

@@ -62,3 +62,16 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        # The defaults are "about 1 hour" and "about %{count} hours"
+        one: "1 hora"
+        other: "%{count} horas"
+      less_than_x_minutes:
+        one: menos de um minuto
+        other: moins de %{count} minutes
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+

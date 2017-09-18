@@ -1,4 +1,4 @@
-class Projects::WorkerProjectsController < ApplicationController
+class WorkerProjectsController < ApplicationController
   before_action :authenticate_tester!
   before_action :set_project, only: [:show]
 

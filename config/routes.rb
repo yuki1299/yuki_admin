@@ -16,12 +16,15 @@ Rails.application.routes.draw do
   get 'tipo_de_usuário' => "pages#user_type", as: :user_type
   get 'test'            => "pages#test"
 
-  namespace :projects do
-    resources :client_projects do
-      member do
-        put :change
-      end
+
+  resources :projects do
+    resources :asks
+    resources :tasks
+    resources :publics
+    resources :credits
+    member do
+      put :change
     end
-    resources :worker_projects, only: [:index, :show]
   end
+  resources :worker_projects, only: [:index, :show] 
 end
