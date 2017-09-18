@@ -10,7 +10,7 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "Senha" %>
+    <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "Nova Senha" %>
     <%= f.input :password_confirmation, required: false, label: false, placeholder: "Confirme sua senha" %>
     <%= f.input :current_password, required: true, label: false, placeholder: "Senha atual" %>
   </div>

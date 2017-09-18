@@ -6,12 +6,17 @@
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email" %>
     <%= f.input :age, required: true, label: false, placeholder: "Idade" %>
+    <%= f.input :gender, required: true, label: false, placeholder: "Sexo" %>
+    <%= f.input :schooling, required: true, label: false, placeholder: "Escolaridade" %>
+    <%= f.input :locale, required: true, label: false, placeholder: "Localidade" %>
+    <%= f.input :role, required: true, label: false, placeholder: "Profissão" %>
+    <%= f.input :kind_of_disability, required: true, label: false, placeholder: "Tipo de deficiência" %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "Senha" %>
+    <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "Nova Senha" %>
     <%= f.input :password_confirmation, required: false, label: false, placeholder: "Confirme sua senha" %>
     <%= f.input :current_password, required: true, label: false, placeholder: "Senha atual" %>
   </div>

@@ -8,6 +8,11 @@
     <%= f.input :password, required: true, label: false, placeholder: "Senha", hint: ("Pelo menos #{@minimum_password_length} dígitos" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true, label: false, placeholder: "Confirme sua senha" %>
     <%= f.input :age, required: true, label: false, placeholder: "Idade" %>
+    <%= f.input :gender, required: true, label: false, placeholder: "Sexo" %>
+    <%= f.input :schooling, required: true, label: false, placeholder: "Escolaridade" %>
+    <%= f.input :locale, required: true, label: false, placeholder: "Localidade" %>
+    <%= f.input :role, required: true, label: false, placeholder: "Profissão" %>
+    <%= f.input :kind_of_disability, required: true, label: false, placeholder: "Tipo de deficiência" %>
   </div>
 
   <div class="form-actions">
