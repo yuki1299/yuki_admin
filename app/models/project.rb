@@ -19,8 +19,8 @@ class Project < ApplicationRecord
     AutoHtml::SimpleFormat.new
   )
 
-  def name=(n)
+  def url=(n)
     super(n)
-    self[:name_html] = FORMAT.call(n)
+    self[:url_html] = FORMAT.call(n)
   end
 end
