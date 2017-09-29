@@ -1,6 +1,28 @@
-TAREFAS
-<div class="row">
-  <div class="col-md-4">
-    <%= render :partial => "tasks/form" %>
-  </div>
+<div class="panel panel-info show-project-page">
+  <% @tasks.each do |task|%>
+    <div class="panel-heading">
+      <p id="notice"><%= notice %></p>
+    </div>
+
+    <div class="panel-body">
+      <p>
+        <strong>Objetivo</strong>
+        <%= task.objective %>
+      </p>
+
+      <p>
+        <strong>URL</strong>
+        <%= task.url %>
+      </p>
+
+      <p>
+        <strong>Cenário</strong>
+        <%= task.cenary %>
+      </p>
+    </div>
+
+    <div class="panel-footer text-center">
+      <%= link_to("Editar", edit_project_task_path(@project, task)) %>
+    </div>
+  <%end%>
 </div>

@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to new_project_task_path(@project), notice: 'Projeto atualizado com sucesso' }
+        format.html { redirect_to project_tasks_path(@project), notice: 'Projeto atualizado com sucesso' }
         format.json { render :show, url: :ok, status: :ok, location: @project }
       else
         format.html { render :edit, alert: 'Não foi possível atualizar o seu projeto' }
