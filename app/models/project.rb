@@ -1,5 +1,8 @@
 class Project < ApplicationRecord
   include AASM
+  extend Enumerize
+
+  enumerize :test_platform, in: [:desktop, :mobile]
 
   belongs_to :user
   has_many :project_testers, dependent: :destroy
