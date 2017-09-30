@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
-  belongs_to :user
+  include AASM
 
+  belongs_to :user
   has_many :project_testers, dependent: :destroy
   has_many :testers, through: :project_testers
   has_many :tasks, dependent: :destroy
@@ -22,5 +23,24 @@ class Project < ApplicationRecord
   def url=(n)
     super(n)
     self[:url_html] = FORMAT.call(n)
+  end
+
+  aasm column: :status do
+    state :draft    , :initial => true
+    state :sent
+    state :in_progress
+    state :finished
+
+    event :to_sent do
+      transitions :from => :draft, :to => :sent
+    end
+
+    event :progress do
+      transitions :from => :sent, :to => :in_progress
+    end
+
+    event :finish do
+      transitions :from => :in_progress, :to => :finished
+    end
   end
 end
