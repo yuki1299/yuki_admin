@@ -40,6 +40,7 @@ gem 'auto_html'
 gem 'auto_html-contrib'
 gem 'ionicons-rails'
 gem 'aasm'
+gem 'enumerize'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
