@@ -14,7 +14,7 @@ class PublicsController < ApplicationController
     @public = @project.publics.new(public_params)
 
     if @public.save
-      redirect_to new_project_credit_path(@project), notice: "Público definido com sucesso"
+      redirect_to payment_path, notice: "Público definido com sucesso"
     else
       redirect_to new_project_public_path(@project), alert: "Não foi possível definir um público"
     end
@@ -27,7 +27,7 @@ class PublicsController < ApplicationController
     if @public.update_attribute(public_params)
       redirect_to project_publics_path(@project), notice: "Filtro atualizado com sucesso"
     else
-      redirect_to project_publics_path(@project), alert: "Não foi possível atualizar o filtro" 
+      redirect_to project_publics_path(@project), alert: "Não foi possível atualizar o filtro"
     end
   end
 

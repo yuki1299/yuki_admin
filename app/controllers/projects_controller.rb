@@ -5,9 +5,10 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @active   = current_user.projects.where(status: "Ativo")
-    @waiting  = current_user.projects.where(status: "Aguardando Resposta")
-    @finished = current_user.projects.where(status: "Finalizado")
+    @draft        = current_user.projects.where(status: "draft")
+    @sent         = current_user.projects.where(status: "sent")
+    @in_progress  = current_user.projects.where(status: "in_progress")
+    @finished     = current_user.projects.where(status: "finished")
   end
 
   # GET /projects/1
@@ -73,7 +74,7 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def change 
+  def change
     @project.update_attributes(status: params[:status])
     respond_to do |format|
       format.html {redirect_to projects_path, notice: 'Projeto Atualizado'}

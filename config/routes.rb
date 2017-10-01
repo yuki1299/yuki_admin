@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     passwords: 'testers/passwords'
   }
 
-  devise_for :users, controllers: { 
+  devise_for :users, controllers: {
     sessions: 'users/sessions' ,
     registrations: 'users/registrations',
     passwords: 'users/passwords'
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get 'tipo_de_usuário' => "pages#user_type", as: :user_type
   get 'test'            => "pages#test"
+  get 'pagamento'       => "payment#index", as: :payment
 
 
   resources :projects do
@@ -26,5 +27,5 @@ Rails.application.routes.draw do
       put :change
     end
   end
-  resources :worker_projects, only: [:index, :show] 
+  resources :worker_projects, only: [:index, :show]
 end

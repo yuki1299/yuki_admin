@@ -1,24 +1,32 @@
 <div class="row">
-  <div class="col-md-4">
-    <h2 class="text-center">Pendente</h2>
-    
+  <div class="col-md-3">
+    <h2 class="text-center">Rascunho</h2>
+
     <ul id="sortable1" class="sortable connected">
-      <%= render partial: "project", collection: @active %>
+      <%= render partial: "project", collection: @draft %>
     </ul>
   </div>
 
-  <div class="col-md-4">
-    <h2 class="text-center">Aguardando Resposta</h2>
-    
+  <div class="col-md-3">
+    <h2 class="text-center">Enviado</h2>
+
     <ul id="sortable2" class="sortable connected">
-      <%= render partial: "project", collection: @waiting %>
+      <%= render partial: "project", collection: @sent %>
     </ul>
   </div>
 
-  <div class="col-md-4">
-    <h2 class="text-center">Finalizados</h2>
-    
+  <div class="col-md-3">
+    <h2 class="text-center">Em progresso</h2>
+
     <ul id="sortable3" class="sortable connected">
+      <%= render partial: "project", collection: @in_progress %>
+    </ul>
+  </div>
+
+  <div class="col-md-3">
+    <h2 class="text-center">Finalizados</h2>
+
+    <ul id="sortable4" class="sortable connected">
       <%= render partial: "project", collection: @finished %>
     </ul>
   </div>
@@ -27,5 +35,3 @@
 <br>
 
 <%= link_to 'Novo Teste', new_project_path, :class => "btn btn-primary" %>
-
-

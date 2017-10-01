@@ -27,7 +27,7 @@ class CreditsController < ApplicationController
     if @credit.update_attribute(credit_params)
       redirect_to project_credits_path(@project), notice: "Quantidade de testadores atualizada com sucesso"
     else
-      redirect_to project_credits_path(@project), alert: "Não foi possível atualizar a quantidade de testadores" 
+      redirect_to project_credits_path(@project), alert: "Não foi possível atualizar a quantidade de testadores"
     end
   end
 
@@ -47,9 +47,5 @@ class CreditsController < ApplicationController
 
   def set_credit
     @credit = @project.credit.find(params[:id])
-  end
-
-  def credit_params
-    params.require(:credit).permit(:participants)
   end
 end
