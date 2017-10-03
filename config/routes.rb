@@ -14,15 +14,15 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'tipo_de_usuário' => "pages#user_type", as: :user_type
-  get 'test'            => "pages#test"
   get 'pagamento'       => "payment#index", as: :payment
-
 
   resources :projects do
     resources :asks
     resources :tasks
     resources :publics
     resources :credits
+    get 'roteiro'         => "script#list", as: :script
+    get 'resultados'      => "results#list", as: :results
     member do
       put :change
     end

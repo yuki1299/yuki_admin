@@ -1,6 +1,6 @@
 <div class="panel panel-info">
   <div class="panel-heading">
-  <%= link_to edit_project_path(project) do %>
+  <%= link_to project_script_path(project) do %>
     criado há <%= time_ago_in_words(project.created_at) %> atrás
   <% end %>
 
@@ -17,8 +17,8 @@
   </div>
 
   <div class="panel-footer text-center">
-    <%= link_to "<i class='fa fa-plus-circle'></i> Finalizados".html_safe, change_project_path(project, status: "Ativo"), method: :put, :class => "btn btn-info btn-md btn-block" %>
+    <!-- <%= link_to "<i class='fa fa-plus-circle'></i> Finalizados".html_safe, change_project_path(project, status: "Ativo"), method: :put, :class => "btn btn-info btn-md btn-block" %>
 
-    <%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %>
+    <%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %> -->
   </div>
 </div>

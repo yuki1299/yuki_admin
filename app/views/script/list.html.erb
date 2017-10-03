@@ -1,3 +1,5 @@
+<%= link_to "Público", project_publics_path(@project) %>
+
 <div class="panel panel-info show-project-page">
   <div class="panel-heading">
     <p id="notice"><%= notice %></p>
@@ -15,26 +17,40 @@
     </p>
 
     <p>
-      <strong>Url</strong>
+      <strong>URL</strong>
       <%= @project.url %>
     </p>
   </div>
 
-  <%= @project.each do |task| %>
+  <% @tasks.each do |task| %>
     <div class="panel-body">
       <p>
         <strong>Objetivo</strong>
-        <%= @task.objective %>
+        <%= task.objective %>
       </p>
 
       <p>
         <strong>URL</strong>
-        <%= raw(task.url_html) %>
+        <%= raw(task.url) %>
       </p>
 
       <p>
         <strong>Cenário</strong>
-        <%= @task.cenary %>
+        <%= task.cenary %>
+      </p>
+    </div>
+  <% end %>
+
+  <% @asks.each do |ask| %>
+    <div class="panel-body">
+      <p>
+        <strong>Objetivo</strong>
+        <%= ask.ask_type %>
+      </p>
+
+      <p>
+        <strong>URL</strong>
+        <%= ask.question %>
       </p>
     </div>
   <% end %>

@@ -2,9 +2,11 @@ class AsksController < ApplicationController
   before_action :set_project
   before_action :set_ask, only: [:show, :edit, :update, :destroy, :change]
 
-
   def index
     @asks = @project.asks
+  end
+
+  def show
   end
 
   def new
@@ -28,7 +30,7 @@ class AsksController < ApplicationController
     if @ask.update_attribute(ask_params)
       redirect_to project_asks_path(@project), notice: "Perguta atualizada com sucesso"
     else
-      redirect_to project_asks_path(@project), alert: "Não foi possível atualizar as perguntas" 
+      redirect_to project_asks_path(@project), alert: "Não foi possível atualizar as perguntas"
     end
   end
 

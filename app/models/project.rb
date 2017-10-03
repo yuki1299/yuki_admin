@@ -9,7 +9,7 @@ class Project < ApplicationRecord
   has_many :testers, through: :project_testers
   has_many :tasks, dependent: :destroy
   has_many :asks, dependent: :destroy
-  has_many :publics, dependent: :destroy
+  has_one  :public, dependent: :destroy
   has_many :credits, dependent: :destroy
 
   validates :user_id, presence: true

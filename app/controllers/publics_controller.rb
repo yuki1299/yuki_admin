@@ -6,7 +6,11 @@ class PublicsController < ApplicationController
     @publics = @project.publics
   end
 
+  def show
+  end
+
   def new
+    binding.pry
     @public = @project.publics.new
   end
 
@@ -50,6 +54,6 @@ class PublicsController < ApplicationController
   end
 
   def public_params
-    params.require(:public).permit(:age_range_start, :age_range_end, :gender, :schooling, :locale, :role, :kind_of_disability)
+    params.require(:public).permit(:age_range_start, :age_range_end, :gender, :schooling, :locale, :role, :kind_of_disability, :participants)
   end
 end
