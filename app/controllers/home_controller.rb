@@ -1,5 +1,5 @@
-class PagesController < ApplicationController
-  def home
+class HomeController < ApplicationController
+  def index
     if current_user
       redirect_to projects_client_project_path
     # elsif current_tester
@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def home
+  def index
   end
 
   def test

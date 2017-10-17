@@ -41,6 +41,12 @@ gem 'auto_html-contrib'
 gem 'ionicons-rails'
 gem 'aasm'
 gem 'enumerize'
+gem 'normalize-rails',        '3.0.3'
+gem 'bourbon',                '4.2.6'
+gem 'neat',                   '1.7.2'
+gem 'bitters',                '1.1.0'
+gem 'refills',                '0.1.0'
+gem 'ionicons-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
