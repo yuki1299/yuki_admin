@@ -5,17 +5,17 @@
         <b>Seu produto é acessível?</b>
       </p>
       <h1>
-        <b>Ninguém melhor que uma pessoa com deficiência pra te dizer isso</b>
+        <b>Ninguém melhor que uma pessoa com deficiência pra te dizer isso.</b>
       </h1>
     </div>
 
     <div class="main-banner-buttons">
       <button>
-        Quero testar meu produto
+        <%= link_to("Quero testar meu produto", new_user_session_path) %>
       </button>
 
       <button>
-        Quero ser um testador
+        <%= link_to("Quero ser um testador", new_tester_session_path) %>
       </button>
     </div>
   </div>
@@ -30,13 +30,15 @@
         <div class="img-step">
           <%= image_tag("home/script-icon.svg") %> 
         </div>
-        <h2>
-          Roteiro
-        </h2>
-        <p>
-          Crie um roteiro de teste com tarefas 
-          a serem realizadas. Você pode especificar qual é a deficiência que você está precisando testar.
-        </p>        
+        <div class="text-step">
+          <h2>
+            Roteiro
+          </h2>
+          <p>
+            Crie um roteiro de teste com tarefas 
+            a serem realizadas. Você pode especificar qual é a deficiência que você está precisando testar.
+          </p>        
+        </div>
       </div>
 
       <div class="steps">
@@ -44,28 +46,32 @@
           <%= image_tag("home/blind-icon.svg") %> 
           <%= image_tag("home/deaf-icon.svg") %> 
         </div>
-        <h2>
-          Submeta o teste
-        </h2>
-        <p>
-          Pessoas com a deficiência que você
-          especificou tentarão realizar as suas tarefas e criarão um relatório detalhado com a experiência de uso em sua interface.
-        </p>
+        <div class="text-step">
+          <h2>
+            Submeta o teste
+          </h2>
+          <p>
+            Pessoas com a deficiência que você
+            especificou tentarão realizar as suas tarefas e criarão um relatório detalhado com a experiência de uso em sua interface.
+          </p>
+        </div>
       </div>
 
       <div class="steps">
         <div class="img-step">
           <%= image_tag("home/report-icon.svg") %> 
         </div>
-        <h2>
-          Receba relatórios
-        </h2>
-        <p>
-          Você receberá dados detalhados
-          sobre a experiência relatada pelos
-          usuários. Assim fica mais fácil saber
-          como solucionar problemas de interface!
-        </p>
+        <div class="text-step">
+          <h2>
+            Receba relatórios
+          </h2>
+          <p>
+            Você receberá dados detalhados
+            sobre a experiência relatada pelos
+            usuários. Assim fica mais fácil saber
+            como solucionar problemas de interface!
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -76,37 +82,42 @@
     </h1>
 
     <p>
-      Coloque seu site em teste por pessoas com deficiência.
+      Coloque seu site em teste por pessoas com deficiência. <br>
       É a chance de garantir que seu projeto seja inclusivo do início ao fim.
     </p>
 
     <button>
-      Criar Conta
+      <%= link_to("Criar Conta", user_type_path) %>
     </button>
   </div>
 
   <div class="acessibility-info">
     <h1>
-      Você sabe como pessoas 
+      Você sabe como pessoas  <br>
       com deficiência usam a internet?
     </h1>
     
     <p>
-      Usabilidade é um assunto amplo e o senso comum nos traz à mente apenas aspectos de uso de pessoas que usam as mãos e em telas convencionais. Mas o que acontece se o usuário não possui uma das mãos? E se não possui visão, ou audição? 
+      Usabilidade é um assunto amplo e o senso comum nos traz à mente apenas aspectos de uso de pessoas que usam as mãos e em telas convencionais. <br>
+      Mas o que acontece se o usuário não possui uma das mãos? E se não possui visão, ou audição? 
       Não precisa ficar com medo. Com o Integra você consegue tirar essas dúvidas direto da fonte, com testes de usabilidade realizados por pessoas com deficiência.
     </p>
   </div>
 
   <div class="newsletter">
-    <%= image_tag("home/newsletter-icon.svg") %>
+    <div class="newsletter-box">
+      <%= image_tag("home/newsletter-icon.svg") %>
+    </div>
+    
+    <div class="newsletter-text">
+      <h1>
+        Receba nossa newsletter
+      </h1>
 
-    <h1>
-      Receba nossa newsletter
-    </h1>
-
-    <p>
-      Dicas de usabilidade, notícias sobre pessoas com deficiência, avanços de leis e outros assuntos relacionados. Mantenha-se informado! :)
-    </p>
+      <p>
+        Dicas de usabilidade, notícias sobre pessoas com deficiência, avanços de leis e outros assuntos relacionados. Mantenha-se informado! :)
+      </p>
+    </div>
 
     <%#= f.text_field :email, name: 'email', id: 'email', type: 'email', placeholder: "Endereço de e-mail", required: true %>
     <input type="email" id="email" name="usermail" placeholder="Endereço de e-mail" required />

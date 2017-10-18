@@ -1,6 +1,7 @@
 footer {
   background: linear-gradient(0deg, #3e6db5, #48a8de);
   padding: 25px 0;
+  height: 11.5vh;
 
   .content {
     @include span-columns (12 of 12);
@@ -40,6 +41,7 @@ footer {
       }
       a {
         color: #FFF;
+        font-style: normal;
       }
     }
   }
