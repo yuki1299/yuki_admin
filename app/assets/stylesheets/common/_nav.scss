@@ -1,0 +1,61 @@
+nav {
+  @include shift (1 of 12);
+  padding: 25px 0;
+  .nav-logo {
+    @include span-columns (2 of 12);
+
+    img {
+      padding-right: 20px;
+    }
+  }
+
+  .menu {
+    @include span-columns (9 of 12);
+    height: 6vh;
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+
+      a {
+        color: $black;
+      }
+    }
+
+    li {
+      margin-right: 2.72vw;
+      &:first-of-type {
+        margin-left: 7.2vw;
+      }
+
+      &:last-of-type {
+        margin-right: 4.6vw;
+      }
+    }
+
+    button {
+      height: 6vh;
+      width: 8.8vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: solid 1px $blue;
+      color: $black;
+      background: #FFF;
+
+      &:first-of-type {
+        margin-right: 2.2vw;
+        width: 12.2vw;
+        background: linear-gradient(-90deg, #3e6db5, #48a8de);
+        border: none;
+
+        a {
+          color: #FFF;
+        }
+      }
+    }
+  }
+}

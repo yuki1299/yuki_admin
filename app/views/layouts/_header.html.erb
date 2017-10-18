@@ -1,5 +1,5 @@
-<nav class="navbar" role="navigation">
-  <div class="navbar-header">
+<nav class="navbar full-container" role="navigation">
+  <div class="nav-logo">
     <%= link_to "/" do %>
       <%= image_tag("integra-logo.png") %> 
     <% end %>
@@ -43,12 +43,14 @@
         <li>
           <%= link_to("Ajuda", "#") %>
         </li>
-        <li>
+
+        <button>
           <%= link_to("Criar Conta", user_type_path) %>
-        </li>
-        <li>
+        </button>
+
+        <button>
           <%= link_to("Entrar", user_type_path) %>
-        </li>
+        </button>
       <% end %>
     </ul>
   </div>
