@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
 
-  root 'pages#home'
+  root 'home#index'
 
-  get 'tipo_de_usuário' => "pages#user_type", as: :user_type
+  get 'tipo_de_usuário' => "home#user_type", as: :user_type
   get 'pagamento'       => "payment#index", as: :payment
 
   resources :projects do

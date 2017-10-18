@@ -1,0 +1,308 @@
+#home-page {
+  .main-banner {
+    background-image: image-url("home/main-banner-home2.jpg");
+    height: 115vh;
+    background-size: 100%;
+    background-position-y: -16vh;
+
+    .text-box {
+      @include span-columns (6 of 12);
+      @include shift (1 of 12);
+      padding-top: 6vh;
+      h1,
+      p {
+        color: #FFF;
+      }
+
+      p {
+        font-size: 2.08vw;
+        margin-bottom: 2vh;
+      }
+
+      h1 {
+        font-size: 3.12vw;
+        padding-right: 7vw;
+      }
+    }
+
+    .main-banner-buttons {
+      @include span-columns (8 of 12);
+      @include shift (2 of 12);
+      margin-top: 39vh;
+
+      button {
+        background-color: #FFF;
+        color: $blue-text;
+        width: 25.35vw;
+        font-size: 1.5vw;
+        font-weight: bold;
+        border-radius: .9vw;
+
+        &:first-of-type {
+          margin-left: 6vw;
+          margin-right: 2.3vw;
+        }
+      }
+    }
+  }
+
+  .how-it-work {
+    .title {
+      @include span-columns (6 of 12);
+      @include shift (3 of 12);
+      background-color: #FFF;
+      margin-top: -3.3vw;
+      padding: 2vw 0;
+      box-shadow: 2px 4px 4px 0px;
+
+      h1 {
+        color: $blue-text;
+        text-align: center;
+        font-size: 3vw;
+        margin-bottom: 0;
+      }
+    }
+
+    .how-to-steps {
+      @include span-columns (12 of 12);
+      margin-top: 10vh;
+      padding-bottom: 10vh;
+      .steps {
+        @include span-columns (4 of 12);
+
+        .img-step {
+          display: flex;
+          justify-content: center;
+          height: 20vh;
+
+          img {
+            float: left;
+            width: 23%;
+
+            &:first-of-type {
+              margin-right: 3vw;
+            }
+          }
+        }
+
+        .text-step {
+          width: 100%;
+          float: left;
+          text-align: center;
+          margin-top: 3vh;
+
+          h2 {
+            font-size: 2.1vw;
+            color: $blue-text;
+          }
+
+          p {
+            color: $blue-text;
+            padding: 0;
+          }
+        }
+
+        &:first-of-type {
+          @include span-columns (3 of 12);
+          @include shift (1 of 12);
+
+          .img-step {
+            @include span-columns (1 of 3);
+            @include shift (1 of 3);
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        &:nth-of-type(2) {
+          .text-step {
+            p {
+              padding: 0 4vw;
+            }
+          }
+        }
+
+        &:last-of-type {
+          @include span-columns (3 of 12);
+          .img-step {
+            img {
+              margin-right: 0;
+              width: 36%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .start-to-use {
+    @include span-columns (12 of 12);
+    background: linear-gradient(90deg, #834098, #ec457f);
+    padding: 10vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1,
+    p,
+    button {
+      color: #FFF;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8vw;
+    }
+
+    p {
+      margin-bottom: 9vh;
+      font-size: 1.54vw;
+    }
+
+    button {
+      background: transparent;
+      border: solid 1px #FFF;
+      font-size: 1.5vw;
+      width: 16vw;
+
+      a {
+        color: #FFF;
+      }
+    }
+  }
+
+  .acessibility-info {
+    @include span-columns (12 of 12);
+    background-image: image-url("home/second-banner.jpg");
+    background-size: 100%;
+    height: 89vh;
+    padding-top: 12vh;
+
+    h1,
+    p {
+      color: $blue-text;
+      @include span-columns (7 of 12);
+      @include shift (5 of 12);
+      padding-left: 3.5vw;
+    }
+
+    h1 {
+      font-size: 2.75vw;
+    }
+
+    p {
+      font-size: 1.54vw;
+      padding-right: 12vw;
+    }
+  }
+
+  .newsletter {
+    @include span-columns (12 of 12);
+    background: linear-gradient(90deg, #3e6db5, #48a8de);
+    padding: 5vh 0 15vh 0;
+    
+    .newsletter-box {
+      @include span-columns (2 of 12);
+      margin: 0 auto 3vh auto;
+      display: flex;
+      justify-content: center;
+      float: none;
+      img {
+        width: 40%;
+      }
+    }
+
+    h1,
+    p {
+      color: #FFF;
+      text-align: center;
+      padding: 0 26vw;
+    }
+
+    h1 {
+      font-size: 2.86vw;
+    }
+
+    .newsletter-text {
+      @include span-columns (12 of 12);
+      margin-bottom: 5vh;
+    }
+
+    input {
+      @include span-columns (3 of 12);
+      width: 28vw;
+      margin-left: 35.7vw;
+      font-size: 1.5vw;
+      border-radius: .9vw;
+      padding-left: 3vw;
+      color: #FFF;
+    }
+
+    button {
+      background-color: #FFF;
+      color: $blue-text;
+      font-size: 1.5vw;
+      margin-left: -9.4vw;
+      float: left;
+      height: 6.7vh;
+      border-top-right-radius: .9vw;
+      border-bottom-right-radius: .9vw;
+    }
+  }
+
+  .news {
+    .title {
+      width: 53.4vw;
+      margin-left: 22.9vw;
+      float: left;
+      background: linear-gradient(90deg, #834098, #ec457f);
+      margin-top: -3.3vw;
+      padding: 2vw 0;
+      box-shadow: 2px 4px 4px 0px;
+      border-radius: .9vw;
+      margin-bottom: 10vh;
+
+      h1 {
+        color: #FFF;
+        text-align: center;
+        font-size: 3vw;
+        margin-bottom: 0;
+      }
+    }
+
+    .with-three-columns {
+      @include span-columns (12 of 12);
+
+      article {
+        @include span-columns (4 of 12);
+        margin-bottom: 5vh;
+
+        &:nth-of-type(3n) {
+          @include omega;
+        }
+
+        figure {
+          border: solid 1px #ebebeb;
+          figcaption {
+            padding: 1vw;
+            h2,
+            p {
+              color: $blue-text;
+            }
+
+            h2 {
+              font-size: 1.3vw;
+            }
+
+            p {
+              margin-bottom: 0;
+              font-size: .98vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}

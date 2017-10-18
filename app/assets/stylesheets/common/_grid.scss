@@ -1,4 +1,15 @@
+//Full Content 
+.full-container {
+  @include span-columns (12 of 12);
+}
+
+//Half Columns
 .half-column {
   width: 50%;
   float: left;
+}
+
+//With Three Columns
+.with-three-columns {
+  @include span-columns (4 of 12);
 }
