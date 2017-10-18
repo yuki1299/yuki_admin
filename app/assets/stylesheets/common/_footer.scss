@@ -1,0 +1,46 @@
+footer {
+  background: linear-gradient(0deg, #3e6db5, #48a8de);
+  padding: 25px 0;
+
+  .content {
+    @include span-columns (12 of 12);
+    display: flex;
+    align-items: center;
+
+    .footer-logo {
+      @include shift (1 of 12);
+      @include span-columns (2 of 12);
+
+      img {
+        padding-right: 20px;
+      }
+    }
+
+    i {
+      font-size: 2.4vw;
+      color: #fff;
+
+      &:first-of-type {
+        margin-right: 3vw;
+      }
+    }
+
+    ul {
+      @include span-columns (8 of 12);
+      margin-right: 1vw;
+      height: 6vh;
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      margin-right: 2.5vw;
+      &:first-of-type {
+        margin-left: 30.1vw;
+      }
+      a {
+        color: #FFF;
+      }
+    }
+  }
+}
