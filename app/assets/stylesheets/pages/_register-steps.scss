@@ -1,0 +1,138 @@
+#user-type {
+  @include span-columns (12 of 12);
+  padding: 14vh 0 5vh 0;
+  box-shadow: 2px 4px 4px 0px;
+
+  .title {
+    background-color: #48a8de;
+    border-radius: .99vw;
+    padding: 2vh;
+    width: 44.8vw;
+    margin-left: 27.2vw;
+    box-shadow: 2px 4px 4px 0px;
+
+    h1 {
+      text-align: center;
+      color: #FFF;
+      margin-bottom: 0;
+      font-size: 1.96vw;
+    }
+  }
+
+  .user-type-box {
+    @include span-columns (12 of 12);
+    padding-top: 12vh;
+    .img-box {
+      @include span-columns (4 of 12);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      p {
+        font-size: 1.07vw;
+        line-height: 1.3;
+      }
+      
+      p,
+      a {
+        color: #824199;
+        text-align: center;
+      }
+
+      a {
+        font-size: 1.93vw;
+        margin-top: 3vh;
+
+        &:first-of-type {
+          @include span-columns (2 of 4);
+          background-image: image-url("user_type/pcd.jpg");
+          background-size: 150%;
+          background-position-x: -9vh;
+          border-radius: 100%;
+          border: solid 4px #824199;
+          overflow: hidden;
+          width: 32vh;
+          height: 32vh;
+          margin-right: 0;
+        }
+      }
+
+      &:first-of-type {
+        @include shift (2 of 12);
+        
+        p,
+        a {
+          color: #3e6db5;
+        }
+
+        a {
+          &:first-of-type {
+            background-image: image-url("user_type/profissional.jpg");
+            background-position-x: -3vh;
+            border: solid 4px #3e6db5;
+          }
+        }
+      }
+    }
+  }
+
+  .register-progress-bar {
+    @include span-columns (10 of 12);
+    @include shift (1 of 12);
+    padding-top: 7vh;
+    
+    p {
+      font-size: 1.07vw;
+      color: $blue-text;
+      line-height: 1.3;
+      margin-left: 1.1vw;
+      margin-top: 2vh;
+    }
+
+    img {
+      width: 3vw;
+      float: left;
+      margin-left: .5vw;
+      margin-bottom: 2vh;
+    }
+
+    .full-bar {
+      @include span-columns (10 of 10);
+
+      .active,
+      .disable {
+        width: 1.5vw;
+        height: 1.5vw;
+        background-color: $blue-text;
+        float: left;
+      }
+
+      .disable {
+        background-color: transparent;
+        border: solid 1px $blue-text;
+      }
+
+      .step1 {
+        margin-left: 1.2vw;
+      }
+
+      .step2 {
+        margin-left: 37.7vw;
+      }
+
+      .step3 {
+        float: right;
+        margin-right: 1.2vw;
+      }
+    }
+
+    .line-bar {
+      margin-left: 1.9vw;
+      width: 78.5vw;
+      clear: left;
+      border: solid .5px $blue-text;
+      position: relative;
+      bottom: 1.4vh;
+    }
+  }
+}

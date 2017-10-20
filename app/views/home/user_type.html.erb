@@ -1,17 +1,48 @@
-<div class="jumbotron">
-  <h3 class="text-center">
-    <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
-    Qual seu tipo de usuário?
-  </h3>
+<div id="user-type" class="shadow-container">
+  <div class="title">
+    <h1>
+      Antes de tudo, nos diga qual o seu perfil
+    </h1>
+  </div>
 
-  <div class="user-type row justify-content-center">
-    <div class="half-column">
-      <i class="ion-person">
-      <%= link_to("Cliente", new_user_session_path) %>
-    </div>
+  <div class="user-type-box">
+    <div class="img-box">
+      <%= link_to new_user_session_path, :class => "img-case" do %>
+        
+      <% end %>
+      <%= link_to("Profissional", new_user_session_path) %>
+      <p>
+        Tenho um produto <br>
+        e preciso testá-lo
+      </p>
+    </div>  
 
-    <div class="half-column">
-      <%= link_to("Testador", new_tester_session_path) %>
+    <div class="img-box">
+      <%= link_to new_tester_session_path do %>
+        
+      <% end %>
+      <%= link_to("Pessoa com deficiência", new_tester_session_path) %>
+      <p>
+        Tenho uma deficiência <br>
+        e posso testar um produto
+      </p>
+    </div>  
+  </div>
+
+  <div class="register-progress-bar">
+    <%= image_tag("user_type/usuario.svg") %>
+    <div class="full-bar">
+      <div class="step1 active"></div>
+
+      <div class="step2 disable"></div>
+
+      <div class="step3 disable"></div>
+
     </div>
+    <div class="line-bar"></div>
+    <p>
+      Passo 1 <br>
+      Perfil de usuário
+    </p>
   </div>
 </div>
