@@ -1,16 +1,70 @@
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
-  <%= f.error_notification %>
-
-  <h2 class="text-center">Cadastro</h2>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email" %>
-    <%= f.input :password, required: true, label: false, placeholder: "Senha", hint: ("Pelo menos #{@minimum_password_length} dígitos" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true, label: false, placeholder: "Confirme sua senha" %>
+<section id="user-register-step2">
+  <div class="header-step2">
+    <div class="img-box">
+      
+    </div>
+    <h2>Cadastro de profissional</h2>
+    <h2>Agora, alguns dados cadastrais</h2>
   </div>
+  
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Cadastrar", :class => "btn btn-primary btn-block" %>
+    <div class="form-inputs">
+      <%= f.input :full_name, required: true, autofocus: true, label: "Nome Completo" %>
+      <%= f.input :email, required: true, autofocus: true, label: "E-mail" %>
+      <%= f.input :role, required: true, autococus: true, label: "Profissão" %>
+      <%= f.input :company, required: false, autofocus: true, label: "Empresa" %>
+      <%= f.input :password, required: true, label: "Senha" %>
+      <%= f.input :password_confirmation, required: true, label: "Repetir senha" %>
+    </div>
+
+    <div class="extra-infos">
+      <p>
+        Onde conheceu o Integra? (opcional)
+      </p>
+      <input id="a" type="checkbox" />
+      <p>Redes Sociais</p>
+
+      <input id="b" type="checkbox" />
+      <p>Anúncios</p>
+
+      <input id="c" type="checkbox" />
+      <p>Outros (escreva)</p>
+      <input type="text">
+
+      <input id="d" type="radio" />
+      <p>Li e aceito os <b>termos de serviço*</b></p>
+
+      <input id="e" type="radio" />
+      <p>Aceito receber e-mails com notícias e novidades do Integra</b></p>
+
+      <p>Todos os campos com * são obrigatórios</p>
+
+    </div>
+
+    <div class="form-actions">
+      <button>
+        <%= link_to("Voltar", user_type_path) %>
+      </button>
+      <%= f.button :submit, "Continuar", :class => "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+
+  <div class="register-progress-bar">
+    <%= image_tag("user_type/usuario.svg") %>
+    <div class="full-bar">
+      <div class="step1 active"></div>
+
+      <div class="step2 disable"></div>
+
+      <div class="step3 disable"></div>
+
+    </div>
+    <div class="line-bar"></div>
+    <p>
+      Passo 1 <br>
+      Perfil de usuário
+    </p>
   </div>
-<% end %>
-
+</section>  
