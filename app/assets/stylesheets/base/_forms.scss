@@ -16,9 +16,12 @@ select {
 label {
   font-weight: 600;
   margin-bottom: $small-spacing / 2;
+  color: $blue-text;
+  font-size: 1.2vw;
 
   &.required::after {
     content: "*";
+    color: red;
   }
 
   abbr {
@@ -28,29 +31,31 @@ label {
 
 #{$all-text-inputs},
 select[multiple=multiple] {
-  background-color: $light-blue;
-  border: solid .7px #FFF;
+  background-color: #FFF;
+  border: solid .7px $blue-text;
   border-radius: $base-border-radius;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
   font-family: $base-font-family;
-  font-size: 1.49vh;
+  font-size: 1.2vw;
+  color: $blue-text;
   margin-bottom: $small-spacing;
   padding: $base-spacing / 3;
   transition: border-color $base-duration $base-timing;
   width: 100%;
+  height: 5vh;
 
   &::-webkit-input-placeholder {
-    color: #FFF;
+    color: $blue-text;
     font-weight: normal;
   }
 
   &:hover {
-    border-color: shade(#FFF, 20%);
+    border-color: shade($blue-text, 20%);
   }
 
   &:focus {
-    border-color: #FFF;
+    border-color: #blue-text;
     box-shadow: $form-box-shadow-focus;
     outline: none;
   }

@@ -1,7 +1,7 @@
+// User Type Step1
 #user-type {
   @include span-columns (12 of 12);
   padding: 14vh 0 5vh 0;
-  box-shadow: 2px 4px 4px 0px;
 
   .title {
     background-color: #48a8de;
@@ -93,6 +93,184 @@
       width: 3vw;
       float: left;
       margin-left: .5vw;
+      margin-bottom: 2vh;
+    }
+
+    .full-bar {
+      @include span-columns (10 of 10);
+
+      .active,
+      .disable {
+        width: 1.5vw;
+        height: 1.5vw;
+        background-color: $blue-text;
+        float: left;
+      }
+
+      .disable {
+        background-color: transparent;
+        border: solid 1px $blue-text;
+      }
+
+      .step1 {
+        margin-left: 1.2vw;
+      }
+
+      .step2 {
+        margin-left: 37.7vw;
+      }
+
+      .step3 {
+        float: right;
+        margin-right: 1.2vw;
+      }
+    }
+
+    .line-bar {
+      margin-left: 1.9vw;
+      width: 78.5vw;
+      clear: left;
+      border: solid .5px $blue-text;
+      position: relative;
+      bottom: 1.4vh;
+    }
+  }
+}
+
+// User Register Step 2
+#user-register-step2 {
+  @include span-columns (12 of 12);
+  padding: 8vh 0 5vh 0;
+  
+  .header-step2 {
+    width: 44.7vw;
+    float: left;
+    display: block;
+    margin-left: 25.3vw;
+
+    h2 {
+      font-size: 1.96vw;
+      color: $blue-text;
+      margin-top: 6vh;
+      margin-bottom: 0;
+    }
+
+    .title {
+      background-color: #48a8de;
+      border-radius: .99vw;
+      padding: 1vh 0 1vh 0;
+      width: 38.8vw;
+      margin-left: 6.2vw;
+      margin-top: 1vh;
+      box-shadow: 2px 4px 4px 0px;
+
+      h3 {
+        text-align: left;
+        color: #FFF;
+        margin-bottom: 0;
+        font-size: 1.96vw;
+        position: relative;
+        left: -1.3vw;
+      }
+    }
+    .img-box-mask {
+      @include span-columns (4 of 12);
+      @include omega;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .img-box {
+        background-image: image-url("user_type/profissional.jpg");
+        background-size: 150%;
+        background-position-x: -2vh;
+        border-radius: 100%;
+        border: solid 4px $blue-text;
+        overflow: hidden;
+        width: 20vh;
+        height: 20vh;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .form-signin {
+    float: left;
+    width: 49.6vw;
+    margin-left: 24vw;
+    margin-top: 6vh;
+
+    .form-group {
+      margin-bottom: 2vh;
+    }
+
+    .user_full_name,
+    .user_email {
+      width: 30.7vw;
+      float: left;
+      margin-right: 1vw;
+    }
+
+    .user_role,
+    .user_company {
+      width: 17.9vw;
+      float: left;
+    }
+
+    .user_password,
+    .user_password_confirmation,
+    .user_another_reason {
+      width: 24.3vw;
+      float: left;
+      margin-right: 1vw;
+    }
+
+    .user_password_confirmation {
+      margin-right: 0;
+    }
+
+    .checkbox {
+      width: 100%;
+      float: left;
+
+      &:nth-of-type(3) {
+        p {
+          float: left;
+          margin-right: 1vw;
+        }
+      }
+    }
+
+    .extra-infos {
+      p {
+        font-size: 1.2vw;
+        color: $blue-text;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        float: left;
+      }
+    }
+  }
+
+  .register-progress-bar {
+    @include span-columns (10 of 12);
+    @include shift (1 of 12);
+    padding-top: 25vh;
+    
+    p {
+      font-size: 1.07vw;
+      color: $blue-text;
+      line-height: 1.3;
+      margin-left: 40.4vw;
+      margin-top: 2vh;
+    }
+
+    img {
+      width: 3vw;
+      float: left;
+      margin-left: 39.6vw;
       margin-bottom: 2vh;
     }
 
