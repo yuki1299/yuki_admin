@@ -1,21 +1,87 @@
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
-  <%= f.error_notification %>
-
-  <h2 class="text-center">Cadastro</h2>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true, label: false, placeholder: "Email" %>
-    <%= f.input :password, required: true, label: false, placeholder: "Senha", hint: ("Pelo menos #{@minimum_password_length} dígitos" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true, label: false, placeholder: "Confirme sua senha" %>
-    <%= f.input :age, required: true, label: false, placeholder: "Idade" %>
-    <%= f.input :gender, required: true, label: false, placeholder: "Sexo" %>
-    <%= f.input :schooling, required: true, label: false, placeholder: "Escolaridade" %>
-    <%= f.input :locale, required: true, label: false, placeholder: "Localidade" %>
-    <%= f.input :role, required: true, label: false, placeholder: "Profissão" %>
-    <%= f.input :kind_of_disability, required: true, label: false, placeholder: "Tipo de deficiência" %>
+<section id="tester-register-step2">
+  <div class="header-step2">
+    <div class="img-box-mask">
+      <div class="img-box">
+        
+      </div>
+    </div>
+    <h2>Cadastro de <br> pessoa com deficiência</h2>
+    <div class="title">
+      <h3>Agora, alguns dados cadastrais</h3>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Cadastrar", :class => "btn btn-primary btn-block" %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :full_name, required: true, autofocus: true, label: "Nome Completo", :class => "full" %>
+      <%= f.input :email, required: true, autofocus: true, label: "E-mail", :class => "large" %>
+      <%= f.input :age, required: true, label: "Idade", :class => "small" %>
+      <%= f.input :gender, required: true, label: "Gênero", :as => :radio_buttons %>
+      <%= f.input :password, required: true, label: "Senha", :class => "medium" %>
+      <%= f.input :password_confirmation, required: true, label: "Repetir senha", :class => "medium" %>
+      <%= f.input :kind_of_disability, required: true, label: "Qual é a sua deficiência?", hint: 'Selecione no mínimo uma. É possível escolher mais de uma.', :class => "medium" %>
+      <!--     <%= f.input :schooling, required: true, label: "Escolaridade" %>
+          <%= f.input :locale, required: true, label: "Localidade" %>
+          <%= f.input :role, required: true, label: "Profissão" %> -->
+
+      <div class="extra-infos">
+        <p>
+          Onde conheceu o Integra? (opcional)
+        </p>
+        <div class="checkbox">
+          <input id="a" type="checkbox" />
+          <p>Redes Sociais</p>
+        </div>
+        
+        <div class="checkbox">
+          <input id="b" type="checkbox" />
+          <p>Anúncios</p>
+        </div>
+        
+        <div class="checkbox">
+          <input id="c" type="checkbox" />
+          <p>Outros (escreva)</p>
+          <input type="text" class="tester_another_reason">
+        </div>
+          
+        <div class="radio-box">  
+          <input id="d" type="radio" class="radio-active" name="re"/>
+          <p>Li e aceito os <b>termos de serviço*</b></p>
+        </div>
+        
+        <div class="radio-box">
+          <input id="e" type="radio" class="radio-active" name="test"/>
+          <p>Aceito receber e-mails com notícias e novidades do Integra</b></p>
+        </div>
+
+        <p>Todos os campos com * são obrigatórios</p>
+      </div>
+
+      <div class="form-actions">
+        <button>
+          <%= link_to("Voltar", user_type_path) %>
+        </button>
+        <%= f.button :submit, "Continuar" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="register-progress-bar">
+    <%= image_tag("user_type/progresso-purple.svg") %>
+    <div class="full-bar">
+      <div class="step1 active"></div>
+
+      <div class="step2 active"></div>
+
+      <div class="step3 disable"></div>
+
+    </div>
+    <div class="line-bar"></div>
+    <p>
+      Passo 2 <br>
+      Dados Cadastrais
+    </p>
   </div>
-<% end %>
+</section> 

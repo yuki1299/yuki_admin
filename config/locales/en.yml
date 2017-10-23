@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  enumerize:
+      tester:
+        gender:
+          male: "Masculino"
+          female: "Feminino"
+          other: "Outro"

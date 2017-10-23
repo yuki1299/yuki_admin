@@ -232,6 +232,7 @@
 
     input {
       @include span-columns (3 of 12);
+      border-color: #FFF;
       width: 28vw;
       margin-left: 35.7vw;
       font-size: 1.5vw;
@@ -240,6 +241,10 @@
       color: #FFF;
       height: 6.7vh;
       background-color: transparent;
+
+      &::-webkit-input-placeholder {
+        color: #FFF;
+      }
     }
 
     button {

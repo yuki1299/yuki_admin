@@ -10,7 +10,6 @@ class PublicsController < ApplicationController
   end
 
   def new
-    binding.pry
     @public = @project.publics.new
   end
 

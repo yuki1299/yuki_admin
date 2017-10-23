@@ -137,11 +137,11 @@
   }
 }
 
-// User Register Step 2
-#user-register-step2 {
+// User/Tester Register Step2 
+#user-register-step2,
+#tester-register-step2 {
   @include span-columns (12 of 12);
   padding: 8vh 0 5vh 0;
-  
   .header-step2 {
     width: 44.7vw;
     float: left;
@@ -150,13 +150,13 @@
 
     h2 {
       font-size: 1.96vw;
-      color: $blue-text;
-      margin-top: 6vh;
+      color: $purple-text;
+      margin-top: 1.3vh;
       margin-bottom: 0;
     }
 
     .title {
-      background-color: #48a8de;
+      background-color: #ef457d;
       border-radius: .99vw;
       padding: 1vh 0 1vh 0;
       width: 38.8vw;
@@ -181,11 +181,11 @@
       flex-direction: column;
 
       .img-box {
-        background-image: image-url("user_type/profissional.jpg");
+        background-image: image-url("user_type/pcd.jpg");
         background-size: 150%;
-        background-position-x: -2vh;
+        background-position-x: -5vh;
         border-radius: 100%;
-        border: solid 4px $blue-text;
+        border: solid 4px $purple-text;
         overflow: hidden;
         width: 20vh;
         height: 20vh;
@@ -204,6 +204,192 @@
       margin-bottom: 2vh;
     }
 
+    .checkbox {
+      width: 100%;
+      float: left;
+
+      &:nth-of-type(3) {
+        p {
+          float: left;
+          margin-right: 1vw;
+        }
+      }
+    }
+
+    .extra-infos {
+      width: 100%;
+      float: left;
+      p {
+        font-size: 1.2vw;
+        color: $blue-text;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        float: left;
+      }
+    }
+
+    .form-actions {
+      width: 100%;
+      float: left;
+    }
+  }
+
+  .register-progress-bar {
+    @include span-columns (10 of 12);
+    @include shift (1 of 12);
+    padding-top: 25vh;
+    
+    p {
+      font-size: 1.07vw;
+      color: $purple-text;
+      line-height: 1.3;
+      margin-left: 40.4vw;
+      margin-top: 2vh;
+    }
+
+    img {
+      width: 3vw;
+      float: left;
+      margin-left: 39.6vw;
+      margin-bottom: 2vh;
+    }
+
+    .full-bar {
+      @include span-columns (10 of 10);
+
+      .active,
+      .disable {
+        width: 1.5vw;
+        height: 1.5vw;
+        background-color: $purple-text;
+        float: left;
+      }
+
+      .disable {
+        background-color: transparent;
+        border: solid 1px $purple-text;
+      }
+
+      .step1 {
+        margin-left: 1.2vw;
+      }
+
+      .step2 {
+        margin-left: 37.7vw;
+      }
+
+      .step3 {
+        float: right;
+        margin-right: 1.2vw;
+      }
+    }
+
+    .line-bar {
+      margin-left: 1.9vw;
+      width: 78.5vw;
+      clear: left;
+      border: solid .5px $purple-text;
+      position: relative;
+      bottom: 1.4vh;
+    }
+  }
+}
+
+// Tester Register Step 2
+#tester-register-step2 {
+  .form-signin {
+    
+    .tester_email {
+      width: 24vw;
+      margin-right: 1vw;
+      float: left;
+    }
+
+    .tester_age {
+      float: left;
+      width: 7.4vw;
+    }
+
+    .tester_gender,
+    .tester_kind_of_disability {
+      width: 100%;
+      float: left;
+    }
+
+    .tester_gender {
+      .radio {
+        label {
+          float: left;
+          margin-right: 10vw;
+        }
+      }
+    }
+
+    .tester_password,
+    .tester_password_confirmation,
+    .tester_another_reason {
+      width: 24.3vw;
+      float: left;
+      margin-right: 1vw;
+    }
+
+    .tester_password_confirmation {
+      @include omega;
+    }
+
+    label {
+      color: $purple-text;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"] {
+      border: solid .7px #ef457d;
+      color: $purple-text;
+    }
+
+    p {
+      color: $purple-text;
+    }
+
+    .extra-infos {
+      p {
+        color: $purple-text;
+      }
+    }
+  }
+}
+
+// User Register Step 2
+#user-register-step2 {
+  .header-step2 {
+    h2 {
+      margin-top: 6vh;
+      color: $blue-text;
+    }
+
+    .title {
+      background-color: #48a8de;
+    }
+    .img-box-mask {
+      @include span-columns (4 of 12);
+      @include omega;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .img-box {
+        background-image: image-url("user_type/profissional.jpg");
+        background-position-x: -2vh;
+        border: solid 4px $blue-text;
+      }
+    }
+  }
+
+  .form-signin {
     .user_full_name,
     .user_email {
       width: 30.7vw;
@@ -228,89 +414,27 @@
     .user_password_confirmation {
       margin-right: 0;
     }
-
-    .checkbox {
-      width: 100%;
-      float: left;
-
-      &:nth-of-type(3) {
-        p {
-          float: left;
-          margin-right: 1vw;
-        }
-      }
-    }
-
-    .extra-infos {
-      p {
-        font-size: 1.2vw;
-        color: $blue-text;
-      }
-
-      input[type="checkbox"],
-      input[type="radio"] {
-        float: left;
-      }
-    }
   }
 
   .register-progress-bar {
-    @include span-columns (10 of 12);
-    @include shift (1 of 12);
-    padding-top: 25vh;
-    
     p {
-      font-size: 1.07vw;
       color: $blue-text;
-      line-height: 1.3;
-      margin-left: 40.4vw;
-      margin-top: 2vh;
-    }
-
-    img {
-      width: 3vw;
-      float: left;
-      margin-left: 39.6vw;
-      margin-bottom: 2vh;
     }
 
     .full-bar {
-      @include span-columns (10 of 10);
-
       .active,
       .disable {
-        width: 1.5vw;
-        height: 1.5vw;
         background-color: $blue-text;
-        float: left;
       }
 
       .disable {
         background-color: transparent;
         border: solid 1px $blue-text;
       }
-
-      .step1 {
-        margin-left: 1.2vw;
-      }
-
-      .step2 {
-        margin-left: 37.7vw;
-      }
-
-      .step3 {
-        float: right;
-        margin-right: 1.2vw;
-      }
     }
 
     .line-bar {
-      margin-left: 1.9vw;
-      width: 78.5vw;
-      clear: left;
       border: solid .5px $blue-text;
-      position: relative;
-      bottom: 1.4vh;
     }
   }
 }
