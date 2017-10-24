@@ -60,10 +60,12 @@
       </div>
 
       <div class="form-actions">
-        <button>
+        <button class="back-button">
           <%= link_to("Voltar", user_type_path) %>
         </button>
-        <%= f.button :submit, "Continuar" %>
+        <button class="next-button tester-button">
+          <%= f.button :submit, "Continuar" %>
+        </button>
       </div>
     </div>
   <% end %>

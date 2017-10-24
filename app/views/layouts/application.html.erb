@@ -14,7 +14,11 @@
     <div class="container site-content">
       <%= yield %>
     </div>
-
-  <%= render :partial => "layouts/footer" %>
+  
+  <% if request.path.include? "tester" %>
+    <%= render :partial => "layouts/footer_tester" %>
+  <% else %>
+    <%= render :partial => "layouts/footer" %>
+  <% end %>
   </body>
 </html>
