@@ -1,0 +1,37 @@
+<section id="user-register-step3">
+  <div class="success-box">
+    <%= image_tag("user_type/success-big-step3.svg") %>
+    <div class="title">
+      <h2>Cadastro completo com sucesso!</h2>
+    </div>
+  </div>
+
+  <p class="success-alert">
+    Em breve você receberá um e-mail com um link de confirmação de cadastro e logo poderá prosseguir com seus testes.
+  </p>
+
+  <div class="step-3-buttons">
+    <button class="back-button">
+      <%= link_to("Voltar para a Home", root_path) %>
+    </button>
+    <button class="next-button">
+      <%= link_to("Meus Testes", projects_path) %>
+    </button>
+  </div>
+
+  <div class="register-progress-bar">
+    <%= image_tag("user_type/success-step3.svg") %>
+    <div class="full-bar">
+      <div class="step1 active"></div>
+
+      <div class="step2 active"></div>
+
+      <div class="step3 active"></div>
+    </div>
+    <div class="line-bar"></div>
+    <p>
+      Passo 3 <br>
+      Final
+    </p>
+  </div>
+</section>

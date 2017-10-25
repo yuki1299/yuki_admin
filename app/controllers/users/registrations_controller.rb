@@ -47,6 +47,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
           devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :email, :password, :current_password, :role, :company])
       end
 
+      def after_sign_up_path_for(resource)
+          complete_profissional_path
+      end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
