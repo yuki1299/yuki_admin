@@ -1,13 +1,15 @@
+.user-bg {
+  background-image: image-url("user_dash/user-dash-bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-color: $blue;
+}
+
 #user-dashboard {
   float: left;
   width: 100%;
   padding: 10vh 2vh 5vh 2vh;
-  &.user-bg {
-    background-image: image-url("user_dash/user-dash-bg.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 100%;
-  }
 
   header {
     h1 {

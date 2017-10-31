@@ -1,4 +1,36 @@
-<h1 class="text-center">Novo Teste</h1>
+<section id="new-test" class="user-bg">
+  <div class="container-steps-content">
+    <div class="nav-box">
+      <ul class="user-steps-nav">
+        <li class="active">
+          <%= link_to "Teste", "#" %>
+        </li>
 
-<%= render 'form', project: @project %>
+        <li class="disable">
+          <%= link_to "Tarefas", "#"  %>
+        </li>
 
+        <li class="disable">
+          <%= link_to "Perguntas", "#" %>
+        </li>
+
+        <li class="disable">
+          <%= link_to "Público", "#" %>
+        </li>
+
+        <li class="disable">
+          <%= link_to "Créditos", "#" %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-box">
+      <div class="form-title">
+        <h2>
+          Conte-nos como será este teste
+        </h2>
+      </div> 
+      <%= render 'form', project: @project %>
+    </div>
+  </div>
+</section>

@@ -1,10 +1,13 @@
 <%= simple_form_for(@project, html: {class: "form-signin"}) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :name, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "Título do teste", error: "Por favor preencha todos os campos" %>
-  <%= f.input :test_platform, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "O que vai testar?", error: "Por favor preencha todos os campos" %>
-  <%= f.input :url, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "URL", error: "Por favor preencha todos os campos" %>
+  <%= f.input :name, label: "Título do teste", required: true, autofocus: true, input_html: {class: "form-control"}, error: "Por favor preencha todos os campos", :as => :string %>
+  <%= f.input :test_platform, label: "Plataforma", required: true, autofocus: true, input_html: {class: "form-control"}, error: "Por favor preencha todos os campos", :as => :radio_buttons %>
+  <%= f.input :url, label: "URL DE ACESSO", required: true, autofocus: true, input_html: {class: "form-control"}, error: "Por favor preencha todos os campos" %>
 
-  <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Continuar para tarefas", 'data-disable-with' => "..." %>
-  <%= link_to 'Voltar', projects_path, :class => "btn btn-primary btn-block btn-lg" %>
+  <div class="new-project-buttons">
+    <button class="back-button">  <%= link_to 'Voltar', projects_path, :class => "btn btn-primary btn-block btn-lg" %> </button>
+    <button class="back-button">  <%= link_to 'Salvar', projects_path, :class => "btn btn-primary btn-block btn-lg" %> </button>
+    <button class="next-button">  <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Continuar", 'data-disable-with' => "..." %> </button>
+  </div>
 <% end %>
