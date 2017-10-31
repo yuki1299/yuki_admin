@@ -125,7 +125,7 @@
         .project-footer-buttons {
           float: left;
           width: 100%;
-          margin-top: 3vh;
+          margin-top: 5vh;
 
           button {
             background-color: transparent;
@@ -158,6 +158,55 @@
             a {
               color: black;
             }
+          }
+        }
+
+        .answers-progress-bar {
+          @include span-columns (12 of 12);
+          @include shift (0 of 12);
+          padding-top: 3vh;
+
+          .full-bar {
+            @include span-columns (10 of 10);
+
+            .active,
+            .disable {
+              width: 1vw;
+              height: 1vw;
+              background-color: $blue-text;
+              float: left;
+            }
+
+            .disable {
+              background-color: #FFF;
+              z-index: 999;
+              position: relative;
+              border: solid 1px $blue-text;
+            }
+
+            .step1 {
+              margin-left: 0;
+            }
+
+            .step2,
+            .step3,
+            .step4 {
+              margin-left: 5.8vw;
+            }
+
+            .step5 {
+              float: right;
+              margin-left: 1.2vw;
+            }
+          }
+
+          .line-bar {
+            margin-left: 0;
+            width: 100%;
+            clear: left;
+            border: solid .5px $blue-text;
+            position: relative;
+            bottom: 1.1vh;
           }
         }
       }

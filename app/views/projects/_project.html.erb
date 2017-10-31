@@ -14,6 +14,22 @@
       <button class="answers-button">
         Ver Respostas
       </button>
+      
+      <div class="answers-progress-bar">
+        <div class="full-bar">
+          <div class="step1 active"></div>
+
+          <div class="step2 active"></div>
+
+          <div class="step3 active"></div>
+
+          <div class="step4 disable"></div>
+
+          <div class="step5 disable"></div>
+        </div>
+        <div class="line-bar"></div>
+      </div>
+
       <div class="project-footer-buttons">
         <% if project.status == "draft" || "sent" %>
           <button class="edit-button">
