@@ -49,7 +49,7 @@ class PublicsController < ApplicationController
   end
 
   def set_public
-    @public = @project.public.find(params[:id])
+    @public = @project.publics.find(params[:id])
   end
 
   def public_params

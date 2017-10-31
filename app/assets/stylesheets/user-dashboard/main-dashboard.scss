@@ -1,0 +1,166 @@
+#user-dashboard {
+  float: left;
+  width: 100%;
+  padding: 10vh 2vh 5vh 2vh;
+  &.user-bg {
+    background-image: image-url("user_dash/user-dash-bg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+
+  header {
+    h1 {
+      color: #FFF;
+      margin-bottom: 0;
+      font-size: 2.6vw;
+    }
+  }
+
+  .dashboard-options {
+    @include span-columns (12 of 12);
+    margin: 8vh 0;
+    button {
+      @include span-columns (2 of 12);
+      background: #FFF;
+      font-size: 1.5vw;
+      width: 14vw;
+      background-image: image-url("user_dash/bg-new-test.png");
+      background-repeat: no-repeat;
+      background-size: 1.9vw;
+      background-position: 1vw;
+      padding-left: 4vw;
+      padding-top: 2.7vh;
+
+      a {
+        color: black;
+      }
+    }
+
+    .user-filter {
+      float: right;
+      p {
+        font-size: 1.5vw;
+        color: #FFF;
+        float: left;
+        display: flex;
+        align-items: center;
+
+        &:first-of-type {
+          margin-right: 2vw;
+        }
+
+        select {
+          background-color: transparent;
+          background-image: image-url("user_dash/select-bg-white.png");
+          background-repeat: no-repeat;
+          background-position: 13.4vw;
+          background-size: 15%;
+          font-size: 1.5vw;
+          float: right;
+          margin-bottom: 0;
+          margin-left: 1.5vw;
+          height: 7.5vh;
+          border: solid 1px;
+          border-radius: 0;
+          -webkit-appearance: none;
+          padding-left: 1vw;
+          padding-right: 4vw;
+        }
+      }
+    }
+  }
+
+  // PROJECTS DASHBOARD GENERAL
+  .user-projects-container {
+    @include span-columns (12 of 12);
+  }
+
+  #user-project {
+    .project-box {
+      @include span-columns (4 of 12);
+      background-color: #FFF;
+      padding: 1.3vw;
+      margin-bottom: 5vh;
+
+      h1 {
+        font-size: 1.5vw;
+        color: $blue-text;
+        border-bottom: 1px solid $blue-text;
+        margin-bottom: 3vh;
+        padding-bottom: 1vh;
+      }
+
+      .project-infos {
+        p {
+          color: black;
+          margin-bottom: 3vh;
+
+          &:nth-of-type(2) {
+            margin-bottom: 6vh;
+          }
+
+          &:last-of-type {
+            float: left;
+          }
+        }
+
+        .answers-button {
+          background-color: transparent;
+          background-image: image-url("user_dash/answers-bg-button.png");
+          background-repeat: no-repeat;
+          background-size: 3vw;
+          background-position: 1vw;
+          font-size: 1.22vw;
+          width: 15vw;
+          font-size: 1.22vw;
+          float: right;
+          color: $blue-text;
+          border: solid 1px $blue-text;
+          border-radius: 0;
+          padding-left: 5.3vw;
+          margin-top: -1.5vh;
+        }
+
+        .project-footer-buttons {
+          float: left;
+          width: 100%;
+          margin-top: 3vh;
+
+          button {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: 1.7vw;
+            font-size: 1vw;
+            border: solid 1px black;
+            border-radius: 0;
+            padding-left: 3.5vw;
+            background-position: 1vw;
+            height: 5.5vh;
+            padding-top: 1.9vh;
+
+            &.edit-button {
+              background-image: image-url("user_dash/edit-bg-button");
+              float: left;
+            }
+
+            &.delete-button {
+              background-image: image-url("user_dash/delete-bg-button");
+              margin-left: 1.7vw;
+            }
+
+            &.copy-button {
+              background-image: image-url("user_dash/copy-bg-button");
+              float: right;
+              @include omega;
+            }
+
+            a {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

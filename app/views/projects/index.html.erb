@@ -1,17 +1,52 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2 class="text-center">Rascunho</h2>
+<section id="user-dashboard" class="user-bg">
+  <header>
+    <h1 tabindex="0">Meus Testes</h1>
+  </header>
 
+  <div class="dashboard-options">
+    <button>
+      <%= link_to 'Novo Teste', new_project_path, :class => "new-project-button" %>
+    </button>
+
+    <div class="user-filter">
+      <p>
+        <strong> Status: </strong>
+        <select name="status" id="status">
+          <option value="all">Todos</option>
+          <option value="draft">Rascunho</option>
+          <option value="sent">Enviado</option>
+          <option value="in_progress">Em Andamento</option>
+          <option value="finished">Finalizado</option>
+        </select>
+      </p>
+
+      <p>
+        <strong> Ordenar: </strong>
+        <select name="order" id="order">
+          <option value="recents">Recentes</option>
+          <option value="">Rascunho</option>
+          <option value="sent">Enviado</option>
+          <option value="in_progress">Em Andamento</option>
+          <option value="finished">Finalizado</option>
+        </select>
+      </p>
+    </div>
+  </div>
+
+  <div class="user-projects-container">
     <ul id="sortable1" class="sortable connected">
       <%= render partial: "project", collection: @draft %>
+      <%= render partial: "project", collection: @sent %>
+      <%= render partial: "project", collection: @in_progress %>
+      <%= render partial: "project", collection: @finished %>
     </ul>
   </div>
 
-  <div class="col-md-12">
+<!--   <div class="col-md-12">
     <h2 class="text-center">Enviado</h2>
 
     <ul id="sortable2" class="sortable connected">
-      <%= render partial: "project", collection: @sent %>
+      
     </ul>
   </div>
 
@@ -19,7 +54,7 @@
     <h2 class="text-center">Em progresso</h2>
 
     <ul id="sortable3" class="sortable connected">
-      <%= render partial: "project", collection: @in_progress %>
+      
     </ul>
   </div>
 
@@ -27,11 +62,7 @@
     <h2 class="text-center">Finalizados</h2>
 
     <ul id="sortable4" class="sortable connected">
-      <%= render partial: "project", collection: @finished %>
+      
     </ul>
-  </div>
-</div>
-
-<br>
-
-<%= link_to 'Novo Teste', new_project_path, :class => "btn btn-primary" %>
+  </div> -->
+</section>

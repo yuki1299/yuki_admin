@@ -1,7 +1,6 @@
 <%= simple_form_for(@project, html: {class: "form-signin"}) do |f| %>
   <%= f.error_notification %>
 
-
   <%= f.input :name, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "Título do teste", error: "Por favor preencha todos os campos" %>
   <%= f.input :test_platform, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "O que vai testar?", error: "Por favor preencha todos os campos" %>
   <%= f.input :url, label: false, required: true, autofocus: true, input_html: {class: "form-control"}, placeholder: "URL", error: "Por favor preencha todos os campos" %>
