@@ -22,6 +22,7 @@
       <strong>URL</strong>
       <%= @project.url %>
     </p>
+    <%= link_to "Editar Teste", edit_project_path(@project)%>
   </div>
 
   <% @tasks.each do |task| %>
@@ -41,6 +42,7 @@
         <%= task.cenary %>
       </p>
     </div>
+    <%= link_to "Editar Tarefa", edit_project_task_path(@project, task) %>
   <% end %>
 
   <% @asks.each do |ask| %>
@@ -55,5 +57,6 @@
         <%= ask.question %>
       </p>
     </div>
+    <%= link_to "Editar Pergunta", edit_project_ask_path(@project, ask) %>
   <% end %>
 </div>

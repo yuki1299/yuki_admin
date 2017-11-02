@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
         Tester.all.each do |tester|
           @project.project_testers.create(project: @project, tester: tester)
         end
-        format.html { redirect_to new_project_task_path(@project), notice: 'Projeto criado com sucesso' }
+        format.html { redirect_to project_tasks_path(@project), notice: 'Projeto criado com sucesso' }
         format.json { render :show, url: :created, status: :created, location: @project }
       else
         format.html { render :new }

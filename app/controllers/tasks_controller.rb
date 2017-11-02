@@ -27,8 +27,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    if @task.update_attribute(task_params)
-      redirect_to project_tasks_path(@project), notice: "Tarefa atualizada com sucesso"
+    if @task.update_attributes(task_params)
+      redirect_to project_script_path(@project), notice: "Tarefa atualizada com sucesso"
     else
       redirect_to project_tasks_path(@project), alert: "Não foi possível atualizar as tarefas" 
     end
