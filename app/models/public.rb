@@ -1,5 +1,4 @@
 class Public < ApplicationRecord
-  belongs_to :project
   extend Enumerize
 
   enumerize :gender, in: [:female, :male]
