@@ -17,7 +17,7 @@ class AsksController < ApplicationController
     @ask = @project.asks.new(ask_params)
 
     if @ask.save
-      redirect_to new_project_public_path(@project), notice: "Perguntas criadas com sucesso"
+      redirect_to project_asks_path(@project), notice: "Perguntas criadas com sucesso"
     else
       redirect_to new_project_ask_path(@project), alert: "Não foi possível cadastrar as perguntas"
     end
