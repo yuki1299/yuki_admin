@@ -1,10 +1,22 @@
-<%= simple_form_for(@task, html: {class: "form-signin"}, url: project_tasks_path) do |f| %>
-  <%= f.error_notification %>
+<div class="task-form">
+  <%= simple_form_for(@task, html: {class: "form-signin"}, url: project_tasks_path) do |f| %>
+    <%= f.error_notification %>
 
-  <%= f.input :objective, label: "Objetivo", required: true, autofocus: true, input_html: {class: "form-control"}%>
-  <%= f.input :url, label: "URL", required: true, autofocus: true, input_html: {class: "form-control"}%>
-  <%= f.input :cenary, label: "Cenário", required: true, autofocus: true, input_html: {class: "form-control"}%>
+    <%= f.input :objective, label: "Objetivo", required: true, autofocus: true, input_html: {class: "form-control"}%>
+    <%= f.input :url, label: "URL", required: true, autofocus: true, input_html: {class: "form-control"}%>
+    <%= f.input :cenary, label: "Cenário", required: true, autofocus: true, input_html: {class: "form-control"}, :as => :text%>
+    
 
-  <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Continuar para perguntas", 'data-disable-with' => "..." %>
-  <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %>
-<% end %>
+    <div class="new-project-buttons">
+      <button class="new-task-button">
+        <%= link_to 'Nova Tarefa', :back, :class => "btn btn-primary btn-block btn-lg" %>
+      </button>
+      <button class="back-button">
+        <%= link_to 'Salvar', :back, :class => "btn btn-primary btn-block btn-lg" %>
+      </button>
+      <button class="next-button">
+        <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Continuar", 'data-disable-with' => "..." %>
+      </button>
+    </div>
+  <% end %>
+</div>

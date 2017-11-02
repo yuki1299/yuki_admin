@@ -6,6 +6,14 @@
   background-color: $blue;
 }
 
+.user-bg-white {
+  background-image: image-url("user_dash/user-dash-bg-white.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-color: #FFF;
+}
+
 #user-dashboard {
   float: left;
   width: 100%;
@@ -84,6 +92,10 @@
       background-color: #FFF;
       padding: 1.3vw;
       margin-bottom: 5vh;
+
+      &:nth-child(3n) {
+        @include omega;
+      }
 
       h1 {
         font-size: 1.5vw;

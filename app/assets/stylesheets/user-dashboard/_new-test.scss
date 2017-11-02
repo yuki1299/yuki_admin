@@ -9,7 +9,7 @@
       li {
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
-        border: solid 1px $blue-text;
+        border: solid 1px $blue;
         padding: 1.5vh 2.04vw;
         &.active {
           background: linear-gradient(0deg, #3e6db5, #48a8de);
@@ -21,7 +21,7 @@
         &.disable {
           background-color: #FFF;
           a {
-            color: $blue-text;
+            color: $blue;
           }
         }
       }
@@ -30,10 +30,13 @@
     .form-box {
       padding: 10vh 0 13vh 0;
       background-color: #FFF;
+      border-radius: 15px;
+      margin-top: -1vh;
+      border-top: solid 1px $blue;
       @include span-columns (10 of 10);
 
       .form-title {
-        border: solid 1.5px $blue-text;
+        border: solid 1.5px $blue;
         border-radius: .99vw;
         padding: 2vh;
         width: 33vw;
@@ -43,7 +46,7 @@
 
         h2 {
           font-size: 1.7vw;
-          color: $blue-text;
+          color: $blue;
           margin-bottom: 0;
           text-align: center;
         }

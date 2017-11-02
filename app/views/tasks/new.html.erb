@@ -1,6 +1,88 @@
-TAREFAS
-<div class="row">
-  <div class="col-md-4">
-    <%= render :partial => "form" %>
+<section id="new-task" class="user-bg-white">
+  <div class="container-steps-content">
+    <div class="nav-box">
+      <ul class="user-steps-nav">
+        <li class="disable">
+          <%= link_to "Teste", "#" %>
+        </li>
+
+        <li class="active">
+          <%= link_to "Tarefas", "#"  %>
+        </li>
+
+        <li class="disable">
+          <%= link_to "Perguntas", "#" %>
+        </li>
+
+        <li class="disable">
+          <%= link_to "Público", "#" %>
+        </li>
+
+        <li class="disable">
+          <%= link_to "Créditos", "#" %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="form-box tasks-infos-box">
+      <div class="form-title">
+        <h2>
+          Defina as tarefas a serem realizadas
+        </h2>
+      </div> 
+
+      <div class="tasks-infos">
+        <p>
+          INFOS SOBRE AS TAREFAS
+        </p>
+      </div>
+    </div>
+
+    <div class="form-box template-tasks-box">
+      <div class="form-title">
+        <h2>Template de tarefas</h2>
+      </div>
+      
+      <div class="close-button">
+        <button>
+          <p>+</p>
+        </button>
+      </div>
+
+      <div class="template-example">
+        <div class="title">
+          <h2>Template 1</h2>
+        </div>
+        <div class="template-content">
+          <p>fsfsdfsdfsdf</p>
+          <div class="template-button">
+            <button class="next-button">
+              <%= link_to("Escolher template", "#") %>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="template-example">
+        <div class="title">
+          <h2>Template 2</h2>
+        </div>
+        <div class="template-content">
+          <p>fsfsdfsdfsdf</p>
+          <div class="template-button">
+            <button class="next-button">
+              <%= link_to("Escolher template", "#") %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-box tasks-box">
+      <div class="form-title">
+        <h2>Tarefa 1</h2>
+      </div>
+      <%= render 'form', project: @project %>
+    </div>
   </div>
-</div>
+</section>

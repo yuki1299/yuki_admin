@@ -34,35 +34,9 @@
   </div>
 
   <div class="user-projects-container">
-    <ul id="sortable1" class="sortable connected">
-      <%= render partial: "project", collection: @draft %>
-      <%= render partial: "project", collection: @sent %>
-      <%= render partial: "project", collection: @in_progress %>
-      <%= render partial: "project", collection: @finished %>
-    </ul>
+    <%= render partial: "project", collection: @draft %>
+    <%= render partial: "project", collection: @sent %>
+    <%= render partial: "project", collection: @in_progress %>
+    <%= render partial: "project", collection: @finished %>
   </div>
-
-<!--   <div class="col-md-12">
-    <h2 class="text-center">Enviado</h2>
-
-    <ul id="sortable2" class="sortable connected">
-      
-    </ul>
-  </div>
-
-  <div class="col-md-12">
-    <h2 class="text-center">Em progresso</h2>
-
-    <ul id="sortable3" class="sortable connected">
-      
-    </ul>
-  </div>
-
-  <div class="col-md-12">
-    <h2 class="text-center">Finalizados</h2>
-
-    <ul id="sortable4" class="sortable connected">
-      
-    </ul>
-  </div> -->
 </section>
