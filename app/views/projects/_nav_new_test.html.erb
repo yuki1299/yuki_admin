@@ -1,0 +1,23 @@
+<div class="nav-box">
+  <ul class="user-steps-nav">
+    <li <%= current_page?(new_project_path) ? "class=active" : "class=disable"%>>
+      <%= link_to "Teste", "#" %>
+    </li>
+
+    <li <%= current_page?(new_project_path) ? "class=active" : "class=disable"%>>
+      <%= link_to "Tarefas", "#"  %>
+    </li>
+
+    <li <%= current_page?(new_project_path) ? "class=active" : "class=disable"%>>
+      <%= link_to "Perguntas", "#" %>
+    </li>
+
+    <li <%= current_page?(new_project_path) ? "class=active" : "class=disable"%>>
+      <%= link_to "Público", "#" %>
+    </li>
+
+    <li <%= current_page?(new_project_path) ? "class=active" : "class=disable"%>>
+      <%= link_to "Créditos", "#" %>
+    </li>
+  </ul>
+</div>

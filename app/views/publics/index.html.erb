@@ -1,51 +1,49 @@
-<div class="row">
-  <div class="col-md-4">
-    <div class="panel panel-info show-project-page">
-      <div class="panel-heading">
-        <p id="notice"><%= notice %></p>
-      </div>
+<% @publics.each do |publics| %>
+  <div class="panel panel-info show-project-page">
+    <div class="panel-heading">
+      <p id="notice"><%= notice %></p>
+    </div>
 
-      <div class="panel-body">
-        <p>
-          <strong>De</strong>
-          <%= @publics.age_rend_start %>
-        </p>
+    <div class="panel-body">
+      <p>
+        <strong>De</strong>
+        <%= publics.age_range_start %>
+      </p>
 
-        <p>
-          <strong>Até</strong>
-          <%= @publics.age_range_end %>
-        </p>
+      <p>
+        <strong>Até</strong>
+        <%= publics.age_range_end %>
+      </p>
 
-        <p>
-          <strong>Sexo</strong>
-          <%= @publics.gender %>
-        </p>
+      <p>
+        <strong>Sexo</strong>
+        <%= publics.gender %>
+      </p>
 
-        <p>
-          <strong>Escolaridade</strong>
-          <%= @publics.schooling %>
-        </p>
+      <p>
+        <strong>Escolaridade</strong>
+        <%= publics.schooling %>
+      </p>
 
-        <p>
-          <strong>Localidade</strong>
-          <%= @publics.locale %>
-        </p>
+      <p>
+        <strong>Localidade</strong>
+        <%= publics.locale %>
+      </p>
 
-        <p>
-          <strong>Profissão</strong>
-          <%= @publics.role %>
-        </p>
+      <p>
+        <strong>Profissão</strong>
+        <%= publics.role %>
+      </p>
 
-        <p>
-          <strong>Pessoas com deficiência</strong>
-          <%= @publics.kind_of_disability %>
-        </p>
+      <p>
+        <strong>Pessoas com deficiência</strong>
+        <%= publics.kind_of_disability %>
+      </p>
 
-        <p>
-          <strong>Participantes</strong>
-          <%= @publics.participants %>
-        </p>
-      </div>
+      <p>
+        <strong>Participantes</strong>
+        <%= publics.participants %>
+      </p>
     </div>
   </div>
-</div>
+<% end %>
