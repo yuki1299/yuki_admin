@@ -17,9 +17,9 @@ class TasksController < ApplicationController
     @task = @project.tasks.new(task_params)
 
     if @task.save
-      redirect_to project_asks_path(@project), notice: "Tarefas criadas com sucesso"
+      redirect_to project_tasks_path(@project), notice: "Tarefa criadas com sucesso"
     else
-      redirect_to new_project_task_path(@project), alert: "Não foi possível cadastrar as tarefas"
+      redirect_to new_project_task_path(@project), alert: "Não foi possível cadastrar as tarefa"
     end
   end
 

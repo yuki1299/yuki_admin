@@ -8,14 +8,8 @@
     
 
     <div class="new-project-buttons">
-      <button class="new-task-button">
-        <%= link_to 'Nova Tarefa', :back, :class => "btn btn-primary btn-block btn-lg" %>
-      </button>
-      <button class="back-button">
-        <%= link_to 'Salvar', :back, :class => "btn btn-primary btn-block btn-lg" %>
-      </button>
       <button class="next-button">
-        <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Continuar", 'data-disable-with' => "..." %>
+        <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Salvar", 'data-disable-with' => "..." %>
       </button>
     </div>
   <% end %>
