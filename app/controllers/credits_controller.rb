@@ -11,10 +11,11 @@ class CreditsController < ApplicationController
   end
 
   def create
-    @credit = @project.credits.new(credit_params)
+    @credit = @project.credits.new
 
     if @credit.save
-      redirect_to projects_path(@project)
+      @project.to_sent
+      redirect_to project_script_path
     else
       redirect_to project_credits_path(@project)
     end
@@ -24,7 +25,7 @@ class CreditsController < ApplicationController
   end
 
   def update
-    if @credit.update_attribute(credit_params)
+    if @credit.update_attributes(credit_params)
       redirect_to project_credits_path(@project), notice: "Quantidade de testadores atualizada com sucesso"
     else
       redirect_to project_credits_path(@project), alert: "Não foi possível atualizar a quantidade de testadores"
@@ -48,4 +49,5 @@ class CreditsController < ApplicationController
   def set_credit
     @credit = @project.credit.find(params[:id])
   end
+
 end

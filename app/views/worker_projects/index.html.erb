@@ -1,13 +1,20 @@
 <div class="row">
   <div class="col-md-4">
-    <h2 class="text-center">Pendentes</h2>
-    
+    <h2 class="text-center">Disponiveis</h2>
     <ul id="sortable1" class="sortable connected">
-      <%= render partial: "project_testers", collection: @projects_pending %>
+      <%= render partial: "project_testers", collection: @projects_availables %>
     </ul>
   </div>
 
   <div class="col-md-4">
+    <h2 class="text-center">Em Progresso</h2>
+    
+    <ul id="sortable2" class="sortable connected">
+      <%= render partial: "project_testers", collection: @projects_in_progress %>
+    </ul>
+  </div>
+
+   <div class="col-md-4">
     <h2 class="text-center">Finalizados</h2>
     
     <ul id="sortable2" class="sortable connected">

@@ -17,7 +17,7 @@ class PublicsController < ApplicationController
     @public = @project.publics.new(public_params)
 
     if @public.save
-      redirect_to payment_path, notice: "Público definido com sucesso"
+      redirect_to new_project_credit_path(@project), notice: "Público definido com sucesso"
     else
       redirect_to new_project_public_path(@project), alert: "Não foi possível definir um público"
     end
