@@ -5,7 +5,8 @@ class Project < ApplicationRecord
   enumerize :test_platform, in: [:desktop, :mobile, :tablet, :outro]
 
   belongs_to :user
-  has_many :testers, through: :project_testers, dependent: :destroy
+  has_many :project_testers, dependent: :destroy
+  has_many :testers, through: :project_testers
   has_many :tasks, dependent: :destroy
   has_many :asks, dependent: :destroy
   has_many :publics, dependent: :destroy

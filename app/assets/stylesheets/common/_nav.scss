@@ -4,6 +4,7 @@ nav {
   z-index: 99;
   .nav-logo {
     @include span-columns (2 of 12);
+    margin-right: 2.3%;
 
     img {
       padding-right: 20px;
