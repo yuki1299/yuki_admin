@@ -14,7 +14,17 @@
     <div class="container site-content">
       <%= yield %>
     </div>
-  
+
+    <div id="container-effect">
+      <button> RONALDO </button>
+      <div class="container-options hide">
+        <h1>Simulador de (des)acessibilidade</h1>
+        <span>Escolha a deficiência a ser simulada</span>
+        <div class="button2">Voltar ao normal</div>
+        <div class="button">Baixa visão</div>
+      </div>
+    </div>
+
   <% if request.path.include? "tester" %>
     <%= render :partial => "layouts/footer_tester" %>
   <% else %>

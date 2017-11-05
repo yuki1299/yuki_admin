@@ -14,3 +14,16 @@ li {
   list-style: none;
   float: left;
 }
+
+#container-effect {
+  position: fixed;
+  bottom: 15vh;
+  right: 0;
+
+  .container-options {
+    display: block;
+    &.hide {
+      display: none;
+    }
+  }
+}
