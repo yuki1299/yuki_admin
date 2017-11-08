@@ -31,45 +31,74 @@ $(document).on('ready page:load', function() {
       };
   }
 
-  $("#container-effect button").click(function(){
+  $("#container-effect .effects-button").click(function(){
     $(".container-options.hide").toggle(400);
   });
 
   //attach click event to button
   $('#container-effect .button').click(function () {
 
-     //when button is clicked we call blurElement function
-     blurElement(".site-content", 4);
-     blurElement("header", 4);
-     blurElement("footer", 4);
+    //when button is clicked we call blurElement function
+    blurElement(".site-content", 4);
+    blurElement("header", 4);
+    blurElement("footer", 4);
 
   });
 
   //attach click event to button
   $('#container-effect .button2').click(function () {
 
-     //when button is clicked we disable the blur
-     blurElement(".site-content", 0);
-     blurElement("header", 0);
-     blurElement("footer", 0);
+    //when button is clicked we disable the blur
+    blurElement(".site-content", 0);
+    blurElement("header", 0);
+    blurElement("footer", 0);
 
   });
 });
 
 
 //set the css3 blur to an element
- function blurElement(element, size) {
-     var filterVal = 'blur(' + size + 'px)';
-      $(element).css({
-        'filter':filterVal,
-        'webkitFilter':filterVal,
-        'mozFilter':filterVal,
-        'oFilter':filterVal,
-        'msFilter':filterVal,
-        'transition':'all 0.5s ease-out',
-        '-webkit-transition':'all 0.5s ease-out',
-        '-moz-transition':'all 0.5s ease-out',
-        '-o-transition':'all 0.5s ease-out'
-    });
+function blurElement(element, size) {
+  var filterVal = 'blur(' + size + 'px)';
+  $(element).css({
+    'filter':filterVal,
+    'webkitFilter':filterVal,
+    'mozFilter':filterVal,
+    'oFilter':filterVal,
+    'msFilter':filterVal,
+    'transition':'all 0.5s ease-out',
+    '-webkit-transition':'all 0.5s ease-out',
+    '-moz-transition':'all 0.5s ease-out',
+    '-o-transition':'all 0.5s ease-out'
+  });
+}
 
- }
+
+
+// EFFECT CONTAINER WITH DIFFERENT ANIMATE
+// $("#container-effect .effects-button").click(function(){
+//   if($('.container-options').hasClass('hide')){
+//     openEffectBox()
+//   }else{
+//     closeEffectBox()
+//   }
+// });
+
+
+// function closeEffectBox(){
+//   var $link = $(".container-options");
+
+//   if(!$link.hasClass('hide')){
+//     $link.slideToggle("hide");
+//     $link.addClass('hide');
+//   }
+// }
+
+// function openEffectBox(){
+//   var $link = $(".container-options");
+
+//   if($link.hasClass('hide')){
+//     $link.slideToggle("hide");
+//     $link.removeClass('hide');
+//   }
+// }
