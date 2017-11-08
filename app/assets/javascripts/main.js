@@ -1,4 +1,4 @@
-$(document).on('ready page:load', function() {
+$( document ).on('turbolinks:load', function() {
   // Radio Button Unmark
   var allRadios = document.getElementsByName('re');
   var booRadio;

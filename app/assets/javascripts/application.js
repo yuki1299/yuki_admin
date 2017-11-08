@@ -15,5 +15,5 @@
 //= require twitter/bootstrap
 //= require jquery-ui.min
 //= require main
-//= require turbolinks
 //= require_tree .
+//= require turbolinks
