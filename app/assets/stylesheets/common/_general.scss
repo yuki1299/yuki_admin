@@ -24,6 +24,7 @@ li {
   border-radius: 2vw;
   background-color: #FFF;
   border: solid 1px $blue;
+  z-index: 9999;
 
   .effects-button {
     display: block;
