@@ -27,8 +27,9 @@ en:
           male: "Masculino"
           female: "Feminino"
           other: "Outro"
+  enumerize:
       ask:
         ask_type:
           opened_ask: "Pergunta Aberta"
           closed_ask: "Pergunta Fechada"
-          scale_zero_to_five: "Nota de zero a seis"
+          scale_zero_to_six: "Escala de zero à seis"

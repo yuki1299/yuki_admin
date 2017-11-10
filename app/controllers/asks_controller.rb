@@ -27,7 +27,6 @@ class AsksController < ApplicationController
   end
 
   def update
-    binding.pry
     if @ask.update_attributes(ask_params)
       redirect_to project_script_path(@project), notice: "Perguta atualizada com sucesso"
     else

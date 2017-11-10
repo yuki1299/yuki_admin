@@ -586,5 +586,58 @@
         }
       }
     }
+
+    &.review-page {
+      p,
+      .title,
+      h2 {
+        color: $blue;
+      }
+
+      .form-box {
+        .form-title {
+          border: solid 1.5px #006fb1;
+          border-radius: .99vw;
+          padding: 2vh;
+          width: 33vw;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 7vh;
+
+          h2 {
+            border-bottom: none;
+            text-align: center;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+        }
+
+        h3 {
+          font-size: 1.7vw;
+          width: 16vw;
+        }
+
+        .template-example {
+          margin-bottom: 5vh;
+
+          .template-content {
+            background-color: rgba(0,111,177, .3);
+            padding: 1vw;
+            border-radius: 13px;
+            border: solid 1.5px $blue;
+          }
+        }
+      }
+
+      .ask-show-container {
+        margin-bottom: 4vh;
+        padding-top: 4vh;
+        border-top: solid 1.5px $blue;
+
+        &:nth-of-type(2) {
+          border-top: none;
+        }
+      }
+    }
   }
 }
