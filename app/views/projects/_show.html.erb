@@ -1,0 +1,24 @@
+<div class="form-box">
+  <div class="form-title">
+    <h2>
+      Detalhes do teste
+    </h2>
+  </div> 
+  <p>
+    <strong>Nome</strong>
+    <%= @project.name %>
+  </p>
+
+  <p>
+    <strong>O que vai testar?</strong>
+    <%= @project.test_platform %>
+  </p>
+
+  <p>
+    <strong>URL</strong>
+    <%= @project.url %>
+  </p>
+  <%= link_to "Editar Teste", edit_project_path(@project)%>
+</div>
+
+

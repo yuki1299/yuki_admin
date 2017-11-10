@@ -1,3 +1,20 @@
-<h1 class="text-center">Editar Projeto</h1>
+<section id="new-test" class="user-bg">
+  <div class="container-steps-content">
+    <div class="nav-box">
+      <ul class="user-steps-nav">
+        <li <%= current_page?(edit_project_path) ? "class=active" : "class=disable"%>>
+          <%= link_to "Teste", "#" %>
+        </li>
+      </ul>
+    </div>
 
-<%= render 'form', project: @project %>
+    <div class="form-box">
+      <div class="form-title">
+        <h2>
+          Conte-nos como será este teste
+        </h2>
+      </div> 
+      <%= render 'form', project: @project %>
+    </div>
+  </div>
+</section>

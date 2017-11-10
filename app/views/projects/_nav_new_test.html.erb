@@ -4,19 +4,19 @@
       <%= link_to "Teste", "#" %>
     </li>
     <li <%= params[:controller] == "tasks" ? "class=active" : "class=disable"%>>
-      <%= link_to "Tarefas", "#"  %>
+      <%= link_to "Tarefas", project_tasks_path(@project)  %>
     </li>
 
     <li <%= params[:controller] == "asks" ? "class=active" : "class=disable"%>>
-      <%= link_to "Perguntas", "#" %>
+      <%= link_to "Perguntas", project_asks_path(@project) %>
     </li>
 
     <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
-      <%= link_to "Público", "#" %>
+      <%= link_to "Público", project_publics_path(@project) %>
     </li>
 
     <li <%= params[:controller] == "credit" ? "class=active" : "class=disable"%>>
-      <%= link_to "Créditos", "#" %>
+      <%= link_to "Créditos", project_credits_path(@project) %>
     </li>
   </ul>
 </div>

@@ -1,61 +1,32 @@
-<%= link_to "Roteiro"   , project_script_path(@project) %>
-<%= link_to "Público"   , project_script_path(@project, @public) %>
-
-<div class="panel panel-info show-project-page">
-  <div class="panel-heading">
-    <p id="notice"><%= notice %></p>
-  </div>
-
-  <div class="panel-body">
-    <p>
-      <strong>Nome</strong>
-      <%= @project.name %>
-    </p>
-
-    <p>
-      <strong>O que vai testar?</strong>
-      <%= @project.test_platform %>
-    </p>
-
-    <p>
-      <strong>URL</strong>
-      <%= @project.url %>
-    </p>
-    <%= link_to "Editar Teste", edit_project_path(@project)%>
-  </div>
-
-  <% @tasks.each do |task| %>
-    <div class="panel-body">
-      <p>
-        <strong>Objetivo</strong>
-        <%= task.objective %>
-      </p>
-
-      <p>
-        <strong>URL</strong>
-        <%= raw(task.url) %>
-      </p>
-
-      <p>
-        <strong>Cenário</strong>
-        <%= task.cenary %>
-      </p>
+<section id="new-public" class="user-bg-white">
+  <div class="container-steps-content">
+    <div class="nav-box">
+      <ul class="user-steps-nav">
+        <li <%= params[:controller] == "script" ? "class=active" : "class=disable"%>>
+          <%= link_to "Roteiro", project_script_path(@project) %>
+        </li>
+        <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
+          <%= link_to "Público", edit_project_public_path(@project, @public) %>
+        </li>
+      </ul>
     </div>
-    <%= link_to "Editar Tarefa", edit_project_task_path(@project, task) %>
-  <% end %>
 
-  <% @asks.each do |ask| %>
-    <div class="panel-body">
-      <p>
-        <strong>Objetivo</strong>
-        <%= ask.ask_type %>
-      </p>
+    <div class="panel panel-info show-project-page">
+      <div class="panel-heading">
+        <p id="notice"><%= notice %></p>
+      </div>
 
-      <p>
-        <strong>URL</strong>
-        <%= ask.question %>
-      </p>
+      <div class="test-show">
+        <%= render partial: "projects/show" %>
+      </div>
+
+      <div class="tasks-show">
+        <%= render partial: "tasks/show" %>
+      </div>
+
+      <div class="asks-show">
+        <%= render partial: "asks/show" %>
+      </div>
     </div>
-    <%= link_to "Editar Pergunta", edit_project_ask_path(@project, ask) %>
-  <% end %>
-</div>
+  </div>
+</section>

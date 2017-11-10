@@ -1,3 +1,31 @@
-<h1 class="text-center">Editar Público Filtro</h1>
+<section id="new-public" class="user-bg-white">
+  <div class="container-steps-content">
+    <div class="nav-box">
+      <ul class="user-steps-nav">
+        <li <%= params[:controller] == "script" ? "class=active" : "class=disable"%>>
+          <%= link_to "Roteiro", project_script_path(@project) %>
+        </li>
+        <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
+          <%= link_to "Público", edit_project_public_path(@project, @public) %>
+        </li>
+      </ul>
+    </div>
 
-<%= render 'form', project: @project %>
+    <div class="form-box">
+      <div class="form-title">
+        <h2>
+          Detalhes do público do seu teste
+        </h2>
+      </div> 
+      <figure class="public-info-container">
+        <%= image_tag("user_dash/ask-icon.png") %>
+        <figcaption>
+          <p>
+            Por favor, verifique se os dados do público que seu teste deseja atingir estão realmente corretos, caso queira alterar algum dado, fique à vontade.
+          </p>
+        </figcaption>
+      </figure>
+      <%= render 'form', project: @project %>
+    </div>
+  </div>
+</section>

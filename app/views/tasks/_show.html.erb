@@ -1,0 +1,21 @@
+<div class="form-box tasks-box">
+  <% @tasks.each do |task| %>
+    <div class="panel-body">
+      <p>
+        <strong>Objetivo</strong>
+        <%= task.objective %>
+      </p>
+
+      <p>
+        <strong>URL</strong>
+        <%= raw(task.url) %>
+      </p>
+
+      <p>
+        <strong>Cenário</strong>
+        <%= task.cenary %>
+      </p>
+    </div>
+    <%= link_to "Editar Tarefa", edit_project_task_path(@project, task) %>
+  <% end %>
+</div>

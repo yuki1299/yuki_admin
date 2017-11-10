@@ -31,4 +31,4 @@ en:
         ask_type:
           opened_ask: "Pergunta Aberta"
           closed_ask: "Pergunta Fechada"
-          scale_zero_to_five: "Nota de zero a cinco"
+          scale_zero_to_five: "Nota de zero a seis"

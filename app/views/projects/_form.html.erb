@@ -6,7 +6,7 @@
   <%= f.input :url, label: "URL DE ACESSO", required: true, autofocus: true, input_html: {class: "form-control"}, error: "Por favor preencha todos os campos" %>
 
   <div class="new-project-buttons">
-    <button class="back-button">  <%= link_to 'Voltar', projects_path, :class => "btn btn-primary btn-block btn-lg" %> </button>
+    <button class="back-button">  <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %> </button>
     <button class="back-button">  <%= link_to 'Salvar', projects_path, :class => "btn btn-primary btn-block btn-lg" %> </button>
     <button class="next-button">  <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Continuar", 'data-disable-with' => "..." %> </button>
   </div>
