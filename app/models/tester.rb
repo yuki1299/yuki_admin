@@ -6,5 +6,6 @@ class Tester < ApplicationRecord
 
   extend Enumerize
 
-  enumerize :gender, in: [:male, :female, :other]
+  enumerize :gender, in: [:masculino, :feminino, :outro]
+  enumerize :kind_of_disability, in: [:cegueira, :baixa_visão, :surdez, :deficiência_auditiva, :deficiência_Física_Leve, :deficiência_Física_Severa, :outras]
 end

@@ -11,12 +11,7 @@
       <button class="back-button back-ask-open">
         <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %>
       </button>
-      <button class="back-button back-ask-open">
-        <%= link_to 'Adicionar Tarefa', new_project_task_path(@project), :class => "btn btn-primary btn-block btn-lg" %>
-      </button>
-      <button class="back-button back-ask-open">
-        <%= link_to 'Remover Tarefa', project_scripts_path(@project), method: :delete, data: {confirm: "Deseja mesmo excluir este projeto?"}, :class => "pull-right" %>
-      </button>
+      
       <button class="next-button next-ask-open">
         <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Salvar", 'data-disable-with' => "..." %>
       </button>

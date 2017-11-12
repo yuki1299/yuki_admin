@@ -2,7 +2,7 @@
   <div class="header-step2">
     <div class="img-box-mask">
       <div class="img-box">
-        
+
       </div>
     </div>
     <h2>Cadastro de <br> pessoa com deficiência</h2>
@@ -21,7 +21,7 @@
       <%= f.input :gender, required: true, label: "Gênero", :as => :radio_buttons %>
       <%= f.input :password, required: true, label: "Senha", :class => "medium" %>
       <%= f.input :password_confirmation, required: true, label: "Repetir senha", :class => "medium" %>
-      <%= f.input :kind_of_disability, required: true, label: "Qual é a sua deficiência?", hint: 'Selecione no mínimo uma. É possível escolher mais de uma.', :class => "medium" %>
+      <%= f.input :kind_of_disability, required: true, label: "Qual é a sua deficiência? Selecione no mínimo uma.", :class => "medium", :as => :check_boxes %>
       <!--     <%= f.input :schooling, required: true, label: "Escolaridade" %>
           <%= f.input :locale, required: true, label: "Localidade" %>
           <%= f.input :role, required: true, label: "Profissão" %> -->
@@ -34,23 +34,23 @@
           <input id="a" type="checkbox" />
           <p>Redes Sociais</p>
         </div>
-        
+
         <div class="checkbox">
           <input id="b" type="checkbox" />
           <p>Anúncios</p>
         </div>
-        
+
         <div class="checkbox">
           <input id="c" type="checkbox" />
           <p>Outros (escreva)</p>
           <input type="text" class="tester_another_reason">
         </div>
-          
-        <div class="radio-box">  
+
+        <div class="radio-box">
           <input id="d" type="radio" class="radio-active" name="re"/>
           <p>Li e aceito os <b>termos de serviço*</b></p>
         </div>
-        
+
         <div class="radio-box">
           <input id="e" type="radio" class="radio-active" name="test"/>
           <p>Aceito receber e-mails com notícias e novidades do Integra</b></p>
@@ -85,4 +85,4 @@
       Dados Cadastrais
     </p>
   </div>
-</section> 
+</section>
