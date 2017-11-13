@@ -12,27 +12,33 @@
   <body>
   <%= render :partial => "layouts/header" %>
 
-    <div class="container site-content">
-      <%= yield %>
-    </div>
+  <div class="container site-content">
+    <%= yield %>
+  </div>
 
-    <div id="container-effect">
-      <button class="effects-button"> 
-        <i class="ion-ios-body"></i> 
+  <div id="container-effect" class="expose">
+    <button class="effects-button"> 
+      <i class="ion-ios-body"></i> 
+    </button>
+    <div class="container-options hide">
+      <p>Simulador de (des)acessibilidade</p>
+      <p>Escolha a deficiência a ser simulada</p>
+      <button class="button2">
+        <i class="ion-eye"></i>
+        Voltar ao normal
       </button>
-      <div class="container-options hide">
-        <p>Simulador de (des)acessibilidade</p>
-        <p>Escolha a deficiência a ser simulada</p>
-        <button class="button2">
-          <i class="ion-eye"></i>
-          Voltar ao normal
-        </button>
-        <button class="button">
-          <i class="ion-ios-eye-outline"></i>
-          Baixa visão
-        </button>
-      </div>
+      <button class="button">
+        <i class="ion-ios-eye-outline"></i>
+        Baixa visão
+      </button>
+      <button class="button3">
+        <i class="ion-eye-disabled"></i>
+        Cegueira
+      </button>
     </div>
+  </div>
+
+  <div id="overlay"></div>
 
   <% if request.path.include? "tester" %>
     <%= render :partial => "layouts/footer_tester" %>

@@ -1,22 +1,27 @@
 <div class="form-box tasks-box">
+  <div class="form-title">
+    <h2 class="tasks-title-review">Perguntas</h2>
+  </div>
   <% @asks.each do |ask| %>
-    <div class="template-example">
-      <div class="title">
-        <h3>Objetivo</h3>
+    <div class="ask-show-container">
+      <div class="template-example">
+        <div class="title">
+          <h3>Objetivo</h3>
+        </div>
+        <div class="template-content">
+          <p> <%= ask.ask_type %> </p>
+        </div>
       </div>
-      <div class="template-content">
-        <p> <%= ask.ask_type %> </p>
-      </div>
-    </div>
 
-    <div class="template-example">
-      <div class="title">
-        <h3>Pergunta</h3>
+      <div class="template-example">
+        <div class="title">
+          <h3>Pergunta</h3>
+        </div>
+        <div class="template-content">
+          <p> <%= ask.question %> </p>
+        </div>
       </div>
-      <div class="template-content">
-        <p> <%= ask.question %> </p>
-      </div>
+      <%= link_to "Editar Pergunta", edit_project_ask_path(@project, ask) %>
     </div>
-    <%= link_to "Editar Pergunta", edit_project_ask_path(@project, ask) %>
   <% end %>
 </div>  

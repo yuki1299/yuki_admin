@@ -35,6 +35,7 @@ $( document ).on('turbolinks:load', function() {
     $(".container-options.hide").toggle(400);
   });
 
+  // BLUR EFFECT BUTTON
   //attach click event to button
   $('#container-effect .button').click(function () {
 
@@ -53,6 +54,16 @@ $( document ).on('turbolinks:load', function() {
     blurElement("header", 0);
     blurElement("footer", 0);
 
+    $('#overlay').fadeOut(300, function(){
+        $('.expose').css('z-index','99999');
+    });
+
+  });
+
+  // BLIND EFFECT BUTTON 
+  $('#container-effect .button3').click(function(e){
+      $(this).css('z-index','99999');
+      $('#overlay').fadeIn(300);
   });
 });
 
