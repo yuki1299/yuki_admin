@@ -1,6 +1,56 @@
-CRÉDITOS
-<div class="row">
-  <div class="col-md-4">
-    <%= render :partial => "form" %>
+<section id="new-credits" class="user-bg-white">
+  <div class="container-steps-content">
+    <%= render partial: "projects/nav_new_test" %>
+    <div class="form-box">
+      <div class="form-title">
+        <h2>
+          Especifique o público que você quer pesquisar
+        </h2>
+      </div> 
+      <figure class="public-info-container">
+        <%= image_tag("user_dash/ask-icon.png") %>
+        <figcaption>
+          <p>
+            Compre créditos para sua conta! A quantidade de créditos necessários para sua pesquisa varia de acordo com a quantidade de testadores contratados para seu teste.
+          </p>
+        </figcaption>
+      </figure>
+
+      <div class="credits-infos">
+        <h2>
+          Seus créditos
+        </h2>
+        <p>Se você já possuí créditos não é necessária uma nova compra.</p>
+        <div class="your-credits-container">
+          <div class="review-test-name">
+            <h3>
+              Crédito
+            </h3>
+            <p>  <%= @project.name %> </p>
+          </div>
+          
+          <div class="right-review-credits">
+            <div class="actually-credits">
+              <h3>
+                Saldo Atual
+              </h3>        
+              <p>
+                20
+              </p>
+            </div>
+
+            <div class="final-credits">
+              <h3>
+                Saldo Final
+              </h3>
+              <p>
+                15
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= render :partial => "form" %>
+    </div>
   </div>
-</div>
+</section>

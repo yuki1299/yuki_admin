@@ -12,10 +12,10 @@
     </li>
 
     <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
-      <%= link_to "Público", project_publics_path(@project) %>
+      <%= link_to "Público", new_project_public_path(@project) %>
     </li>
 
-    <li <%= params[:controller] == "credit" ? "class=active" : "class=disable"%>>
+    <li <%= params[:controller] == "credits" ? "class=active" : "class=disable"%>>
       <%= link_to "Créditos", project_credits_path(@project) %>
     </li>
   </ul>
