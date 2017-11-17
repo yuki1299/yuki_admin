@@ -40,9 +40,9 @@ $( document ).on('turbolinks:load', function() {
   $('#container-effect .button').click(function () {
 
     //when button is clicked we call blurElement function
-    blurElement(".site-content", 4);
-    blurElement("header", 4);
-    blurElement("footer", 4);
+    blurElement(".site-content", 3);
+    blurElement("header", 3);
+    blurElement("footer", 3);
 
   });
 
