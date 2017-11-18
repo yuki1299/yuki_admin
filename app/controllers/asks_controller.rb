@@ -28,7 +28,7 @@ class AsksController < ApplicationController
 
   def update
     if @ask.update_attributes(ask_params)
-      redirect_to project_script_path(@project), notice: "Perguta atualizada com sucesso"
+      redirect_to project_asks_path(@project), notice: "Perguta atualizada com sucesso"
     else
       redirect_to project_asks_path(@project), alert: "Não foi possível atualizar as perguntas"
     end

@@ -12,9 +12,8 @@
     </li>
 
     <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
-      <%= link_to "Público", new_project_public_path(@project) %>
+      <%= link_to "Público", @project.publics.present? && @project.publics.first.persisted? ? edit_project_public_path(@project, @project.publics.first) : new_project_public_path %>
     </li>
-
     <li <%= params[:controller] == "credits" ? "class=active" : "class=disable"%>>
       <%= link_to "Créditos", project_credits_path(@project) %>
     </li>

@@ -1,27 +1,17 @@
 <section id="new-public" class="user-bg-white">
   <div class="container-steps-content">
-    <div class="nav-box">
-      <ul class="user-steps-nav">
-        <li <%= params[:controller] == "script" ? "class=active" : "class=disable"%>>
-          <%= link_to "Roteiro", project_script_path(@project) %>
-        </li>
-        <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
-          <%= link_to "Público", edit_project_public_path(@project, @public) %>
-        </li>
-      </ul>
-    </div>
-
+    <%= render partial: "projects/nav_new_test" %>
     <div class="form-box">
       <div class="form-title">
         <h2>
-          Detalhes do público do seu teste
+          Especifique o público que você quer pesquisar
         </h2>
-      </div> 
+      </div>
       <figure class="public-info-container">
         <%= image_tag("user_dash/ask-icon.png") %>
         <figcaption>
           <p>
-            Por favor, verifique se os dados do público que seu teste deseja atingir estão realmente corretos, caso queira alterar algum dado, fique à vontade.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
           </p>
         </figcaption>
       </figure>
