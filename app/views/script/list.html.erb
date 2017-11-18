@@ -6,7 +6,7 @@
           <%= link_to "Roteiro", project_script_path(@project) %>
         </li>
         <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
-          <%= link_to "Público", edit_project_public_path(@project, @public) %>
+          <%= link_to("Público", @public.present? ? edit_project_public_path(@project, @public) : new_project_public_path(@project))%>
         </li>
       </ul>
     </div>
@@ -17,15 +17,15 @@
       </div>
 
       <div class="test-show">
-        <%= render partial: "projects/show" %>
+        <%= render partial: "projects/show"  %>
       </div>
 
       <div class="tasks-show">
-        <%= render partial: "tasks/show" %>
+        <%= render partial: "tasks/show"  %>
       </div>
 
       <div class="asks-show">
-        <%= render partial: "asks/show" %>
+        <%= render partial: "asks/show"  %>
       </div>
     </div>
   </div>
