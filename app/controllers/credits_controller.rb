@@ -15,6 +15,7 @@ class CreditsController < ApplicationController
 
     if @credit.save
       @project.to_sent
+      @project.save
       redirect_to project_script_path
     else
       redirect_to project_credits_path(@project)
