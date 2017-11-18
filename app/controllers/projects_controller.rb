@@ -5,10 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @draft        = current_user.projects.where(status: "draft")
-    @sent         = current_user.projects.where(status: "sent")
-    @in_progress  = current_user.projects.where(status: "in_progress")
-    @finished     = current_user.projects.where(status: "finished")
+    @projects = current_user.projects.order(created_at: :desc)
   end
 
   # GET /projects/1

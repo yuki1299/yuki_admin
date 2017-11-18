@@ -14,7 +14,7 @@
       <button class="answers-button">
         Ver Respostas
       </button>
-      
+
       <div class="answers-progress-bar">
         <div class="full-bar">
           <div class="step1 active"></div>
@@ -31,9 +31,9 @@
       </div>
 
       <div class="project-footer-buttons">
-        <% if project.status == "draft" || "sent" %>
+        <% if project.status == "draft" %>
           <button class="edit-button">
-            <%= link_to "Editar", project_script_path(project) %>
+            <%= link_to "Editar", project_script_path(project)%>
           </button>
         <% end %>
         <button class="delete-button">
@@ -54,4 +54,4 @@
 
     <%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %> -->
   </div>
-</section>  
+</section>
