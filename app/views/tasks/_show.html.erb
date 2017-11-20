@@ -27,6 +27,16 @@
         <p><%= task.cenary %></p>
       </div>
     </div>
-    <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
+
+    <div class="project-footer-buttons">
+      <% unless request.path.include? "roteiro" %>
+        <button class="delete-button">
+          <%= link_to "Excluir", project_task_path(@project, task) , method: :delete, data: {confirm: "Deseja mesmo excluir esta tarefa?"}, :class => "pull-right" %>
+        </button>
+        <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
+      <% else %>
+        <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
+      <% end %>
+    </div>
   </div>
 <% end %>

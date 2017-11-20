@@ -7,6 +7,7 @@ class PublicsController < ApplicationController
   end
 
   def show
+    @publics = @project.publics
   end
 
   def new

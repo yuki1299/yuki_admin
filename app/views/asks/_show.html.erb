@@ -1,4 +1,3 @@
-
 <div class="form-title">
   <h2 class="tasks-title-review">Perguntas</h2>
 </div>
@@ -20,6 +19,17 @@
       <div class="template-content">
         <p> <%= ask.question %> </p>
       </div>
+    </div>
+
+    <div class="project-footer-buttons">
+      <% unless request.path.include? "roteiro" %>
+        <button class="delete-button">
+          <%= link_to "Excluir", project_ask_path(@project, ask) , method: :delete, data: {confirm: "Deseja mesmo excluir esta pergunta?"}, :class => "pull-right" %>
+        </button>
+        <%= link_to("Editar Tarefa", edit_project_ask_path(@project, ask)) if current_page?(project_asks_path)%>
+      <% else %>
+        <%= link_to("Editar Tarefa", edit_project_ask_path(@project, ask)) if current_page?(project_asks_path)%>
+      <% end %>
     </div>
   </div>
 <% end %>

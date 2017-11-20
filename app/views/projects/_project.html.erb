@@ -9,7 +9,7 @@
         Criado há: <%= time_ago_in_words(project.created_at) %> atrás
       </p>
       <p tabindex="0">
-        Respostas: 03/05
+        Respostas: 00/05
       </p>
       <% if project.status == "sent"%>
         <%= link_to project_script_path(project) do %>
@@ -21,11 +21,11 @@
 
       <div class="answers-progress-bar">
         <div class="full-bar">
-          <div class="step1 active"></div>
+          <div class="step1 disable"></div>
 
-          <div class="step2 active"></div>
+          <div class="step2 disable"></div>
 
-          <div class="step3 active"></div>
+          <div class="step3 disable"></div>
 
           <div class="step4 disable"></div>
 
@@ -37,7 +37,7 @@
       <div class="project-footer-buttons">
         <% if project.status == "draft" %>
           <button class="edit-button">
-            <%= link_to "Editar", project_script_path(project)%>
+            <%= link_to "Editar", edit_project_path(project)%>
           </button>
         <% end %>
         <button class="delete-button">

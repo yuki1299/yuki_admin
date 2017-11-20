@@ -1,24 +1,39 @@
-<div class="row">
-  <div class="col-md-4">
-    <h2 class="text-center">Disponiveis</h2>
-    <ul id="sortable1" class="sortable connected">
-      <%= render partial: "project_testers", collection: @projects_availables %>
-    </ul>
+<section id="user-dashboard" class="user-bg">
+  <header>
+    <h1 tabindex="0">Meus Testes</h1>
+  </header>
+
+  <div class="dashboard-options">
+    <button>
+      <%= link_to 'Novo Teste', new_project_path, :class => "new-project-button" %>
+    </button>
+
+    <div class="user-filter">
+      <p>
+        <strong> Status: </strong>
+        <select name="status" id="status">
+          <option value="all">Todos</option>
+          <option value="draft">Rascunho</option>
+          <option value="sent">Enviado</option>
+          <option value="in_progress">Em Andamento</option>
+          <option value="finished">Finalizado</option>
+        </select>
+      </p>
+
+      <p>
+        <strong> Ordenar: </strong>
+        <select name="order" id="order">
+          <option value="recents">Recentes</option>
+          <option value="">Rascunho</option>
+          <option value="sent">Enviado</option>
+          <option value="in_progress">Em Andamento</option>
+          <option value="finished">Finalizado</option>
+        </select>
+      </p>
+    </div>
   </div>
 
-  <div class="col-md-4">
-    <h2 class="text-center">Em Progresso</h2>
-    
-    <ul id="sortable2" class="sortable connected">
-      <%= render partial: "project_testers", collection: @projects_in_progress %>
-    </ul>
+  <div class="user-projects-container">
+    <%= render partial: "project_testers"%>
   </div>
-
-   <div class="col-md-4">
-    <h2 class="text-center">Finalizados</h2>
-    
-    <ul id="sortable2" class="sortable connected">
-      <%= render partial: "project_testers", collection: @projects_finisheds %>
-    </ul>
-  </div>
-</div>
+</section>
