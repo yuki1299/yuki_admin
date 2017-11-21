@@ -1,17 +1,40 @@
-<% project = project_testers.project %>
+<%@projects.each do |project|%>
+  <section id="user-project">
+    <section class="project-box">
+      <div class="project-infos">
+        <h1 tabindex="0"> <%= project.name %> </h1>
+        <p tabindex="0">
+          Status: <strong> <%= project.status%> </strong>
+        </p>
+        <p tabindex="0">
+          Criado há: <%= time_ago_in_words(project.created_at) %> atrás
+        </p>
+        <p tabindex="0">
+          Respostas: 00/05
+        </p>
+        <div class="answers-progress-bar">
+          <div class="full-bar">
+            <div class="step1 disable"></div>
 
-<div class="panel panel-info">
+            <div class="step2 disable"></div>
 
-  <div class="panel-body">
-    <strong> Título do teste </strong><br>
-    <%= project.name %> <br><br>
-    <strong> O que vai testar? </strong><br>
-    <%= project.test_platform %><br><br>
-    <strong> URL </strong><br>
-    <%= raw(project.url_html) %>
-  </div>
+            <div class="step3 disable"></div>
 
-  <div class="panel-footer text-center">
-    <%= link_to "<i class='fa fa-plus-circle'></i> Vizualizar".html_safe, worker_project_path(project), :class => "btn btn-info btn-md btn-block" %>
-  </div>
-</div>
+            <div class="step4 disable"></div>
+
+            <div class="step5 disable"></div>
+          </div>
+          <div class="line-bar"></div>
+        </div>
+
+        <div class="project-footer-buttons">
+          <% if project.status == "sent" %>
+            <button class="edit-button">
+              <%= link_to "Avaliar", worker_projects_tasks_path(project)%>
+            </button>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </section>
+<%end%>

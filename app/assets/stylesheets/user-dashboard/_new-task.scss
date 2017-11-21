@@ -4,6 +4,20 @@
 #new-credits {
   @include span-columns (12 of 12);
   padding: 10vh 0 16vh 0;
+
+  &.show-specific-page {
+    padding: 0;
+
+    .ask-show-container {
+      &:first-of-type {
+        padding-top: 0 !important;
+      }
+
+      .template-example {
+        margin-bottom: 5vh;
+      }
+    }
+  }
   .container-steps-content {
     @include span-columns (10 of 12);
     @include shift (1 of 12);

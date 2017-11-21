@@ -7,6 +7,7 @@ class PublicsController < ApplicationController
   end
 
   def show
+    @publics = @project.publics
   end
 
   def new
@@ -27,8 +28,8 @@ class PublicsController < ApplicationController
   end
 
   def update
-    if @public.update_attribute(public_params)
-      redirect_to project_publics_path(@project), notice: "Filtro atualizado com sucesso"
+    if @public.update_attributes(public_params)
+      redirect_to new_project_credit_path(@project), notice: "Filtro atualizado com sucesso"
     else
       redirect_to project_publics_path(@project), alert: "Não foi possível atualizar o filtro"
     end

@@ -1,27 +1,35 @@
-<div class="form-box tasks-box">
-  <div class="form-title">
-    <h2 class="tasks-title-review">Perguntas</h2>
-  </div>
-  <% @asks.each do |ask| %>
-    <div class="ask-show-container">
-      <div class="template-example">
-        <div class="title">
-          <h3>Objetivo</h3>
-        </div>
-        <div class="template-content">
-          <p> <%= ask.ask_type %> </p>
-        </div>
+<div class="form-title">
+  <h2 class="tasks-title-review">Perguntas</h2>
+</div>
+<% @asks.each do |ask| %>
+  <div class="ask-show-container">
+    <div class="template-example">
+      <div class="title">
+        <h3>Objetivo</h3>
       </div>
-
-      <div class="template-example">
-        <div class="title">
-          <h3>Pergunta</h3>
-        </div>
-        <div class="template-content">
-          <p> <%= ask.question %> </p>
-        </div>
+      <div class="template-content">
+        <p> <%= ask.ask_type %> </p>
       </div>
-      <%= link_to "Editar Pergunta", edit_project_ask_path(@project, ask) %>
     </div>
-  <% end %>
-</div>  
+
+    <div class="template-example">
+      <div class="title">
+        <h3>Pergunta</h3>
+      </div>
+      <div class="template-content">
+        <p> <%= ask.question %> </p>
+      </div>
+    </div>
+
+    <div class="project-footer-buttons">
+      <% unless request.path.include? "roteiro" %>
+        <button class="delete-button">
+          <%= link_to "Excluir", project_ask_path(@project, ask) , method: :delete, data: {confirm: "Deseja mesmo excluir esta pergunta?"}, :class => "pull-right" %>
+        </button>
+        <%= link_to("Editar Tarefa", edit_project_ask_path(@project, ask)) if current_page?(project_asks_path)%>
+      <% else %>
+        <%= link_to("Editar Tarefa", edit_project_ask_path(@project, ask)) if current_page?(project_asks_path)%>
+      <% end %>
+    </div>
+  </div>
+<% end %>

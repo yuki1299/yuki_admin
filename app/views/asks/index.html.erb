@@ -2,38 +2,19 @@
   <div class="container-steps-content">
     <%= render partial: "projects/nav_new_test" %>
     <div class="form-box tasks-infos-box">
-      <div class="form-title">
-        <h2>
-          Defina as perguntas a serem realizadas
-        </h2>
-      </div>
-
-      <div class="tasks-infos asks-infos-box">
-        <figure class="first-info">
-          <%= image_tag("user_dash/ask-icon.png") %>
-          <figcaption>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </figcaption>
-        </figure>
-        <figure class="second-info">
-          <%= image_tag("user_dash/ask-icon.png") %>
-          <figcaption>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </figcaption>
-        </figure>
-        <figure class="third-info">
-          <%= image_tag("user_dash/ask-icon.png") %>
-          <figcaption>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            </p>
-          </figcaption>
-        </figure>
-      </div>
+      <% if @project.asks.present?%>
+        <section id="new-public" class="review-page show-specific-page">
+          <div class="panel panel-info show-project-page">
+            <div class="container-steps-content">
+              <div class="asks-show">
+                <%= render partial: "asks/show"  %>
+              </div>
+            </div>
+          </div>
+        </section>
+      <%else%>
+        <%= render partial: "asks_instructions"%>
+      <%end%>
     </div>
 
     <div class="form-box template-tasks-box">
@@ -83,7 +64,7 @@
         <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %>
       </button>
       <button class="next-button">
-        <%= link_to("Continuar", new_project_public_path(@project)) %>
+        <%= link_to("Continuar", @project.publics.present? ? edit_project_public_path(@project, @project.publics.first) : new_project_public_path(@project)) %>
       </button>
     </div>
   </div>

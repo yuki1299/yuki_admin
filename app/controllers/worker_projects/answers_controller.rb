@@ -1,9 +1,9 @@
-class AsksController < ApplicationController
+class WorkerProjects::AnswersController < ApplicationController
   before_action :set_project
   before_action :set_ask, only: [:show, :edit, :update, :destroy, :change]
 
   def index
-    @asks = @project.asks
+    @tasks = @project.tasks
   end
 
   def show
@@ -45,14 +45,6 @@ class AsksController < ApplicationController
   private
 
   def set_project
-    @project = Project.find(params[:project_id])
-  end
-
-  def set_ask
-    @ask = @project.asks.find(params[:id])
-  end
-
-  def ask_params
-    params.require(:ask).permit(:ask_type, :question)
+    @project = Project.find(params[:id])
   end
 end

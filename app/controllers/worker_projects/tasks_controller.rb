@@ -1,9 +1,7 @@
-class AsksController < ApplicationController
-  before_action :set_project
-  before_action :set_ask, only: [:show, :edit, :update, :destroy, :change]
-
+class WorkerProjects::TasksController < ApplicationController
   def index
-    @asks = @project.asks
+    @project = Project.find(params[:id])
+    @tasks = @project.tasks
   end
 
   def show
@@ -11,6 +9,18 @@ class AsksController < ApplicationController
 
   def new
     @ask = @project.asks.new
+  end
+
+  def answer
+    @project = Project.find(params[:project_id])
+    @task = Task.find(params[:id])
+    @answer = @task.answers.new(answers_params)
+
+    if @answer.save
+      redirect_to worker_projects_tasks_path(project), notice: "Tarefa criadas com sucesso"
+    else
+      redirect_to worker_projects_tasks_opened_path(@project, task), alert: "Não foi possível cadastrar as tarefa"
+    end
   end
 
   def create
@@ -45,14 +55,10 @@ class AsksController < ApplicationController
   private
 
   def set_project
-    @project = Project.find(params[:project_id])
+    @project = Project.find(params[:id])
   end
 
-  def set_ask
-    @ask = @project.asks.find(params[:id])
-  end
-
-  def ask_params
-    params.require(:ask).permit(:ask_type, :question)
+  def answers_params
+    params.require(:answer).permit(:answer)
   end
 end

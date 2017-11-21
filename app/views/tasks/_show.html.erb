@@ -1,34 +1,42 @@
-<div class="form-box tasks-box">
-  <div class="form-title">
-    <h2 class="tasks-title-review">Tarefas</h2>
-  </div>
-  <% @tasks.each do |task| %>
-    <div class="ask-show-container">
-      <div class="template-example">
-        <div class="title">
-          <h3>Tarefa</h3>
-        </div>
-        <div class="template-content">
-          <p><%= task.objective %></p>
-        </div>
-      </div>
-      <div class="template-example">
-        <div class="title">
-          <h3>URL</h3>
-        </div>
-        <div class="template-content">
-          <p><%= raw(task.url) %></p>
-        </div>
-      </div>
-      <div class="template-example">
-        <div class="title">
-          <h3>Cenário</h3>
-        </div>
-        <div class="template-content">
-          <p><%= task.cenary %></p>
-        </div>
-      </div>
-      <%= link_to "Editar Tarefa", edit_project_task_path(@project, task) %>
-    </div>
-  <% end %>
+<div class="form-title">
+  <h2 class="tasks-title-review">Tarefas</h2>
 </div>
+<% @tasks.each do |task| %>
+  <div class="ask-show-container">
+    <div class="template-example">
+      <div class="title">
+        <h3>Tarefa:</h3>
+      </div>
+      <div class="template-content">
+        <p><%= task.objective %></p>
+      </div>
+    </div>
+    <div class="template-example">
+      <div class="title">
+        <h3>URL:</h3>
+      </div>
+      <div class="template-content">
+        <p><%= raw(task.url) %></p>
+      </div>
+    </div>
+    <div class="template-example">
+      <div class="title">
+        <h3>Cenário:</h3>
+      </div>
+      <div class="template-content">
+        <p><%= task.cenary %></p>
+      </div>
+    </div>
+
+    <div class="project-footer-buttons">
+      <% unless request.path.include? "roteiro" %>
+        <button class="delete-button">
+          <%= link_to "Excluir", project_task_path(@project, task) , method: :delete, data: {confirm: "Deseja mesmo excluir esta tarefa?"}, :class => "pull-right" %>
+        </button>
+        <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
+      <% else %>
+        <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -2,40 +2,19 @@
   <div class="container-steps-content">
     <%= render partial: "projects/nav_new_test" %>
     <div class="form-box tasks-infos-box">
-      <div class="form-title">
-        <h2>
-          Defina as tarefas a serem realizadas
-        </h2>
-      </div>
-
-      <div class="tasks-infos">
-        <figure class="first-info">
-          <%= image_tag("user_dash/task-icon.png") %>
-          <figcaption>
-            <p>
-              Tarefa é um objetivo a ser cumprido.<br>
-              Ex: Adicionar produto ao carrinho.
-            </p>
-          </figcaption>
-        </figure>
-        <figure class="second-info">
-          <%= image_tag("user_dash/task-icon2.png") %>
-          <figcaption>
-            <p>
-              Lembre-se do porque de sua página existir. <br>
-              O usuário consegue executar a principal tarefa do site?
-            </p>
-          </figcaption>
-        </figure>
-        <figure class="third-info">
-          <%= image_tag("user_dash/task-icon3.png") %>
-          <figcaption>
-            <p>
-              Use um de nossos templates prontos caso tenha dificuldades em definir tarefas.
-            </p>
-          </figcaption>
-        </figure>
-      </div>
+      <% if @project.tasks.present?%>
+        <section id="new-public" class="review-page show-specific-page">
+          <div class="panel panel-info show-project-page">
+            <div class="container-steps-content">
+              <div class="tasks-show">
+                <%= render partial: "tasks/show"  %>
+              </div>
+            </div>
+          </div>
+        </section>
+      <%else%>
+        <%= render partial: "task_instructions"%>
+      <%end%>
     </div>
 
     <div class="form-box template-tasks-box">

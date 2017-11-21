@@ -1,13 +1,12 @@
 class WorkerProjectsController < ApplicationController
+  include ProjectsHelper
   before_action :authenticate_tester!
   before_action :set_project, only: [:show]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects_availables = current_tester.project_testers.where(status: "sent") if current_tester.project_testers.present?
-    @projects_in_progress = current_tester.project_testers.where(status: "in_progress") if current_tester.project_testers.present?
-    @projects_finisheds = current_tester.project_testers.where(status: "finished") if current_tester.project_testers.present?
+    @projects = projects_for_testers(current_tester)
   end
 
   # GET /projects/1

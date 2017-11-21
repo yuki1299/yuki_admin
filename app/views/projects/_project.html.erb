@@ -11,10 +11,14 @@
       <p tabindex="0">
         Respostas: 00/05
       </p>
-      <button class="answers-button">
-        Ver Respostas
-      </button>
-      
+      <% if project.status == "sent"%>
+        <%= link_to project_script_path(project) do %>
+          <button class="answers-button">
+            Ver Respostas
+          </button>
+        <%end%>
+      <%end%>
+
       <div class="answers-progress-bar">
         <div class="full-bar">
           <div class="step1 disable"></div>
@@ -31,9 +35,9 @@
       </div>
 
       <div class="project-footer-buttons">
-        <% if project.status == "draft" || "sent" %>
+        <% if project.status == "draft" %>
           <button class="edit-button">
-            <%= link_to "Editar", project_script_path(project) %>
+            <%= link_to "Editar", edit_project_path(project)%>
           </button>
         <% end %>
         <button class="delete-button">
@@ -45,13 +49,14 @@
       </div>
     </div>
 
-  <div class="panel-footer text-center">
-    <!--     <strong> O que vai testar? </strong><br>
-        <%= project.test_platform %><br><br>
-        <strong> URL </strong><br>
-        <%= raw(project.url_html) %> -->
-    <!-- <%= link_to "<i class='fa fa-plus-circle'></i> Finalizados".html_safe, change_project_path(project, status: "Ativo"), method: :put, :class => "btn btn-info btn-md btn-block" %>
+    <div class="panel-footer text-center">
+      <!--     <strong> O que vai testar? </strong><br>
+          <%= project.test_platform %><br><br>
+          <strong> URL </strong><br>
+          <%= raw(project.url_html) %> -->
+      <!-- <%= link_to "<i class='fa fa-plus-circle'></i> Finalizados".html_safe, change_project_path(project, status: "Ativo"), method: :put, :class => "btn btn-info btn-md btn-block" %>
 
-    <%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %> -->
-  </div>
-</section>  
+      <%= link_to "<i class='fa fa-plus-circle'></i> Espera".html_safe, change_project_path(project, status: "Aguardando Resposta"), method: :put, :class => "btn btn-info btn-md btn-block" %> -->
+    </div>
+  </section>
+</section>

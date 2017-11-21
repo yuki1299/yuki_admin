@@ -87,15 +87,19 @@
   }
 
   #user-project {
+    &:nth-child(3n) {
+      .project-box {
+        @include omega;
+      }
+    }
+
     .project-box {
-      @include span-columns (4 of 12);
+      width: 31.6239316239%;
+      float: left;
+      margin-right: 2.5641025641%;
       background-color: #FFF;
       padding: 1.3vw;
       margin-bottom: 5vh;
-
-      &:nth-child(3n) {
-        @include omega;
-      }
 
       h1 {
         font-size: 1.5vw;
@@ -156,11 +160,11 @@
             &.edit-button {
               background-image: image-url("user_dash/edit-bg-button");
               float: left;
+              margin-right: 1.7vw;
             }
 
             &.delete-button {
               background-image: image-url("user_dash/delete-bg-button");
-              margin-left: 1.7vw;
             }
 
             &.copy-button {

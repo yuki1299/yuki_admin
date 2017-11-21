@@ -1,8 +1,8 @@
-<div class="public-form">    
+<div class="public-form">
   <%= simple_form_for(@credit, html: {class: "form-signin"}, url: project_credits_path) do |f| %>
     <%= f.error_notification %>
 
-    
+
     <div class="new-project-buttons">
       <button class="back-button back-credit">  <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %> </button>
       <button class="back-button credit-button">  <%= link_to 'Comprar créditos', :back, :class => "btn btn-primary btn-block btn-lg" %> </button>
