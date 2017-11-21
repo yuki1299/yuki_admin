@@ -1,59 +1,61 @@
 <section id="new-public" class="user-bg-white review-page">
   <div class="container-steps-content">
-  <div class="tasks-show">
-    <div class="form-box tasks-box">
-      <div class="form-title">
-        <h2 class="tasks-title-review">Público</h2>
-      </div>
-      <% @publics.each do |publico| %>
-        <div class="ask-show-container">
-          <div class="template-example">
-            <div class="title">
-              <h3>De</h3>
-            </div>
-            <div class="template-content">
-              <p> <%= publico.age_range_start %> </p>
-            </div>
-          </div>
-
-          <div class="template-example">
-            <div class="title">
-              <h3>Até</h3>
-            </div>
-            <div class="template-content">
-              <p> <%= publico.age_range_end %> </p>
-            </div>
-          </div>
-
-          <div class="template-example">
-            <div class="title">
-              <h3>Gênero</h3>
-            </div>
-            <div class="template-content">
-              <p> <%= publico.gender %> </p>
-            </div>
-          </div>
-
-          <div class="template-example">
-            <div class="title">
-              <h3>Tipo de deficiência</h3>
-            </div>
-            <div class="template-content">
-              <p> <%= publico.kind_of_disability %> </p>
-            </div>
-          </div>
-
-          <div class="template-example">
-            <div class="title">
-              <h3>Participantes</h3>
-            </div>
-            <div class="template-content">
-              <p> <%= publico.participants %> </p>
-            </div>
-          </div>
+    <div class="tasks-show">
+      <div class="form-box tasks-box">
+        <div class="form-title">
+          <h2 class="tasks-title-review">Público</h2>
         </div>
-      <% end %>
+        <% @publics.each do |publico| %>
+          <div class="ask-show-container">
+            <div class="template-example">
+              <div class="title">
+                <h3>De</h3>
+              </div>
+              <div class="template-content">
+                <p> <%= publico.age_range_start %> </p>
+              </div>
+            </div>
+
+            <div class="template-example">
+              <div class="title">
+                <h3>Até</h3>
+              </div>
+              <div class="template-content">
+                <p> <%= publico.age_range_end %> </p>
+              </div>
+            </div>
+
+            <div class="template-example">
+              <div class="title">
+                <h3>Gênero</h3>
+              </div>
+              <div class="template-content">
+                <p> <%= publico.gender %> </p>
+              </div>
+            </div>
+
+            <div class="template-example">
+              <div class="title">
+                <h3>Tipo de deficiência</h3>
+              </div>
+              <div class="template-content">
+                <%publico.kind_of_disability.texts.each do |disability| %>
+                  <p> <%= disability %> </p>
+                <%end%>
+              </div>
+            </div>
+
+            <div class="template-example">
+              <div class="title">
+                <h3>Participantes</h3>
+              </div>
+              <div class="template-content">
+                <p> <%= publico.participants %> </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 </section>

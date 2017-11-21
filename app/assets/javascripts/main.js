@@ -31,6 +31,11 @@ $( document ).on('turbolinks:load', function() {
       };
   }
 
+  // Responsive Menu
+  $(".responsive-menu .responsive-menu-button").click(function(event){
+    $(this).parent().find(".nav-menu-responsive").slideToggle('slow');
+  });
+
   $("#container-effect .effects-button").click(function(){
     $(".container-options.hide").toggle(400);
   });

@@ -1,0 +1,69 @@
+// Iphone 5/6
+@include media ($mobile) {
+  a {
+    color: $action-color;
+    text-decoration: none;
+    transition: color $base-duration $base-timing;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: shade($action-color, 25%);
+    }
+  }
+
+  img,
+  picture {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* Custom Sizes */
+  ul {
+    li,
+    button {
+      font-size: 4.55vw;
+    }
+  }
+
+  p {
+    font-size: 4.22vw;
+  }
+
+  /* Colors */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  i,
+  figcaption,
+  a,
+  span {
+    &.white {
+      color: #FFF;
+    }
+
+    &.medium-gray {
+      color: $medium-gray;
+    }
+
+    &.light-gray {
+      color: $light-gray;
+    }
+
+    &.dark-gray {
+      color: $dark-gray;
+    }
+
+    &.light-black {
+      color: $light-black;
+    }
+
+    &.light-blue {
+      color: $light-blue;
+    }
+  }
+}

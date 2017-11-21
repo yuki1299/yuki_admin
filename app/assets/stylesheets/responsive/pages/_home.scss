@@ -1,0 +1,244 @@
+// Iphone 5/6 
+@include media ($mobile) {
+  #home-page {
+    .main-banner {
+      height: 57vh;
+      background-size: cover;
+      background-position-y: 0;
+
+      .text-box {
+        @include span-columns (12 of 12);
+        @include shift (0 of 12);
+        padding-top: 6vh;
+        h1,
+        p {
+          padding: 0 20px;
+          text-align: center;
+        }
+
+        p {
+          font-size: 4.22vw;
+          margin-bottom: 2vh;
+        }
+
+        h1 {
+          font-size: 6vw;
+          padding-right: 7vw;
+        }
+      }
+
+      .main-banner-buttons {
+        @include span-columns (8 of 12);
+        @include shift (2 of 12);
+        margin-top: 5vh;
+
+        button {
+          width: 67.35vw;
+          font-size: 4.22vw;
+          margin-bottom: 3vh;
+
+          &:first-of-type {
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .how-it-work {
+      .title {
+        width: 91.4vw;
+        margin-left: 4vw;
+
+        h1 {
+          font-size: 6vw;
+        }
+      }
+
+      .how-to-steps {
+        .steps {
+          @include span-columns (12 of 12);
+          margin-bottom: 7vh;
+          padding: 0 20px;
+
+          .img-step {
+            height: 20vh;
+
+            img {
+              float: left;
+              width: 23%;
+
+              &:first-of-type {
+                margin-right: 3vw;
+              }
+            }
+          }
+
+          .text-step {
+            margin-top: 3vh;
+
+            h2 {
+              font-size: 5.75vw;
+            }
+
+            p {
+              padding: 0;
+            }
+          }
+
+          &:first-of-type {
+            @include span-columns (12 of 12);
+            @include shift (0 of 12);
+            margin-bottom: 1vh;
+
+            .img-step {
+              @include span-columns (6 of 12);
+              @include shift (3 of 12);
+              display: flex;
+
+              img {
+                width: 100%;
+                margin-right: 0;
+              }
+            }
+          }
+
+          &:nth-of-type(2) {
+            .text-step {
+              p {
+                padding: 0 4vw;
+              }
+            }
+          }
+
+          &:last-of-type {
+            @include span-columns (12 of 12);
+            .img-step {
+              img {
+                margin-right: 0;
+                width: 36%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .start-to-use {
+      h1 {
+        font-size: 5.75vw;
+      }
+
+      p {
+        margin-bottom: 9vh;
+        font-size: 4.22vw;
+        padding: 0 20px;
+      }
+
+      button {
+        background: transparent;
+        border: solid 1px #FFF;
+        font-size: 4.22vw;
+        width: 46vw;
+
+        a {
+          color: #FFF;
+        }
+      }
+    }
+
+    .acessibility-info {
+      background-size: cover;
+      height: 77vh;
+
+      h1,
+      p {
+        @include span-columns (12 of 12);
+        @include shift (0 of 12);
+        padding-left: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        padding: 0 20px;
+        font-size: 5.75vw;
+      }
+
+      p {
+        font-size: 4.22vw;
+        padding-right: 20px;
+      }
+    }
+
+    .newsletter {
+      @include span-columns (12 of 12);
+      
+      .newsletter-box {
+        img {
+          width: 100%;
+        }
+      }
+
+      h1,
+      p {
+        padding: 0 10vw;
+      }
+
+      h1 {
+        font-size: 5.86vw;
+      }
+
+      .newsletter-text {
+        @include span-columns (12 of 12);
+        margin-bottom: 5vh;
+      }
+
+      input {
+        @include span-columns (3 of 12);
+        width: 55vw;
+        margin-left: 18.7vw;
+        font-size: 4.22vw;
+      }
+
+      button {
+        font-size: 4.22vw;
+        width: 16.7vw;
+      }
+    }
+
+    .news {
+      .title {
+        width: 91.4vw;
+        margin-left: 4vw;
+
+        h1 {
+          font-size: 6vw;
+        }
+      }
+
+      .with-three-columns {
+
+        article {
+          @include span-columns (12 of 12);
+
+          figure {
+            margin: 1em 20px;
+            figcaption {
+              padding: 4vw;
+
+              h2 {
+                font-size: 5.3vw;
+                text-align: center;
+              }
+
+              p {
+                font-size: 4.22vw;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -60,5 +60,13 @@ nav {
         }
       }
     }
+
+    &.responsive-menu {
+      display: none;
+    }
+  }
+
+  .responsive-menu-button {
+    display: none;
   }
 }
