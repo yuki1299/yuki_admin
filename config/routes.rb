@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'tester_completo'       => "register_confirmation#complete_tester", as: :complete_tester
   get 'tester_fail'           => "register_confirmation#fail_tester", as: :fail_tester
   get 'user_completo'         => "register_confirmation#complete_user", as: :complete_profissional
-  
+
 
   resources :projects do
     resources :asks
@@ -33,4 +33,7 @@ Rails.application.routes.draw do
     end
   end
   resources :worker_projects, only: [:index, :show]
+
+  get 'worker_projects/project/:id/tasks' => 'worker_projects/tasks#index', as: :worker_projects_tasks
+  get 'worker_projects/project/:project_id/tasks/:id' => 'worker_projects/tasks#answer', as: :worker_projects_tasks_opened
 end

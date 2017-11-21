@@ -30,7 +30,7 @@
         <div class="project-footer-buttons">
           <% if project.status == "sent" %>
             <button class="edit-button">
-              <%= link_to "Avaliar", edit_project_path(project)%>
+              <%= link_to "Avaliar", worker_projects_tasks_path(project)%>
             </button>
           <% end %>
         </div>
