@@ -36,6 +36,22 @@ $( document ).on('turbolinks:load', function() {
     $(this).parent().find(".nav-menu-responsive").slideToggle('slow');
   });
 
+  $("#container-effect .button4").click(function(event){
+    $(this).parents().find("body a").addClass('daltonism');
+    $(this).parents().find("body p").addClass('daltonism');
+    $(this).parents().find("body h1").addClass('daltonism');
+    $(this).parents().find("body h2").addClass('daltonism');
+    $(this).parents().find("body button").addClass('daltonism');
+    $(this).parents().find("body h3").addClass('daltonism');
+    $(this).parents().find("body span").addClass('daltonism');
+    $(this).parents().find("body input").addClass('daltonism');
+    $(this).parents().find("body i").addClass('daltonism');
+    $(this).parents().find("body .title").addClass('daltonism-bg');
+
+    $(this).css('z-index','99999');
+    $('#overlay2').fadeIn(300);
+  });
+
   $("#container-effect .effects-button").click(function(){
     $(".container-options.hide").toggle(400);
   });
@@ -62,6 +78,21 @@ $( document ).on('turbolinks:load', function() {
     $('#overlay').fadeOut(300, function(){
         $('.expose').css('z-index','99999');
     });
+
+    $('#overlay2').fadeOut(300, function(){
+        $('.expose').css('z-index','99999');
+    });
+
+    $(this).parents().find("body a").removeClass('daltonism');
+    $(this).parents().find("body p").removeClass('daltonism');
+    $(this).parents().find("body h1").removeClass('daltonism');
+    $(this).parents().find("body h2").removeClass('daltonism');
+    $(this).parents().find("body button").removeClass('daltonism');
+    $(this).parents().find("body h3").removeClass('daltonism');
+    $(this).parents().find("body span").removeClass('daltonism');
+    $(this).parents().find("body input").removeClass('daltonism');
+    $(this).parents().find("body i").removeClass('daltonism');
+    $(this).parents().find("body .title").removeClass('daltonism-bg');
 
   });
 

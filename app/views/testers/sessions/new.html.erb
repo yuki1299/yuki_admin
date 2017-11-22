@@ -1,15 +1,35 @@
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
-  <h2 class="text-center">Log in Testador</h2>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true, label: false, placeholder: "Email" %>
-    <%= f.input :password, required: false, label: false, placeholder: "Senha" %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<section id="tester-register-step2" class="login-tester">
+  <div class="header-step2">
+    <div class="img-box-mask">
+      <div class="img-box">
+
+      </div>
+    </div>
+    <h2>Login de <br> pessoa com deficiência</h2>
+    <div class="title">
+      <h3>Preencha os campos abaixo</h3>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", :class => "btn btn-primary btn-block" %>
-    <%= link_to "Esqueceu a senha?", new_password_path(resource_name), :class => "btn btn-primary btn-block" %>
-    <%= link_to "Cadastre-se", new_tester_registration_path, :class => "btn btn-primary btn-block" %>
-  </div>
-<% end %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
+    <%= f.error_notification %>
 
+    <div class="form-inputs">
+      <%= f.input :email, required: false, autofocus: true, label: "E-mail" %>
+      <%= f.input :password, required: false, label: "Senha" %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+      <div class="form-actions">
+        <button class="login-tester">
+          <%= f.button :submit, "Log in", :class => "btn btn-primary btn-block" %>
+        </button>
+        <button class="login-tester">
+          <%= link_to "Cadastre-se", new_tester_registration_path, :class => "btn btn-primary btn-block" %>
+        </button>
+        <button class="login-tester">
+          <%= link_to "Esqueceu a senha?", new_password_path(resource_name), :class => "btn btn-primary btn-block" %>
+        </button>
+      </div>
+    </div>
+  <% end %>
+</section>

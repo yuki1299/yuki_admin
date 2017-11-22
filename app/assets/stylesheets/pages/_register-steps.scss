@@ -3,6 +3,10 @@
   @include span-columns (12 of 12);
   padding: 14vh 0 5vh 0;
 
+  &.login-type {
+    padding: 14vh 0;
+  }
+
   .title {
     background-color: #48a8de;
     border-radius: .99vw;
@@ -142,6 +146,57 @@
 #tester-register-step2 {
   @include span-columns (12 of 12);
   padding: 8vh 0 5vh 0;
+  
+  &.login-tester {
+    padding: 8vh 0;
+
+    .form-actions {
+      .login-tester {
+        background: linear-gradient(0deg, #834098, #ec457f);
+        width: 14.66vw;
+        height: 7.8vh;
+        margin-right: 2.5vw;
+
+        &:last-of-type {
+          float: right;
+          margin-right: 0;
+        }
+
+        input,
+        a {
+          background-color: transparent;
+          font-size: 1.2vw;
+        }
+
+        a {
+          color: #FFF;
+        }
+      }
+
+      .login-user {
+        background: linear-gradient(0deg, #3e6db5, #48a8de);
+        width: 14.66vw;
+        height: 7.8vh;
+        margin-right: 2.5vw;
+
+        &:last-of-type {
+          float: right;
+          margin-right: 0;
+        }
+
+        input,
+        a {
+          background-color: transparent;
+          font-size: 1.2vw;
+        }
+
+        a {
+          color: #FFF;
+        }
+      }
+    }
+  }
+
   .header-step2 {
     width: 44.7vw;
     float: left;
@@ -204,6 +259,11 @@
       margin-bottom: 2vh;
     }
 
+    .tester_remember_me {
+      float: left;
+      clear: left;
+    }
+
     .checkbox,
     .radio-box {
       width: 100%;
@@ -230,7 +290,7 @@
       float: left;
       p {
         font-size: 1.2vw;
-        color: $blue-text;
+        color: $blue;
       }
 
       input[type="checkbox"],

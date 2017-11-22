@@ -27,18 +27,23 @@
         <i class="ion-eye"></i>
         Voltar ao normal
       </button>
+      <button class="button3">
+        <i class="ion-eye-disabled"></i>
+        Cegueira
+      </button>
       <button class="button">
         <i class="ion-ios-eye-outline"></i>
         Baixa visão
       </button>
-      <button class="button3">
-        <i class="ion-eye-disabled"></i>
-        Cegueira
+      <button class="button4">
+        <i class="ion-ios-glasses-outline"></i>
+        Daltonismo
       </button>
     </div>
   </div>
 
   <div id="overlay"></div>
+  <div id="overlay2"></div>
 
   <% if request.path.include? "tester" %>
     <%= render :partial => "layouts/footer_tester" %>

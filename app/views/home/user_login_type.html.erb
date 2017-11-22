@@ -1,0 +1,23 @@
+<div id="user-type" class="shadow-container login-type">
+  <div class="title">
+    <h1>
+      Qual perfil deseja acessar?
+    </h1>
+  </div>
+
+  <div class="user-type-box">
+    <div class="img-box">
+      <%= link_to user_session_path, :class => "img-case" do %>
+        
+      <% end %>
+      <%= link_to("Profissional", user_session_path) %>
+    </div>  
+
+    <div class="img-box">
+      <%= link_to tester_session_path do %>
+        
+      <% end %>
+      <%= link_to("Pessoa com deficiência", tester_session_path) %>
+    </div>  
+  </div>
+</div>

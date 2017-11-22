@@ -3,6 +3,10 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+
+  .daltonism {
+    color: rgba(179, 179, 0, 1) !important;
+  }
 }
 
 // Main
@@ -83,3 +87,16 @@ li {
   left: 0;
   z-index: 99998;
 }
+
+#overlay2 {
+  background: rgba(204,204,0, .5);
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99997;
+}
+
+
