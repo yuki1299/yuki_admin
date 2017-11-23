@@ -1,5 +1,5 @@
 <div class="public-form">
-  <%= simple_form_for(@public, html: {class: "form-signin"}, url: project_publics_path(@project)) do |f| %>
+  <%= simple_form_for(@public, html: {class: "form-signin"}, url: @public.persisted? ? project_public_path(@project) : project_publics_path(@project)) do |f| %>
     <%= f.error_notification %>
     <p class="title">
       Dados Básicos
