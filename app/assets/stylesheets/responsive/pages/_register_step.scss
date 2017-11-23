@@ -1,0 +1,681 @@
+// Iphone 5/6
+@include media ($mobile) {
+  // User Type Step1
+  #user-type {
+    @include span-columns (12 of 12);
+    padding: 10vh 0 5vh 0;
+
+    &.login-type {
+      padding: 14vh 0;
+    }
+
+    .title {
+      width: 84.8vw;
+      margin-left: 7.3vw;
+
+      h1 {
+        font-size: 6vw;
+      }
+    }
+
+    .user-type-box {
+      @include span-columns (12 of 12);
+      padding-top: 5vh;
+      .img-box {
+        @include span-columns (4 of 12);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+          font-size: 4.22vw;
+          line-height: 1.3;
+        }
+
+        p,
+        a {
+          color: #824199;
+          text-align: center;
+        }
+
+        a {
+          font-size: 6vw;
+          margin-top: 3vh;
+
+          &:first-of-type {
+            @include span-columns (2 of 4);
+            background-image: image-url("user_type/pcd.jpg");
+            background-size: 150%;
+            background-position-x: -9vh;
+            border-radius: 100%;
+            border: solid 4px #824199;
+            overflow: hidden;
+            width: 22vh;
+            height: 22vh;
+            margin-right: 0;
+          }
+        }
+
+        &:first-of-type {
+          margin-left: 0%;
+          margin-bottom: 5vh;
+
+          p,
+          a {
+            color: #3e6db5;
+          }
+
+          a {
+            &:first-of-type {
+              background-image: image-url("user_type/profissional.jpg");
+              background-position-x: -3vh;
+              border: solid 4px #3e6db5;
+            }
+          }
+        }
+      }
+    }
+
+    .register-progress-bar {
+      @include span-columns (10 of 12);
+      @include shift (1 of 12);
+      padding-top: 7vh;
+
+      p {
+        font-size: 4.22vw;
+        margin-left: 25.3vw;
+        float: left;
+        text-align: center;
+      }
+
+      img {
+        width: 13vw;
+        margin-left: 35.5vw;
+      }
+
+      .full-bar {
+        display: none;
+      }
+
+      .line-bar {
+        display: none;
+      }
+    }
+  }
+
+  // User/Tester Register Step2
+  #user-register-step2,
+  #tester-register-step2 {
+    @include span-columns (12 of 12);
+    padding: 8vh 0 5vh 0;
+    
+    &.login-tester {
+      padding: 8vh 0;
+
+      .form-actions {
+        .login-tester {
+          background: linear-gradient(0deg, #834098, #ec457f);
+          width: 14.66vw;
+          height: 7.8vh;
+          margin-right: 2.5vw;
+
+          &:last-of-type {
+            float: right;
+            margin-right: 0;
+          }
+
+          input,
+          a {
+            background-color: transparent;
+            font-size: 1.2vw;
+          }
+
+          a {
+            color: #FFF;
+          }
+        }
+
+        .login-user {
+          background: linear-gradient(0deg, #3e6db5, #48a8de);
+          width: 14.66vw;
+          height: 7.8vh;
+          margin-right: 2.5vw;
+
+          &:last-of-type {
+            float: right;
+            margin-right: 0;
+          }
+
+          input,
+          a {
+            background-color: transparent;
+            font-size: 1.2vw;
+          }
+
+          a {
+            color: #FFF;
+          }
+        }
+      }
+    }
+
+    .header-step2 {
+      width: 100%;
+      margin-left: 0;
+
+      h2 {
+        font-size: 6vw;
+        color: $purple-text;
+        margin-top: 1.3vh;
+        margin-bottom: 0;
+        text-align: center;
+      }
+
+      .title {
+        background-color: #ef457d;
+        width: 58.8vw;
+        margin-left: 20.2vw;
+        margin-top: 2vh;
+
+        h3 {
+          text-align: center;
+          color: #FFF;
+          margin-bottom: 0;
+          font-size: 4.22vw;
+          position: relative;
+          left: auto;
+        }
+      }
+      .img-box-mask {
+        @include span-columns (4 of 12);
+        width: 100%;
+        margin-bottom: 3vh;
+        @include omega;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .img-box {
+          background-image: image-url("user_type/pcd.jpg");
+          background-size: 150%;
+          background-position-x: -5vh;
+          border-radius: 100%;
+          border: solid 4px $purple-text;
+          overflow: hidden;
+          width: 20vh;
+          height: 20vh;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .form-signin {
+      float: left;
+      width: 100%;
+      margin-left: 0;
+      padding: 0 20px;
+
+      .form-group {
+        margin-bottom: 2vh;
+      }
+
+      .tester_remember_me {
+        float: left;
+        clear: left;
+      }
+
+      .checkbox,
+      .radio-box {
+        width: 100%;
+        float: left;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2vh;
+
+        p,
+        input {
+          margin-bottom: 0;
+        }
+
+        &:nth-of-type(3) {
+          p {
+            float: left;
+            margin-right: 1vw;
+          }
+        }
+      }
+
+      .extra-infos {
+        width: 100%;
+        float: left;
+        p {
+          font-size: 4.22vw;
+          color: $blue;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+          float: left;
+        }
+      }
+
+      .form-actions {
+        width: 100%;
+        float: left;
+        margin-top: 5vh;
+
+        .back-button,
+        .next-button {
+          width: 48%;
+          height: 7vh;
+          font-size: 4.22vw;
+          padding: 0;
+
+          a,
+          input {
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-size: 7.2vw;
+            background-position: 1vw;
+            height: 7vh;
+            width: 100%;
+          }
+        }
+
+        .back-button {
+          background-color: #FFF;
+          border: solid 1.5px #414141;
+          margin-right: 1vw;
+          float: left;
+
+          a {
+            background-image: image-url("/assets/user_type/anterior.svg");
+            background-position-x: 3.6vw;
+            background-position-y: 2.55vw;
+            color: #414141;
+            display: flex;
+            align-items: center;
+            padding: 0 0 0 17.1vw;
+          }
+        }
+
+        .next-button {
+          background: linear-gradient(0deg, #3e6db5, #48a8de);
+          width: 50%;
+          float: right;
+
+          input {
+            background-image: image-url("/assets/user_type/proximo.svg");
+            background-position-x: 4.6vw;
+            font-size: 4.22vw;
+            padding: 1.1vw 0 0 9.2vw;
+          }
+
+          &.tester-button {
+            background: linear-gradient(0deg, #834098, #ec457f);
+          }
+        }
+      }
+    }
+
+    .register-progress-bar {
+      @include span-columns (10 of 12);
+      @include shift (1 of 12);
+      padding-top: 15vh;
+
+      p {
+        color: $purple-text;
+        font-size: 4.22vw;
+        margin-left: 25.3vw;
+        float: left;
+        text-align: center;
+      }
+
+      img {
+        width: 13vw;
+        margin-left: 35.5vw;
+      }
+
+      .full-bar {
+        display: none;
+      }
+
+      .line-bar {
+        display: none;
+      }
+    }
+  }
+
+  // Tester Register Step 2
+  #tester-register-step2 {
+    .form-signin {
+
+      label,
+      input {
+        font-size: 4.22vw;
+      }
+
+      .tester_email {
+        width: 100%;
+        margin-right: 1vw;
+        float: left;
+      }
+
+      .tester_age {
+        float: left;
+        width: 100%;
+      }
+
+      .tester_gender,
+      .tester_kind_of_disability {
+        width: 100%;
+        float: left;
+      }
+      .tester_kind_of_disability {
+        .checkbox {
+          width: 100%;
+          label {
+            display: flex;
+            span {
+              float: left;
+              margin-right: 5vw;
+              display: flex;
+            }
+
+            input {
+              margin-top: .6vh;
+            }
+          }
+        }
+      }
+
+      .tester_gender {
+        .radio {
+          label {
+            float: left;
+            margin-right: 24vw;
+          }
+        }
+      }
+
+      .tester_password,
+      .tester_password_confirmation,
+      .tester_another_reason {
+        width: 100%;
+        float: left;
+        margin-right: 1vw;
+      }
+
+      .tester_password_confirmation {
+        @include omega;
+      }
+
+      label {
+        color: $purple-text;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="password"] {
+        border: solid .7px #ef457d;
+        color: $purple-text;
+      }
+
+      p {
+        color: $purple-text;
+      }
+
+      .extra-infos {
+        p {
+          color: $purple-text;
+        }
+      }
+    }
+  }
+
+  // User Register Step 2
+  #user-register-step2 {
+    .header-step2 {
+      h2 {
+        font-size: 6vw;
+        text-align: center;
+        color: $blue-text;
+      }
+
+      .title {
+        background-color: #48a8de;
+      }
+
+      .img-box-mask {
+        @include span-columns (4 of 12);
+        @include omega;
+        width: 100%;
+        margin-bottom: 3vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .img-box {
+          background-image: image-url("user_type/profissional.jpg");
+          background-position-x: -2vh;
+          border: solid 4px $blue-text;
+        }
+      }
+    }
+
+    .form-signin {
+      
+      label,
+      input {
+        font-size: 4.22vw;
+      }
+
+      .user_full_name,
+      .user_email {
+        width: 100%;
+        float: left;
+        margin-right: 0vw;
+      }
+
+      .user_role,
+      .user_company {
+        width: 100%;
+        float: left;
+      }
+
+      .user_password,
+      .user_password_confirmation,
+      .user_another_reason {
+        width: 100%;
+        float: left;
+        margin-right: 0vw;
+      }
+
+      .user_password_confirmation {
+        margin-right: 0;
+      }
+    }
+
+    .register-progress-bar {
+      p {
+        color: $blue-text;
+      }
+
+      .full-bar {
+        .active,
+        .disable {
+          background-color: $blue-text;
+        }
+
+        .disable {
+          background-color: transparent;
+          border: solid 1px $blue-text;
+        }
+      }
+
+      .line-bar {
+        border: solid .5px $blue-text;
+      }
+    }
+  }
+
+  // User/Tester Step3
+  #user-register-step3,
+  #tester-register-step3 {
+    @include span-columns (12 of 12);
+    padding: 8vh 0 5vh 0;
+
+    .success-box {
+      img {
+        width: 45vw;
+      }
+
+      .title {
+        background-color: #FFF;
+        border: solid 1px $blue-text;
+        border-radius: .99vw;
+        padding: 2vh;
+        width: 74.8vw;
+        margin-left: 13.2vw;
+
+        h2 {
+          text-align: center;
+          color: $blue-text;
+          margin-bottom: 0;
+          font-size: 4.22vw;
+        }
+
+        &.tester {
+          border: solid 1px #CF4A7B;
+
+          h2 {
+            color: $purple-text;
+          }
+        }
+      }
+    }
+
+    .success-alert {
+      width: 100%;
+      padding: 0 20px;
+      text-align: center;
+      margin: 10vh auto;
+      color: $blue;
+      line-height: 1.2;
+
+      &.tester-alert {
+        color: $purple-text;
+      }
+    }
+
+    .step-3-buttons {
+      text-align: center;
+      padding: 0 20px;
+
+      .back-button,
+      .next-button {
+        width: 70%;
+        height: 7vh;
+        font-size: 4.22vw;
+        padding: 0;
+
+        a {
+          background-repeat: no-repeat;
+          background-color: transparent;
+          background-size: 7.2vw;
+          background-position: 1vw;
+          height: 7vh;
+          width: 100%;
+          background-position-y: .55vw;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .back-button {
+        background-color: #FFF;
+        border: solid 1.5px #414141;
+        margin-right: 0vw;
+        margin-bottom: 2vh;
+
+        a {
+          background-image: image-url("/assets/user_type/anterior.svg");
+          background-position-x: 3.6vw;
+          background-position-y: 2vw;
+          color: #414141;
+          padding: 0 0 0 15.2vw;
+        }
+      }
+
+      .next-button {
+        background: linear-gradient(0deg, #3e6db5, #48a8de);
+
+        a {
+          background-image: image-url("/assets/user_type/proximo.svg");
+          background-position-x: 4.7vw;
+          background-position-y: 2.2vw;
+          color: #FFF;
+          padding: 0 0 0 20.1vw;
+        }
+
+        &.tester-button {
+          background: linear-gradient(0deg, #834098, #ec457f);
+        }
+      }
+    }
+
+    .register-progress-bar {
+      @include span-columns (10 of 12);
+      @include shift (1 of 12);
+      padding-top: 7vh;
+
+      p {
+        font-size: 4.22vw;
+        color: $blue-text;
+        margin-left: 32.5vw;
+        float: left;
+        text-align: center;
+        left: auto;
+      }
+
+      img {
+        width: 13vw;
+        margin-left: 35.5vw;
+      }
+
+      .full-bar {
+        display: none;
+      }
+
+      .line-bar {
+        display: none;
+      }
+
+      &.tester {
+        p {
+          color: $purple-text;
+        }
+
+        .full-bar {
+          .active {
+            width: 1.5vw;
+            height: 1.5vw;
+            background-color: $purple-text;
+          }
+        }
+
+        .line-bar {
+          margin-left: 1.9vw;
+          width: 78.5vw;
+          clear: left;
+          border: solid .5px $purple-text;
+          position: relative;
+          bottom: 1.4vh;
+        }
+      }
+    }
+  }
+
+}

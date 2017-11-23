@@ -1,0 +1,116 @@
+<header>
+  <nav class="navbar full-container" role="navigation">
+    <div class="nav-logo">
+      <%= link_to "/" do %>
+        <%= image_tag("integra-logo.png") %>
+      <% end %>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <% if current_user %>
+          <li>
+            <%= link_to("Dashboard", projects_path) %>
+          </li>
+          <li>
+            <%= link_to("Configurações", edit_user_registration_path) %>
+          </li>
+          <li>
+            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+          </li>
+        <% elsif current_tester %>
+          <li>
+            <%= link_to("Dashboard", worker_projects_path) %>
+          </li>
+          <li>
+            <%= link_to("Configurações", edit_tester_registration_path) %>
+          </li>
+          <li>
+            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to("Como Funciona", "#") %>
+          </li>
+
+          <li>
+            <%= link_to("Preço", "#") %>
+          </li>
+
+          <li>
+            <%= link_to("Blog", "#") %>
+          </li>
+
+          <li>
+            <%= link_to("Ajuda", "#") %>
+          </li>
+
+          <button>
+            <%= link_to("Criar Conta", user_type_path) %>
+          </button>
+
+          <button>
+            <%= link_to("Entrar", user_login_type_path) %>
+          </button>
+        <% end %>
+      </ul>
+    </div> 
+
+    <div class="menu responsive-menu">
+      <div class="responsive-menu-button tester-menu-responsive">
+        <p>
+          MENU
+        </p>
+      </div>
+      <ul class="nav-menu-responsive hidden">
+        <% if current_user %>
+          <li class="tester-menu-responsive">
+            <%= link_to("Dashboard", projects_path) %>
+          </li>
+          <li class="tester-menu-responsive">
+            <%= link_to("Configurações", edit_user_registration_path) %>
+          </li>
+          <li class="tester-menu-responsive">
+            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+          </li>
+        <% elsif current_tester %>
+          <li class="tester-menu-responsive">
+            <%= link_to("Dashboard", worker_projects_path) %>
+          </li>
+          <li class="tester-menu-responsive">
+            <%= link_to("Configurações", edit_tester_registration_path) %>
+          </li>
+          <li class="tester-menu-responsive">
+            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+          </li>
+        <% else %>
+          <li class="tester-menu-responsive">
+            <%= link_to("Como Funciona", "#") %>
+          </li>
+
+          <li class="tester-menu-responsive">
+            <%= link_to("Preço", "#") %>
+          </li>
+
+          <li class="tester-menu-responsive">
+            <%= link_to("Blog", "#") %>
+          </li>
+
+          <li class="tester-menu-responsive">
+            <%= link_to("Ajuda", "#") %>
+          </li>
+          
+          <div class="nav-buttons">
+            <button class="tester-menu-responsive">
+              <%= link_to("Criar Conta", user_type_path) %>
+            </button>
+
+            <button class="tester-menu-responsive">
+              <%= link_to("Entrar", user_login_type_path) %>
+            </button>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

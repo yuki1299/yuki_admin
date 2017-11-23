@@ -25,6 +25,10 @@
           background: $blue;
           padding: 2vh 0;
 
+          &.tester-menu-responsive {
+             background: #b82148;
+          }
+
 
           p {
             width: 100%;
@@ -46,6 +50,10 @@
             background: linear-gradient(-90deg, #3e6db5, #48a8de);
             border-top: solid 1px #FFF;
 
+            &.tester-menu-responsive {
+              background: linear-gradient(-90deg, #834098, #ec457f);
+            }
+
             a {
               color: #FFF;
             }
@@ -61,12 +69,21 @@
 
             button {
               width: 50%;
+
+              &.tester-menu-responsive {
+                border: solid 1px #b82148;
+              }
+
               &:first-of-type {
                 margin-right: 0;
                 width: 50%;
                 float: left;
                 border: solid 1px #006fb1;
                 background: #FFF;
+
+                &.tester-menu-responsive {
+                  border: solid 1px #b82148;
+                }
 
                 a {
                   color: $black;

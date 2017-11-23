@@ -10,7 +10,14 @@
   </head>
 
   <body>
-  <%= render :partial => "layouts/header" %>
+
+  <% if request.path.include? "tester" %>
+    <%= render :partial => "layouts/header_tester" %>
+  <% elsif request.path.include? "worker_projects" %>
+    <%= render :partial => "layouts/header_tester" %>
+  <% else %>
+    <%= render :partial => "layouts/header" %>
+  <% end %>
 
   <div class="container site-content">
     <%= yield %>
