@@ -53,6 +53,10 @@
       box-shadow: 2px 12px 23px 0px;
       @include span-columns (10 of 10);
 
+      &.tester-template-content {
+        border: solid 1px #b82148;
+      }
+
       .form-title {
         border: solid 1.5px $blue;
         border-radius: .99vw;
@@ -651,6 +655,14 @@
             margin-bottom: 0;
             padding-bottom: 0;
           }
+
+          &.tester-template-content {
+            border: solid 1.5px #b82148;
+
+            h2 {
+              color: #b82148;
+            }
+          }
         }
 
         h3 {
@@ -661,11 +673,27 @@
         .template-example {
           margin-bottom: 5vh;
 
+          &.tester-template-content {
+            .title {
+              color: #b82148;
+            }
+          }
+
           .template-content {
             background-color: rgba(0,111,177, .3);
             padding: 1vw;
             border-radius: 13px;
             border: solid 1.5px $blue;
+
+            &.tester-template-content {
+              background-color: transparent;
+              border: solid 1.5px #b82148;
+
+          
+              p {
+                color: #b82148;
+              }
+            }
           }
         }
       }

@@ -47,6 +47,8 @@
 
   <% if request.path.include? "tester" %>
     <%= render :partial => "layouts/footer_tester" %>
+  <% elsif request.path.include? "worker_projects" %>
+    <%= render :partial => "layouts/footer_tester" %>
   <% else %>
     <%= render :partial => "layouts/footer" %>
   <% end %>

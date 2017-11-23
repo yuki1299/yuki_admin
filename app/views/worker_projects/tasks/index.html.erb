@@ -1,31 +1,31 @@
-<section id="new-public" class="user-bg-white review-page">
+<section id="new-public" class="tester-bg review-page">
   <div class="container-steps-content">
     <div class="panel panel-info show-project-page">
       <div class="tasks-show">
-        <div class="form-box tasks-box">
-          <div class="form-title">
+        <div class="form-box tasks-box tester-template-content">
+          <div class="form-title tester-template-content">
             <h2 class="tasks-title-review">Tarefas</h2>
           </div>
           <% @tasks.each do |task| %>
             <div class="ask-show-container">
-              <div class="template-example">
+              <div class="template-example tester-template-content">
                 <div class="title">
                   <h3><%= task.objective %></h3>
                 </div>
               </div>
-              <div class="template-example">
+              <div class="template-example tester-template-content">
                 <div class="title">
                   <h3>URL:</h3>
                 </div>
-                <div class="template-content">
+                <div class="template-content tester-template-content">
                   <p><%= raw(task.url) %></p>
                 </div>
               </div>
-              <div class="template-example">
+              <div class="template-example tester-template-content">
                 <div class="title">
                   <h3>Cenário:</h3>
                 </div>
-                <div class="template-content">
+                <div class="template-content tester-template-content">
                   <p><%= task.cenary %></p>
                 </div>
               </div>
