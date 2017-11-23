@@ -12,25 +12,25 @@
     </div>
 
     <div class="panel panel-info show-project-page">
-      <div class="panel-heading">
-        <p id="notice"><%= notice %></p>
-      </div>
-
       <div class="test-show">
         <%= render partial: "projects/show"  %>
       </div>
 
-      <div class="tasks-show">
-        <div class="form-box tasks-box">
-          <%= render partial: "tasks/show"  %>
+      <% if !@project.tasks.empty?%>
+        <div class="tasks-show">
+          <div class="form-box tasks-box">
+            <%= render partial: "tasks/show"  %>
+          </div>
         </div>
-      </div>
+      <%end%>
 
-      <div class="asks-show">
-        <div class="form-box tasks-box">
-          <%= render partial: "asks/show"  %>
+      <% if !@project.asks.empty?%>
+        <div class="asks-show">
+          <div class="form-box tasks-box">
+            <%= render partial: "asks/show"  %>
+          </div>
         </div>
-      </div>
+      <%end%>
     </div>
   </div>
 </section>
