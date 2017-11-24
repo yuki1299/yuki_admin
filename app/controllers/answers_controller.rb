@@ -14,7 +14,8 @@ class WorkerProjects::AnswersController < ApplicationController
   end
 
   def create
-    @ask = @project.asks.new(ask_params)
+    binding.pry
+    @ask = @project.asks.new(answers_params)
 
     if @ask.save
       redirect_to project_asks_path(@project), notice: "Perguntas criadas com sucesso"
@@ -46,5 +47,9 @@ class WorkerProjects::AnswersController < ApplicationController
 
   def set_project
     @project = Project.find(params[:id])
+  end
+
+  def answers_params
+    params.require(:answer).permit!
   end
 end

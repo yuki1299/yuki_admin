@@ -3,6 +3,7 @@ class Tester < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :projects, through: :project_testers, dependent: :destroy
+  has_many :answers
 
   extend Enumerize
 

@@ -1,7 +1,10 @@
 class WorkerProjects::TasksController < ApplicationController
+  include ProjectsHelper
+
   def index
     @project = Project.find(params[:id])
     @tasks = @project.tasks
+    @tester = current_tester
   end
 
   def show
@@ -14,20 +17,17 @@ class WorkerProjects::TasksController < ApplicationController
   def answer
     @project = Project.find(params[:project_id])
     @task = Task.find(params[:id])
-    @answer = @task.answers.new(answers_params)
-
-    if @answer.save
-      redirect_to worker_projects_tasks_path(project), notice: "Tarefa criadas com sucesso"
-    else
-      redirect_to worker_projects_tasks_opened_path(@project, task), alert: "Não foi possível cadastrar as tarefa"
-    end
+    @answer = @task.answers.new
   end
 
-  def create
-    @ask = @project.asks.new(ask_params)
+  def answer_create
+    @project = Project.find(params[:project_id])
+    @task = Task.find(params[:id])
+    @answer = @task.answers.new(answers_params)
+    set_tester
 
-    if @ask.save
-      redirect_to project_asks_path(@project), notice: "Perguntas criadas com sucesso"
+    if @answer.save
+      redirect_to worker_projects_tasks_opened_path(@project), notice: "Perguntas criadas com sucesso"
     else
       redirect_to new_project_ask_path(@project), alert: "Não foi possível cadastrar as perguntas"
     end
@@ -58,7 +58,11 @@ class WorkerProjects::TasksController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def answers_params
-    params.require(:answer).permit(:answer)
+    def answers_params
+    params.require(:answer).permit!
+  end
+
+  def set_tester
+    @answer.tester = current_tester
   end
 end

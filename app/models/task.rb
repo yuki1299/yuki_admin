@@ -1,4 +1,4 @@
 class Task < ApplicationRecord
   belongs_to :project
-  has_one :answer
+  has_many :answers, as: :project_answer
 end

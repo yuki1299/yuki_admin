@@ -1,5 +1,4 @@
 class Answer < ApplicationRecord
-  belongs_to :tasks
-  belongs_to :ask
-
+  belongs_to :project_answer, polymorphic: true
+  belongs_to :tester
 end

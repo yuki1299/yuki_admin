@@ -37,4 +37,5 @@ Rails.application.routes.draw do
 
   get 'worker_projects/project/:id/tasks' => 'worker_projects/tasks#index', as: :worker_projects_tasks
   get 'worker_projects/project/:project_id/tasks/:id' => 'worker_projects/tasks#answer', as: :worker_projects_tasks_opened
+  post 'worker_projects/project/:project_id/tasks/:id/answer/:id' => 'worker_projects/tasks#answer_create', as: :create_answer
 end

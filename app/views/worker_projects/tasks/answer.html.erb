@@ -11,10 +11,10 @@
   </div>
 </div>
 
-<%= simple_form_for(@answer, html: {class: "form-signin"}) do |f| %>
+<%= simple_form_for(@answer, html: {class: "form-signin"}, url: create_answer_path(@project, @task)) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :answer, label: "Resposta", required: true, autofocus: true, input_html: {class: "form-control"}, error: "Por favor preencha todos os campos", :as => :string %>
+  <%= f.input :testers_answer, label: "Resposta", required: true, autofocus: true, input_html: {class: "form-control"}, error: "Por favor preencha todos os campos", :as => :string %>
 
   <div class="new-project-buttons">
     <button class="back-button">  <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %> </button>
