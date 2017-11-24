@@ -6,6 +6,14 @@
   background-color: $blue;
 }
 
+.tester-bg {
+  background-image: image-url("user_dash/tester-dash-bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-color: #b82148;
+}
+
 .user-bg-white {
   background-image: image-url("user_dash/user-dash-bg-white.jpg");
   background-size: 100%;
@@ -107,6 +115,11 @@
         border-bottom: 1px solid $blue-text;
         margin-bottom: 3vh;
         padding-bottom: 1vh;
+
+        &.tester-template-content {
+          color: #b82148;
+          border-bottom: 1px solid #b82148;
+        }
       }
 
       .project-infos {
