@@ -3,7 +3,7 @@ module ProjectsHelper
     @project = Project.joins(:publics).where(status: "sent").where("publics.age_range_start <= ?", tester.age)
   end
 
-  def find_answers(task, tester)
-    task.answers.where(tester: tester).first
+  def find_answers(object, tester)
+    object.answers.where(tester: tester).first
   end
 end

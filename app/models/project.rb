@@ -38,7 +38,7 @@ class Project < ApplicationRecord
       transitions :from => :draft, :to => :sent
     end
 
-    event :progress do
+    event :to_progress do
       transitions :from => :sent, :to => :in_progress
     end
 

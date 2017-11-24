@@ -1,34 +1,23 @@
-class WorkerProjects::TasksController < ApplicationController
+class WorkerProjects::AsksController < ApplicationController
   include ProjectsHelper
 
   def index
     @project = Project.find(params[:id])
-    @tasks = @project.tasks
     @asks = @project.asks
+    @tasks = @project.tasks
     @tester = current_tester
-  end
-
-  def finish_test
-    @project = Project.find(params[:id])
-    @project.to_progress
-    if @project.save
-      @project.number_answers = @project.number_answers + 1
-      redirect_to worker_projects_path, notice: "Resposta enviada com sucesso"
-    else
-      redirect_to worker_projects_tasks(project), notice: "Sua resposta não pode ser enviada"
-    end
   end
 
   def answer
     @project = Project.find(params[:project_id])
-    @task = Task.find(params[:id])
-    @answer = @task.answers.new
+    @ask = Ask.find(params[:id])
+    @answer = @ask.answers.new
   end
 
   def answer_create
     @project = Project.find(params[:project_id])
-    @task = Task.find(params[:id])
-    @answer = @task.answers.new(answers_params)
+    @ask = Ask.find(params[:id])
+    @answer = @ask.answers.new(answers_params)
     set_tester
 
     if @answer.save

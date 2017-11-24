@@ -38,4 +38,8 @@ Rails.application.routes.draw do
   get 'worker_projects/project/:id/tasks' => 'worker_projects/tasks#index', as: :worker_projects_tasks
   get 'worker_projects/project/:project_id/tasks/:id' => 'worker_projects/tasks#answer', as: :worker_projects_tasks_opened
   post 'worker_projects/project/:project_id/tasks/:id/answer/:id' => 'worker_projects/tasks#answer_create', as: :create_answer
+  get 'worker_projects/project/:project_id/asks/:id' => 'worker_projects/asks#answer', as: :worker_projects_asks_opened
+  post 'worker_projects/project/:project_id/asks/:id/answer/:id' => 'worker_projects/asks#answer_create', as: :create_answer_ask
+
+  post 'worker_projects/project/:id' => 'worker_projects/tasks#finish_test', as: :finish_test
 end

@@ -47,6 +47,50 @@
             </div>
           <% end %>
         </div>
+
+        <div class="form-box tasks-box tester-template-content">
+          <div class="form-title tester-template-content">
+            <h2 class="tasks-title-review">Perguntas</h2>
+          </div>
+          <% @asks.each do |ask| %>
+            <div class="ask-show-container">
+              <div class="template-example tester-template-content">
+                <div class="title">
+                  <h3>Tipo de pergunta</h3>
+                </div>
+                <div class="template-content tester-template-content">
+                  <p><%= ask.ask_type %></p>
+                </div>
+              </div>
+              <div class="template-example tester-template-content">
+                <div class="title">
+                  <h3>Pergunta</h3>
+                </div>
+                <div class="template-content tester-template-content">
+                  <p><%= ask.question %></p>
+                </div>
+              </div>
+
+              <div class="template-example">
+                <div class="title">
+                  <h3>Sua Resposta:</h3>
+                </div>
+                <div class="template-content">
+                  <p><%= find_answers(ask, @tester).present? ? find_answers(ask, @tester).testers_answer : "Você ainda não respondeu"%></p>
+                </div>
+              </div>
+
+              <div class="project-footer-buttons">
+                <%if !find_answers(ask, @tester).present?%>
+                  <%= link_to("Responder", worker_projects_asks_opened_path(@project, ask))%>
+                <%end%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <button type="button" name="button">
+          <%= link_to("Enviar", finish_test_path(@project), method: :post)%>
+        </button>
       </div>
     </div>
   </div>
