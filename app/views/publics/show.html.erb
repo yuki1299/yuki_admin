@@ -1,5 +1,15 @@
 <section id="new-public" class="user-bg-white review-page">
   <div class="container-steps-content">
+    <div class="nav-box">
+      <ul class="user-steps-nav">
+        <li <%= params[:controller] == "script" ? "class=active" : "class=disable"%>>
+          <%= link_to "Roteiro", project_script_path(@project) %>
+        </li>
+        <li <%= params[:controller] == "publics" ? "class=active" : "class=disable"%>>
+          <%= link_to("Público", @public.present? ? project_public_path(@project, @public) : new_project_public_path(@project))%>
+        </li>
+      </ul>
+    </div>
     <div class="tasks-show">
       <div class="form-box tasks-box">
         <div class="form-title">

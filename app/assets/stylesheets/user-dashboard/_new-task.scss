@@ -65,6 +65,7 @@
         display: block;
         margin: 0 auto;
         margin-bottom: 7vh;
+        clear: left;
 
         h2 {
           font-size: 1.7vw;
@@ -488,8 +489,21 @@
   &#new-public,
   &#new-credits {
     .container-steps-content {
+      .finish-answers-button {
+        background: linear-gradient(0deg, #834098, #ec457f);
+        width: 14.66vw;
+        float: right;
+        height: 7vh;
+        padding: 0;
+
+        a {
+          font-size: 1.2vw;
+          color: #FFF;
+        }
+      }
       .form-box {
         padding-bottom: 2vh;
+
         .form-title {
           width: 46vw;
         }
@@ -687,9 +701,17 @@
 
             &.tester-template-content {
               background-color: transparent;
+              border: none;
+
+              p {
+                color: #b82148;
+              }
+            }
+
+            &.tester-template-answers {
+              background-color: rgba(184,33,72, .3);
               border: solid 1.5px #b82148;
 
-          
               p {
                 color: #b82148;
               }
@@ -703,8 +725,58 @@
         padding-top: 4vh;
         border-top: solid 1.5px $blue;
 
+        &.tester-template {
+          border-top: none;
+        }
+
         &:nth-of-type(2) {
           border-top: none;
+        }
+
+        .answers-show {
+          .tester-name {
+            margin-bottom: 2vh;
+          }
+        }
+
+        .project-footer-buttons-tasks {
+          float: left;
+          width: 100%;
+          margin-top: 2vh;
+          margin-bottom: 7vh;
+          padding-bottom: 5vh;
+          border-bottom: solid 1.5px $blue;
+
+          &.tester-template {
+            border-bottom: solid 1.5px #b82148;
+          }
+
+          button {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: 1.7vw;
+            font-size: 1vw;
+            border: solid 1px black;
+            border-radius: 0;
+            padding-left: 3.5vw;
+            background-position: 1vw;
+            height: 5.5vh;
+            padding-top: 1.9vh;
+
+            &.edit-button {
+              background-image: image-url("user_dash/edit-bg-button");
+              float: left;
+              margin-right: 1.7vw;
+            }
+
+            &.delete-button {
+              background-image: image-url("user_dash/delete-bg-button");
+            }
+
+            a {
+              color: black;
+            }
+          }
         }
       }
     }
