@@ -7,10 +7,13 @@
             <h2 class="tasks-title-review">Tarefas</h2>
           </div>
           <% @tasks.each do |task| %>
-            <div class="ask-show-container">
+            <div class="ask-show-container tester-template">
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3><%= task.objective %></h3>
+                  <h3>Tarefa:</h3>
+                </div>
+                <div class="template-content tester-template-content">
+                  <p><%= task.objective %></p>
                 </div>
               </div>
               <div class="template-example tester-template-content">
@@ -30,18 +33,20 @@
                 </div>
               </div>
 
-              <div class="template-example">
+              <div class="template-example tester-template-content">
                 <div class="title">
                   <h3>Sua Resposta:</h3>
                 </div>
-                <div class="template-content">
+                <div class="template-content tester-template-answers">
                   <p><%= find_answers(task, @tester).present? ? find_answers(task, @tester).testers_answer : "Você ainda não respondeu"%></p>
                 </div>
               </div>
 
-              <div class="project-footer-buttons">
+              <div class="project-footer-buttons-tasks tester-template">
                 <%if !find_answers(task, @tester).present?%>
-                  <%= link_to("Responder", worker_projects_tasks_opened_path(@project, task))%>
+                  <button class="edit-button">
+                    <%= link_to("Responder", worker_projects_tasks_opened_path(@project, task))%>
+                  </button>
                 <%end%>
               </div>
             </div>
@@ -53,7 +58,7 @@
             <h2 class="tasks-title-review">Perguntas</h2>
           </div>
           <% @asks.each do |ask| %>
-            <div class="ask-show-container">
+            <div class="ask-show-container tester-template">
               <div class="template-example tester-template-content">
                 <div class="title">
                   <h3>Tipo de pergunta</h3>
@@ -71,24 +76,26 @@
                 </div>
               </div>
 
-              <div class="template-example">
+              <div class="template-example tester-template-content">
                 <div class="title">
                   <h3>Sua Resposta:</h3>
                 </div>
-                <div class="template-content">
+                <div class="template-content tester-template-answers">
                   <p><%= find_answers(ask, @tester).present? ? find_answers(ask, @tester).testers_answer : "Você ainda não respondeu"%></p>
                 </div>
               </div>
 
-              <div class="project-footer-buttons">
+              <div class="project-footer-buttons-tasks tester-template">
                 <%if !find_answers(ask, @tester).present?%>
-                  <%= link_to("Responder", worker_projects_asks_opened_path(@project, ask))%>
+                  <button class="edit-button">
+                    <%= link_to("Responder", worker_projects_asks_opened_path(@project, ask))%>
+                  </button>
                 <%end%>
               </div>
             </div>
           <% end %>
         </div>
-        <button type="button" name="button">
+        <button class="finish-answers-button">
           <%= link_to("Enviar", finish_test_path(@project), method: :post)%>
         </button>
       </div>

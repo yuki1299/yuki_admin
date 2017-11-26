@@ -17,6 +17,12 @@
             Ver Respostas
           </button>
         <%end%>
+      <% elsif project.status == "in_progress" %>
+        <%= link_to project_script_path(project) do %>
+          <button class="answers-button">
+            Ver Respostas
+          </button>
+        <% end %>
       <%end%>
 
       <div class="answers-progress-bar">

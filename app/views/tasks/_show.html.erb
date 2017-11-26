@@ -28,6 +28,17 @@
       </div>
     </div>
 
+    <div class="project-footer-buttons-tasks">
+      <% unless request.path.include? "roteiro" %>
+        <button class="delete-button">
+          <%= link_to "Excluir", project_task_path(@project, task) , method: :delete, data: {confirm: "Deseja mesmo excluir esta tarefa?"}, :class => "pull-right" %>
+        </button>
+        <button class="edit-button">
+          <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
+        </button>
+      <% end %>
+    </div>
+
     <div class="form-title">
       <h2 class="tasks-title-review">Respostas</h2>
     </div>
@@ -35,16 +46,5 @@
       <h2>Usuário:</h2><%= answer.tester.full_name%>
       <h2>Resposta:</h2><%= answer.testers_answer%>
     <%end%>
-
-    <div class="project-footer-buttons">
-      <% unless request.path.include? "roteiro" %>
-        <button class="delete-button">
-          <%= link_to "Excluir", project_task_path(@project, task) , method: :delete, data: {confirm: "Deseja mesmo excluir esta tarefa?"}, :class => "pull-right" %>
-        </button>
-        <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
-      <% else %>
-        <%= link_to("Editar Tarefa", edit_project_task_path(@project, task)) if current_page?(project_tasks_path)%>
-      <% end %>
-    </div>
   </div>
 <% end %>

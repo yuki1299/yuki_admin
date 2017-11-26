@@ -21,23 +21,29 @@
       </div>
     </div>
 
-    <div class="form-title">
-      <h2 class="tasks-title-review">Respostas</h2>
-    </div>
-    <%ask.answers.each do |answer|%>
-      <h2>Usuário:</h2><%= answer.tester.full_name%>
-      <h2>Resposta:</h2><%= answer.testers_answer%>
-    <%end%>
-
-    <div class="project-footer-buttons">
+    <div class="project-footer-buttons-tasks">
       <% unless request.path.include? "roteiro" %>
         <button class="delete-button">
-          <%= link_to "Excluir", project_ask_path(@project, ask) , method: :delete, data: {confirm: "Deseja mesmo excluir esta pergunta?"}, :class => "pull-right" %>
+          <%= link_to "Excluir", project_ask_path(@project, ask) , method: :delete, data: {confirm: "Deseja mesmo excluir esta tarefa?"}, :class => "pull-right" %>
         </button>
-        <%= link_to("Editar Tarefa", edit_project_ask_path(@project, ask)) if current_page?(project_asks_path)%>
-      <% else %>
-        <%= link_to("Editar Tarefa", edit_project_ask_path(@project, ask)) if current_page?(project_asks_path)%>
+        <button class="edit-button">
+          <%= link_to("Editar Tarefa", edit_project_ask_path(@project, ask)) if current_page?(project_asks_path)%>
+        </button>
       <% end %>
+    </div>
+
+    <div class="form-title tasks-show-border">
+      <h2 class="tasks-title-review">Respostas</h2>
+    </div>
+    <div class="answers-show">
+      <%ask.answers.each do |answer|%>
+        <div class="tester-name">
+          <h2>Usuário:</h2>
+          <p> <%= answer.tester.full_name%> </p>
+        </div>
+        <h2>Resposta:</h2>
+        <p> <%= answer.testers_answer%> </p>
+      <%end%>
     </div>
   </div>
 <% end %>
