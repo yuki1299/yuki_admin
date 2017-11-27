@@ -10,9 +10,9 @@ class WorkerProjects::TasksController < ApplicationController
 
   def finish_test
     @project = Project.find(params[:id])
-    @project.to_progress
+    @project.to_progress if @project.status != "in_progress"
+    @project.number_answers = @project.number_answers + 1
     if @project.save
-      @project.number_answers = @project.number_answers + 1
       redirect_to worker_projects_path, notice: "Resposta enviada com sucesso"
     else
       redirect_to worker_projects_tasks(project), notice: "Sua resposta não pode ser enviada"

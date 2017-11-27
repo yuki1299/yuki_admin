@@ -32,17 +32,19 @@
       <% end %>
     </div>
 
-    <div class="form-title tasks-show-border">
-      <h2 class="tasks-title-review">Respostas</h2>
-    </div>
-    <div class="answers-show">
-      <%ask.answers.each do |answer|%>
-        <div class="tester-name">
-          <h2>Usuário:</h2>
-          <p> <%= answer.tester.full_name%> </p>
-        </div>
-        <h2>Resposta:</h2>
-        <p> <%= answer.testers_answer%> </p>
+    <%if @project.status != "draft"%>
+      <div class="form-title tasks-show-border">
+        <h2 class="tasks-title-review">Respostas</h2>
+      </div>
+      <div class="answers-show">
+        <%ask.answers.each do |answer|%>
+          <div class="tester-name">
+            <h2>Usuário:</h2>
+            <p> <%= answer.tester.full_name%> </p>
+          </div>
+          <h2>Resposta:</h2>
+          <p> <%= answer.testers_answer%> </p>
+        <%end%>
       <%end%>
     </div>
   </div>

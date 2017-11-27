@@ -38,13 +38,14 @@
         </button>
       <% end %>
     </div>
-
-    <div class="form-title">
-      <h2 class="tasks-title-review">Respostas</h2>
-    </div>
-    <%task.answers.each do |answer|%>
-      <h2>Usuário:</h2><%= answer.tester.full_name%>
-      <h2>Resposta:</h2><%= answer.testers_answer%>
+    <%if @project.status != "draft"%>
+      <div class="form-title">
+        <h2 class="tasks-title-review">Respostas</h2>
+      </div>
+      <%task.answers.each do |answer|%>
+        <h2>Usuário:</h2><%= answer.tester.full_name%>
+        <h2>Resposta:</h2><%= answer.testers_answer%>
+      <%end%>
     <%end%>
   </div>
 <% end %>

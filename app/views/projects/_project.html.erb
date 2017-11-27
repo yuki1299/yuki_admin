@@ -9,7 +9,11 @@
         Criado há: <%= time_ago_in_words(project.created_at) %> atrás
       </p>
       <p tabindex="0">
-        Respostas: 00/05
+        <%if project.publics.present?%>
+          Respostas: <%=project.number_answers.present? ? project.number_answers : 0  %>/<%= project.publics.first.participants %>
+        <%else%>
+          Respostas: --
+        <%end%>
       </p>
       <% if project.status == "sent"%>
         <%= link_to project_script_path(project) do %>
