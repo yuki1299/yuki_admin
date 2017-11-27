@@ -14,7 +14,6 @@ class WorkerProjects::AnswersController < ApplicationController
   end
 
   def create
-    binding.pry
     @ask = @project.asks.new(answers_params)
 
     if @ask.save
