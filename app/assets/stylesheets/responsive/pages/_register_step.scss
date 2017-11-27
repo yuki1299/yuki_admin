@@ -116,9 +116,10 @@
       .form-actions {
         .login-tester {
           background: linear-gradient(0deg, #834098, #ec457f);
-          width: 14.66vw;
+          width: 100%;
           height: 7.8vh;
-          margin-right: 2.5vw;
+          margin-right: 0;
+          margin-bottom: 3vh;
 
           &:last-of-type {
             float: right;
@@ -128,7 +129,7 @@
           input,
           a {
             background-color: transparent;
-            font-size: 1.2vw;
+            font-size: 4.22vw;
           }
 
           a {
@@ -138,9 +139,10 @@
 
         .login-user {
           background: linear-gradient(0deg, #3e6db5, #48a8de);
-          width: 14.66vw;
+          width: 100%;
           height: 7.8vh;
-          margin-right: 2.5vw;
+          margin-bottom: 3vh;
+          margin-right: 0vw;
 
           &:last-of-type {
             float: right;
@@ -150,7 +152,7 @@
           input,
           a {
             background-color: transparent;
-            font-size: 1.2vw;
+            font-size: 4.22vw;
           }
 
           a {
@@ -174,8 +176,8 @@
 
       .title {
         background-color: #ef457d;
-        width: 58.8vw;
-        margin-left: 20.2vw;
+        width: 68.8vw;
+        margin-left: 16.2vw;
         margin-top: 2vh;
 
         h3 {
@@ -371,6 +373,12 @@
       .tester_kind_of_disability {
         width: 100%;
         float: left;
+      }
+
+      .tester_current_password {
+        label {
+          float: left;
+        }
       }
       .tester_kind_of_disability {
         .checkbox {

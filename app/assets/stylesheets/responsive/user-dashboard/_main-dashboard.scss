@@ -1,0 +1,200 @@
+// Iphone 5/6 
+@include media ($mobile) {
+  .user-bg {
+  background-image: image-url("user_dash/user-dash-bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-color: $blue;
+}
+
+.tester-bg {
+  background-image: image-url("user_dash/tester-dash-bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-color: #b82148;
+}
+
+.user-bg-white {
+  background-image: image-url("user_dash/user-dash-bg-white.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-color: #FFF;
+}
+
+#user-dashboard {
+  float: left;
+  width: 100%;
+  padding: 10vh 20px 5vh 20px;
+
+  header {
+    h1 {
+      font-size: 6vw;
+      text-align: center;
+    }
+  }
+
+  .dashboard-options {
+    @include span-columns (12 of 12);
+    margin: 8vh 0;
+    button {
+      @include span-columns (2 of 12);
+      background: #FFF;
+      font-size: 4.22vw;
+      width: 41vw;
+      background-image: image-url("user_dash/bg-new-test.png");
+      background-repeat: no-repeat;
+      background-size: 6vw;
+      background-position: 3vw;
+      padding-left: 13vw;
+      padding-top: 2.7vh;
+      margin-bottom: 10vh;
+      margin-left: 23vw;
+
+      a {
+        color: black;
+      }
+    }
+
+    .user-filter {
+      float: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: 4.22vw;
+        color: #FFF;
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+
+        &:first-of-type {
+          margin: 0 auto;
+          margin-bottom: 2vh;
+        }
+
+        select {
+          background-color: transparent;
+          background-image: image-url("user_dash/select-bg-white.png");
+          background-position: 27.4vw;
+          background-size: 19%;
+          font-size: 4.22vw;
+          padding-left: 3vw;
+          padding-right: 4vw;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  // PROJECTS DASHBOARD GENERAL
+  .user-projects-container {
+    @include span-columns (12 of 12);
+  }
+
+  #user-project {
+    &:nth-child(3n) {
+      .project-box {
+        @include omega;
+      }
+    }
+
+    .project-box {
+      width: 100%;
+      float: left;
+      margin-right: 0;
+      background-color: #FFF;
+      padding: 4.3vw;
+      margin-bottom: 5vh;
+
+      h1 {
+        font-size: 4.22vw;
+        color: $blue-text;
+        border-bottom: 1px solid $blue-text;
+        margin-bottom: 3vh;
+        padding-bottom: 1vh;
+
+        &.tester-template-content {
+          color: #b82148;
+          border-bottom: 1px solid #b82148;
+        }
+      }
+
+      .project-infos {
+        p {
+          color: black;
+          margin-bottom: 3vh;
+
+          &:nth-of-type(2) {
+            margin-bottom: 6vh;
+          }
+
+          &:last-of-type {
+            float: left;
+          }
+        }
+
+        .answers-button {
+          background-color: transparent;
+          background-image: image-url("user_dash/answers-bg-button.png");
+          background-repeat: no-repeat;
+          background-size: 10vw;
+          background-position: 5vw;
+          font-size: 1.22vw;
+          width: 54vw;
+          font-size: 4.22vw;
+          float: none;
+          color: #3e6db5;
+          border: solid 1px #3e6db5;
+          border-radius: 0;
+          padding-left: 19.3vw;
+          margin-top: -1.5vh;
+        }
+
+        .project-footer-buttons {
+          float: left;
+          width: 100%;
+          margin-top: 5vh;
+
+          button {
+            background-size: 5.22vw;
+            font-size: 4.22vw;
+            padding-left: 13.5vw;
+            height: 5.7vh;
+            background-position: 4vw;
+            float: right;
+
+            &.edit-button {
+              background-image: image-url("user_dash/edit-bg-button");
+              float: left;
+              margin-right: 1.7vw;
+            }
+
+            &.delete-button {
+              background-image: image-url("user_dash/delete-bg-button");
+            }
+
+            &.copy-button {
+              background-image: image-url("user_dash/copy-bg-button");
+              float: right;
+              @include omega;
+            }
+
+            a {
+              color: black;
+            }
+          }
+        }
+
+        .answers-progress-bar {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+}

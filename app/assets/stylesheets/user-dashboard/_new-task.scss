@@ -440,6 +440,15 @@
       }
 
       .form-box {
+        .task-form {
+          .tester-template {
+            .tester-template-content {
+              .ask-answers {
+                color: #b82148;
+              }
+            }
+          }
+        }
         &.template-tasks-box {
           .form-title {
             width: 20vw;
@@ -531,6 +540,25 @@
           @include span-columns (8 of 10);
           @include shift (1 of 10);
           margin-top: 7vh;
+
+          &.ask-answers {
+            margin-left: 0;
+            width: 100%;
+            margin-top: 0;
+
+            label {
+              color: #b82148;
+              font-size: 1.7vw;
+            }
+
+            textarea {
+              color: #b82148;
+              font-size: 1.22vw;
+              border: solid 0.7px #b82148;
+              height: 17vh;
+              resize: none;
+            }
+          }
 
           .title {
             font-size: 2vw;
@@ -641,6 +669,14 @@
             position: relative;
             bottom: -13vh;
             right: -16.6vh;
+
+            &.ask-buttons-confirm {
+              right: -2.5vw;
+
+              .next-button {
+                background: linear-gradient(0deg, #834098, #ec457f);
+              }
+            }
           }
         }
       }

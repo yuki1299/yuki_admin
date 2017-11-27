@@ -24,6 +24,23 @@
         }
       }
 
+      .footer-icons {
+        a {
+          font-size: 12.4vw;
+
+          &:first-of-type {
+            margin-right: 0;
+            margin-left: 26vw;
+          }
+
+          i {
+            &:first-of-type {
+              margin-right: 25vw;
+            }
+          }
+        }
+      }
+
       li {
         text-align: center;
         margin-right: 0;
