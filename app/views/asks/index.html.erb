@@ -11,61 +11,60 @@
               </div>
             </div>
           </div>
+          <div class="form-box template-tasks-box">
+            <div class="form-title">
+              <h2>Template de perguntas</h2>
+            </div>
+
+            <div class="close-button">
+              <button>
+                <p>+</p>
+              </button>
+            </div>
+
+            <div class="template-example">
+              <div class="title">
+                <h2>Template 1</h2>
+              </div>
+              <div class="template-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat </p>
+                <div class="template-button">
+                  <button class="next-button">
+                    <%= link_to("Em breve", "#") %>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="template-example">
+              <div class="title">
+                <h2>Template 2</h2>
+              </div>
+              <div class="template-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat </p>
+                <div class="template-button">
+                  <button class="next-button">
+                    <%= link_to("Em breve", "#") %>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="new-project-buttons">
+            <button class="new-task-button new-ask-button">
+              <%= link_to("Nova Pergunta", new_project_ask_path(@project)) %>
+            </button>
+            <button class="back-button">
+              <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %>
+            </button>
+            <button class="next-button">
+              <%= link_to("Continuar", @project.publics.present? ? edit_project_public_path(@project, @project.publics.first) : new_project_public_path(@project)) %>
+            </button>
+          </div>
         </section>
       <%else%>
         <%= render partial: "asks_instructions"%>
       <%end%>
-    </div>
-
-    <div class="form-box template-tasks-box">
-      <div class="form-title">
-        <h2>Template de perguntas</h2>
-      </div>
-
-      <div class="close-button">
-        <button>
-          <p>+</p>
-        </button>
-      </div>
-
-      <div class="template-example">
-        <div class="title">
-          <h2>Template 1</h2>
-        </div>
-        <div class="template-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat </p>
-          <div class="template-button">
-            <button class="next-button">
-              <%= link_to("Em breve", "#") %>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="template-example">
-        <div class="title">
-          <h2>Template 2</h2>
-        </div>
-        <div class="template-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat </p>
-          <div class="template-button">
-            <button class="next-button">
-              <%= link_to("Em breve", "#") %>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="new-project-buttons">
-      <button class="new-task-button new-ask-button">
-        <%= link_to("Nova Pergunta", new_project_ask_path(@project)) %>
-      </button>
-      <button class="back-button">
-        <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %>
-      </button>
-      <button class="next-button">
-        <%= link_to("Continuar", @project.publics.present? ? edit_project_public_path(@project, @project.publics.first) : new_project_public_path(@project)) %>
-      </button>
     </div>
   </div>
 </section>
