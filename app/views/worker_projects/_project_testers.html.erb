@@ -13,7 +13,7 @@
 
         <div class="project-footer-buttons">
           <% if project.status == "sent" || project.status == "in_progress"  %>
-            <button class="edit-button">
+            <button tabindex="-1" class="edit-button">
               <%= awnswer_all_questions(project) ? (link_to "Já respondido", "#") : (link_to "Avaliar", worker_projects_tasks_path(project))%>
             </button>
           <% end %>

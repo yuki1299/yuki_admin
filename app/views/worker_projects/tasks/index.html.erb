@@ -4,47 +4,47 @@
       <div class="tasks-show">
         <div class="form-box tasks-box tester-template-content">
           <div class="form-title tester-template-content">
-            <h2 class="tasks-title-review">Tarefas</h2>
+            <h2 class="tasks-title-review" tabindex="0">Tarefas</h2>
           </div>
           <% @tasks.each do |task| %>
             <div class="ask-show-container tester-template">
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3>Tarefa:</h3>
+                  <h3 tabindex="0">Tarefa:</h3>
                 </div>
                 <div class="template-content tester-template-content">
-                  <p><%= task.objective %></p>
+                  <p tabindex="0"><%= task.objective %></p>
                 </div>
               </div>
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3>URL:</h3>
+                  <h3 tabindex="0">URL:</h3>
                 </div>
                 <div class="template-content tester-template-content">
-                  <p><%= raw(task.url) %></p>
+                  <p tabindex="0"><%= raw(task.url) %></p>
                 </div>
               </div>
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3>Cenário:</h3>
+                  <h3 tabindex="0">Cenário:</h3>
                 </div>
                 <div class="template-content tester-template-content">
-                  <p><%= task.cenary %></p>
+                  <p tabindex="0"><%= task.cenary %></p>
                 </div>
               </div>
 
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3>Sua Resposta:</h3>
+                  <h3 tabindex="0">Sua Resposta:</h3>
                 </div>
                 <div class="template-content tester-template-answers">
-                  <p><%= find_answers(task, @tester).present? ? find_answers(task, @tester).testers_answer : "Você ainda não respondeu"%></p>
+                  <p tabindex="0"><%= find_answers(task, @tester).present? ? find_answers(task, @tester).testers_answer : "Você ainda não respondeu"%></p>
                 </div>
               </div>
 
               <div class="project-footer-buttons-tasks tester-template">
                 <%if !find_answers(task, @tester).present?%>
-                  <button class="edit-button">
+                  <button class="edit-button" tabindex="-1">
                     <%= link_to("Responder", worker_projects_tasks_opened_path(@project, task))%>
                   </button>
                 <%end%>
@@ -55,39 +55,39 @@
 
         <div class="form-box tasks-box tester-template-content">
           <div class="form-title tester-template-content">
-            <h2 class="tasks-title-review">Perguntas</h2>
+            <h2 class="tasks-title-review" tabindex="0">Perguntas</h2>
           </div>
           <% @asks.each do |ask| %>
             <div class="ask-show-container tester-template">
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3>Tipo de pergunta</h3>
+                  <h3 tabindex="0">Tipo de pergunta</h3>
                 </div>
                 <div class="template-content tester-template-content">
-                  <p><%= ask.ask_type %></p>
+                  <p tabindex="0"><%= ask.ask_type %></p>
                 </div>
               </div>
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3>Pergunta</h3>
+                  <h3 tabindex="0">Pergunta</h3>
                 </div>
                 <div class="template-content tester-template-content">
-                  <p><%= ask.question %></p>
+                  <p tabindex="0"><%= ask.question %></p>
                 </div>
               </div>
 
               <div class="template-example tester-template-content">
                 <div class="title">
-                  <h3>Sua Resposta:</h3>
+                  <h3 tabindex="0">Sua Resposta:</h3>
                 </div>
                 <div class="template-content tester-template-answers">
-                  <p><%= find_answers(ask, @tester).present? ? find_answers(ask, @tester).testers_answer : "Você ainda não respondeu"%></p>
+                  <p tabindex="0"><%= find_answers(ask, @tester).present? ? find_answers(ask, @tester).testers_answer : "Você ainda não respondeu"%></p>
                 </div>
               </div>
 
               <div class="project-footer-buttons-tasks tester-template">
                 <%if !find_answers(ask, @tester).present?%>
-                  <button class="edit-button">
+                  <button class="edit-button" tabindex="-1">
                     <%= link_to("Responder", worker_projects_asks_opened_path(@project, ask))%>
                   </button>
                 <%end%>

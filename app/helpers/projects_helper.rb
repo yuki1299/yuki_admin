@@ -36,7 +36,7 @@ module ProjectsHelper
 
   def awnswer_all_questions(project)
     @project = project
-    @tester = Tester.find(5)
+    @tester = Tester.find(current_tester)
     total_of_answers
     tester_answers_count
     @count >= @total
