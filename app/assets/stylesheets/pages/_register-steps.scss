@@ -421,6 +421,69 @@
 #tester-register-step2 {
   .form-signin {
 
+    .cego {
+      width: 1.6vw;
+      position: relative;
+      bottom: 22.2vh;
+      left: 1.6vw;
+      float: left;
+    }
+
+    .baixa-visao {
+      width: 1.6vw;
+      position: relative;
+      bottom: 22.2vh;
+      left: 12.3vw;
+      float: left;
+    }
+
+    .surdez {
+      width: 1.4vw;
+      position: relative;
+      bottom: 22.2vh;
+      left: 23.2vw;
+      float: left;
+    }
+
+    .def-auditiva {
+      width: .96vw;
+      position: relative;
+      bottom: 22.2vh;
+      left: 34.5vw;
+      float: left;
+    }
+
+    .def-fisica {
+      width: 2.7vw;
+      position: relative;
+      bottom: 12vh;
+      left: -4.7vw;
+      float: left;
+    }
+
+    .def-fisica-severa {
+      width: 2.7vw;
+      position: relative;
+      bottom: 12vh;
+      left: 5vw;
+      float: left;
+    }
+
+
+    .man-icon-purple {
+      width: 1vw;
+      position: relative;
+      top: 17.3vh;
+      right: 30.1vw;
+    }
+
+    .woman-icon-purple {
+      width: 1vw;
+      position: relative;
+      top: 17.3vh;
+      right: 14.6vw;
+    }
+
     .tester_email {
       width: 24vw;
       margin-right: 1vw;
@@ -437,6 +500,10 @@
       width: 100%;
       float: left;
     }
+
+    #tester_kind_of_disability_outras {
+      margin-right: 1vw;
+    }
     
     .tester_current_password {
       label {
@@ -446,7 +513,7 @@
 
     .tester_kind_of_disability {
       .checkbox {
-        width: 11vw;
+        width: 12.4vw;
         label {
           display: flex;
           span {
@@ -456,7 +523,8 @@
           }
 
           input {
-            margin-top: .6vh;
+            margin-top: .9vh;
+            margin-right: 3vw;
           }
         }
       }
@@ -466,7 +534,16 @@
       .radio {
         label {
           float: left;
-          margin-right: 10vw;
+          margin-right: 6vw;
+
+          #tester_gender_outro {
+            margin-right: 1vw;
+          }
+
+          input {
+            margin-right: 4vw;
+            vertical-align: middle;
+          }
         }
       }
     }

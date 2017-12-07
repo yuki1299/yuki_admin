@@ -358,6 +358,68 @@
         font-size: 4.22vw;
       }
 
+      .cego {
+        width: 7.2vw;
+        position: relative;
+        bottom: 46.6vh;
+        left: 7.6vw;
+        float: left;
+      }
+
+      .baixa-visao {
+        width: 7.2vw;
+        position: relative;
+        bottom: 40.5vh;
+        left: 0.6vw;
+        float: left;
+      }
+
+      .surdez {
+        width: 7.2vw;
+        position: relative;
+        bottom: 34.2vh;
+        left: -7vw;
+        float: left;
+      }
+
+      .def-auditiva {
+        width: 5.2vw;
+        position: relative;
+        bottom: 28.2vh;
+        left: -13vw;
+        float: left;
+      }
+
+      .def-fisica {
+        width: 10.2vw;
+        position: relative;
+        bottom: 21.6vh;
+        left: -21vw;
+        float: left;
+      }
+
+      .def-fisica-severa {
+        width: 10.2vw;
+        position: relative;
+        bottom: 15.4vh;
+        left: -31vw;
+        float: left;
+      }
+
+      .man-icon-purple {
+        width: 4vw;
+        position: relative;
+        top: -25.7vh;
+        right: -9.9vw;
+      }
+
+      .woman-icon-purple {
+        width: 4vw;
+        position: relative;
+        top: -16.7vh;
+        right: -4.7vw;
+      }
+
       .tester_email {
         width: 100%;
         margin-right: 1vw;
@@ -367,6 +429,10 @@
       .tester_age {
         float: left;
         width: 100%;
+      }
+
+      #tester_gender_outro {
+        margin-right: 6vw;
       }
 
       .tester_gender,
@@ -380,6 +446,11 @@
           float: left;
         }
       }
+
+      #tester_kind_of_disability_outras {
+        margin-right: 5vw;
+      }
+
       .tester_kind_of_disability {
         .checkbox {
           width: 100%;
@@ -393,6 +464,7 @@
 
             input {
               margin-top: .6vh;
+              margin-right: 15vw;
             }
           }
         }
@@ -403,6 +475,11 @@
           label {
             float: left;
             margin-right: 24vw;
+            margin-top: 5vh;
+
+            input {
+              margin-right: 17vw;
+            }
           }
         }
       }

@@ -15,13 +15,22 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <%= f.error_notification %>
       <%= f.input :full_name, required: true, autofocus: true, label: "Nome Completo", :class => "full" %>
       <%= f.input :email, required: true, autofocus: true, label: "E-mail", :class => "large" %>
       <%= f.input :age, required: true, label: "Idade", :class => "small" %>
       <%= f.input :gender, required: true, label: "Gênero", :as => :radio_buttons %>
+      <%= image_tag("man-icon-purple.png", :class => "man-icon-purple") %>
+      <%= image_tag("woman-icon-purple.png", :class => "woman-icon-purple") %>
       <%= f.input :password, required: true, label: "Senha", :class => "medium" %>
       <%= f.input :password_confirmation, required: true, label: "Repetir senha", :class => "medium" %>
       <%= f.input :kind_of_disability, required: true, label: "Qual é a sua deficiência? Selecione no mínimo uma.", :class => "medium", :as => :check_boxes %>
+      <%= image_tag("cego.png", :class => "cego") %>
+      <%= image_tag("baixa-visao.png", :class => "baixa-visao") %>
+      <%= image_tag("surdez.png", :class => "surdez" )%>
+      <%= image_tag("def-auditiva.png", :class => "def-auditiva") %>
+      <%= image_tag("def-fisica.png", :class => "def-fisica") %>
+      <%= image_tag("def-fis-severa.png", :class => "def-fisica-severa") %>
       <!--     <%= f.input :schooling, required: true, label: "Escolaridade" %>
           <%= f.input :locale, required: true, label: "Localidade" %>
           <%= f.input :role, required: true, label: "Profissão" %> -->
@@ -51,8 +60,8 @@
           <p>Li e aceito os <b>termos de serviço*</b></p>
         </div>
 
-        <div class="radio-box">
-          <input id="e" type="radio" class="radio-active" name="test"/>
+        <div class="checkbox">
+          <input id="e" type="checkbox" class="radio-active" name="test"/>
           <p>Aceito receber e-mails com notícias e novidades do Integra</b></p>
         </div>
 

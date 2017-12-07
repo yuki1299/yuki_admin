@@ -3,7 +3,7 @@
     <div class="project-infos">
       <h1 tabindex="0"> <%= project.name %> </h1>
       <p tabindex="0">
-        Status: <strong> <%= project.status%> </strong>
+        Status: <strong> <%= t(project.status, scope: [:activerecord, :state_machines, :project, :status]) %> </strong>
       </p>
       <p tabindex="0">
         Criado há: <%= time_ago_in_words(project.created_at) %> atrás

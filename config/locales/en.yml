@@ -30,6 +30,6 @@ en:
   enumerize:
       ask:
         ask_type:
-          opened_ask: "Pergunta Aberta"
-          closed_ask: "Pergunta Fechada"
-          scale_zero_to_six: "Escala de zero à seis"
+          pergunta_aberta: "Pergunta Aberta"
+          pergunta_fechada: "Pergunta Fechada"
+          escala_de_zero_à_seis: "Escala de zero à seis"

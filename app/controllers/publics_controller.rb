@@ -16,7 +16,6 @@ class PublicsController < ApplicationController
 
   def create
     @public = @project.publics.new(public_params)
-
     if @public.save
       redirect_to new_project_credit_path(@project), notice: "Público definido com sucesso"
     else
@@ -54,6 +53,6 @@ class PublicsController < ApplicationController
   end
 
   def public_params
-    params.require(:public).permit(:age_range_start, :age_range_end, :gender, :schooling, :locale, :role, :kind_of_disability, :participants)
+    params.require(:public).permit(:age_range_start, :age_range_end, :gender, :schooling, :locale, :role, :participants, kind_of_disability: [])
   end
 end
