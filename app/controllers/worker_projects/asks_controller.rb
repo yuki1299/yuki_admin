@@ -23,7 +23,7 @@ class WorkerProjects::AsksController < ApplicationController
     if @answer.save
       redirect_to worker_projects_tasks_path(@project), notice: "Perguntas criadas com sucesso"
     else
-      redirect_to new_project_ask_path(@project), alert: "Não foi possível cadastrar as perguntas"
+      redirect_to worker_projects_asks_opened_path(@project, ask), alert: "Não foi possível cadastrar as perguntas"
     end
   end
 
