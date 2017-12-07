@@ -157,6 +157,11 @@
         height: 7.8vh;
         margin-right: 2.5vw;
 
+        &.forgot-password-user {
+          width: 18vw;
+          margin-right: 14.2vw !important;
+        }
+
         &:last-of-type {
           float: right;
           margin-right: 0;
@@ -178,6 +183,11 @@
         width: 14.66vw;
         height: 7.8vh;
         margin-right: 2.5vw;
+
+        &.forgot-password-user {
+          width: 18vw;
+          margin-right: 14.2vw !important;
+        }
 
         &:last-of-type {
           float: right;
@@ -420,6 +430,12 @@
 // Tester Register Step 2
 #tester-register-step2 {
   .form-signin {
+    &.forgot-password-user-form {
+      .tester_email {
+        margin-left: 11vw;
+        width: 30vw;
+      }
+    }
 
     .cego {
       width: 1.6vw;
@@ -612,6 +628,12 @@
   }
 
   .form-signin {
+    &.forgot-password-user-form {
+      .user_email {
+        margin-left: 11vw;
+      }
+    }
+
     .user_full_name,
     .user_email {
       width: 30.7vw;

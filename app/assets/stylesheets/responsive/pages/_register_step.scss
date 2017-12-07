@@ -121,6 +121,11 @@
           margin-right: 0;
           margin-bottom: 3vh;
 
+          &.forgot-password-user {
+            width: 100%;
+            margin-right: 0 !important;
+          }
+
           &:last-of-type {
             float: right;
             margin-right: 0;
@@ -143,6 +148,11 @@
           height: 7.8vh;
           margin-bottom: 3vh;
           margin-right: 0vw;
+
+          &.forgot-password-user {
+            width: 100%;
+            margin-right: 0 !important;
+          }
 
           &:last-of-type {
             float: right;
@@ -352,6 +362,12 @@
   // Tester Register Step 2
   #tester-register-step2 {
     .form-signin {
+      &.forgot-password-user-form {
+        .tester_email {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
 
       label,
       input {
@@ -551,6 +567,12 @@
     }
 
     .form-signin {
+      &.forgot-password-user-form {
+        .user_email {
+          margin-left: 0;
+          width: 100% !important;
+        }
+      }
       
       label,
       input {
