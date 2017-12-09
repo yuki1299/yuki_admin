@@ -189,10 +189,42 @@
             display: none;
           }
 
+          .prices-infos {
+            @include span-columns (3 of 10);
+            @include shift (0 of 12);
+            width: 100%;
+
+            .value {
+              margin-left: 20%;
+              @include omega;
+            }
+
+            .credits,
+            .value {
+              @include span-columns (1 of 3);
+              width: 33%;
+
+              p {
+                text-align: center;
+                color: #FFF;
+
+                &:nth-of-type(2) {
+                  color: #babcbe;
+                }
+              }
+            }
+          }
+
           .template-example {
             margin-bottom: 8vh;
             float: left;
             width: 100%;
+
+            &.prices-example {
+              .title {
+                width: 24.4vw;
+              }
+            }
 
             &:last-of-type {
               border-top: none;
@@ -257,6 +289,127 @@
                 background-position-y: .7vw;
                 height: 7vh;
                 width: 100%;
+              }
+            }
+          }
+
+          &.how-to-page {
+            padding-bottom: 5vh;
+            .form-title {
+              border-bottom: solid 1.5px #FFF;
+              border-radius: 0;
+              width: 48vw !important;
+            }
+
+            .how-to-example {
+              width: 100%;
+              margin-left: 0;
+              margin-bottom: 3vh;
+
+              &:last-of-type {
+                border-top: none;
+                width: 90%;
+                margin-left: 4%;
+              }
+
+              .title {
+                border-bottom: none;
+              }
+
+              .template-content {
+                p {
+                  width: 100%;
+                }
+
+                .how-to-steps {
+                  width: 100%;
+                  margin-left: 0%;
+                  margin-bottom: 8vh;
+
+                  p {
+                    text-align: center;
+                    height: 11vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                  }
+
+                  i {
+                    font-size: 16.4vw;
+                    color: #FFF;
+                    display: flex;
+                    margin-top: 0;
+                  }
+
+                  img {
+                    margin-top: 1.5vh;
+                  }
+                }
+
+                &.how-to-steps-tester {
+                  .how-to-steps {
+                    margin-left: 0%;
+                  }
+                }
+              }
+            }
+
+            .prices-infos {
+              margin-left: 26%;
+              width: 80%;
+
+              .value {
+                position: relative;
+                top: 4.4vh;
+                margin-left: -29%;
+                width: 52%;
+              }
+
+              p {
+                margin-bottom: 5vh;
+                text-align: left;
+
+                &:nth-of-type(2) {
+                  color: #FFF;
+                } 
+              }
+            }
+          }
+
+          &.help-page {
+            padding: 6vh 5vh 7vh 5vh;
+            .form-title {
+              margin-bottom: 3vh;
+              h1 {
+                font-size: 7vw;
+                color: #FFF;
+              }
+            }
+
+            .how-to-example {
+              border-top: none;
+              margin-bottom: 2vh;
+            }
+
+            .help-form {
+              width: 100%;
+              margin-left: 0;
+              position: relative;
+              bottom: 11vh;
+
+              textarea {
+                height: 27vh;
+                resize: none;
+              }
+            }
+
+            .template-button {
+              position: relative;
+              top: 30vh;
+
+              .next-button {
+                width: 100%;
+                margin-right: 0;
               }
             }
           }

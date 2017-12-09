@@ -15,7 +15,10 @@ Rails.application.routes.draw do
 
   get 'tipo_de_usuário'       => "home#user_type", as: :user_type
   get 'tipo_de_usuário_login' => "home#user_login_type", as: :user_login_type
-  get 'pagamento'             => "payment#index", as: :payment
+  get 'precos'                => "prices#index", as: :prices
+  get 'como_funciona'         => "how_to#index", as: :how_to
+  get 'ajuda'                 => "help#index", as: :help
+  get 'blog'                  => "blog#index", as: :blog
 
   get 'tester_completo'       => "register_confirmation#complete_tester", as: :complete_tester
   get 'tester_fail'           => "register_confirmation#fail_tester", as: :fail_tester

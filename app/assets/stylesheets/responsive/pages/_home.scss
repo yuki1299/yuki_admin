@@ -240,5 +240,15 @@
         }
       }
     }
+
+    &.blog-page {
+      .news {
+        .title {
+          margin-top: 10vh;
+          width: 88vw;
+          margin-left: 6vw;
+        }
+      }
+    }
   }
 }
