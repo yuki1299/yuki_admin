@@ -10,7 +10,15 @@
     <%= f.input :age_range_start, label: "De:", required: true, autofocus: true, input_html: {min: '0', step: 'any', max: '100' }%>
     <%= f.input :age_range_end, label: "Até", required: true, autofocus: true, input_html: {min: '0', step: 'any', max: '100' }%>
     <%= f.input :gender, label: "Gênero", required: true, autofocus: true, input_html: {class: "form-control"}, :as => :radio_buttons %>
+    <%= image_tag("man-icon.png", :class => "man-icon-purple") %>
+    <%= image_tag("woman-icon.png", :class => "woman-icon-purple") %>
     <%= f.input :kind_of_disability, label: "Tipo de deficiência", required: true, autofocus: true, input_html: {class: "form-control"}, :as => :check_boxes, multiple: true %>
+    <%= image_tag("cego-blue.png", :class => "cego") %>
+    <%= image_tag("baixa-visao-blue.png", :class => "baixa-visao") %>
+    <%= image_tag("surdez-blue.png", :class => "surdez" )%>
+    <%= image_tag("def-auditiva-blue.png", :class => "def-auditiva") %>
+    <%= image_tag("def-fisica-blue.png", :class => "def-fisica") %>
+    <%= image_tag("def-fis-severa-blue.png", :class => "def-fisica-severa") %>
     <p class="participants-infos">
       Escolha quantos participantes para testar você quer, o ideal são 5 participantes e recomendamos
       não usar mais de 10 participantes para melhor eficiência.

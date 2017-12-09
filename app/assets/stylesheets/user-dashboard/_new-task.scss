@@ -338,8 +338,9 @@
             width: 100%;
             margin-left: 0;
             
-
-            &:last-of-type {
+          
+            &:last-of-type,
+            &:nth-last-of-type(2) {
               border-top: none;
               width: 90%;
               margin-left: 4%;
@@ -356,7 +357,7 @@
 
               .how-to-steps {
                 width: 18%;
-                margin-left: 9%;
+                margin-left: 10%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -712,6 +713,83 @@
           @include shift (1 of 10);
           margin-top: 7vh;
 
+          .cego {
+            width: 1.6vw;
+            position: relative;
+            bottom: 23vh;
+            left: 4.9vw;
+            float: left;
+          }
+
+          .baixa-visao {
+            width: 1.6vw;
+            position: relative;
+            bottom: 23vh;
+            left: 17.3vw;
+            float: left;
+          }
+
+          .surdez {
+            width: 1.6vw;
+            position: relative;
+            bottom: 23vh;
+            left: 32.8vw;
+            float: left;
+          }
+
+          .def-auditiva {
+            width: 1.7vw;
+            position: relative;
+            bottom: 23vh;
+            left: 48.4vw;
+            float: left;
+          }
+
+          .def-fisica {
+            width: 2.7vw;
+            position: relative;
+            bottom: 15vh;
+            left: -2.1vw;
+            float: left;
+          }
+
+          .def-fisica-severa {
+            width: 2.7vw;
+            position: relative;
+            bottom: 15vh;
+            left: 9.1vw;
+            float: left;
+          }
+          
+          #public_kind_of_disability_outras {
+            margin-right: 1vw;
+          }
+
+          .man-icon-purple {
+            width: .8vw;
+            position: relative;
+            top: 12vh;
+            right: 23.7vw;
+          }
+
+          .woman-icon-purple {
+            width: 1vw;
+            position: relative;
+            top: 12vh;
+            right: 7.3vw;
+          }
+
+          .tester_email {
+            width: 24vw;
+            margin-right: 1vw;
+            float: left;
+          }
+
+          .tester_age {
+            float: left;
+            width: 7.4vw;
+          }
+
           &.ask-answers {
             margin-left: 0;
             width: 100%;
@@ -780,8 +858,16 @@
             margin-bottom: 7vh;
             label {
               float: left;
-              float: left;
               margin-right: 7vw;
+
+              #public_gender_ambos,
+              #public_gender_outros {
+                margin-right: 1vw;
+              }
+              
+              input {
+                margin-right: 4vw;
+              }
             }
 
             .control-label {
@@ -800,19 +886,26 @@
             }
 
             span {
+              &:nth-of-type(4) {
+                label {
+                  margin-right: 0;
+                }
+              }
               label {
                 float: left;
                 margin-right: 5vw;
-                width: 11vw;
+                width: 12vw;
                 display: flex;
               }
 
               input {
                 margin-top: .7vh;
+                margin-right: 4vw;
 
                 &#public_kind_of_disability_cegueira,
                 &#public_kind_of_disability_deficincia_fsica_leve {
                   margin-left: 3vw;
+                  margin-right: 4vw;
                 }
               }
             }

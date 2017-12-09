@@ -678,6 +678,68 @@
             @include shift (1 of 10);
             margin-top: 7vh;
 
+            .cego {
+              width: 7.2vw;
+              position: relative;
+              bottom: 80.6vh;
+              left: 7.8vw;
+              float: left;
+            }
+
+            .baixa-visao {
+              width: 7.2vw;
+              position: relative;
+              bottom: 70.5vh;
+              left: 0.6vw;
+              float: left;
+            }
+
+            .surdez {
+              width: 7.2vw;
+              position: relative;
+              bottom: 59.2vh;
+              left: -6.5vw;
+              float: left;
+            }
+
+            .def-auditiva {
+              width: 8.2vw;
+              position: relative;
+              bottom: 49.2vh;
+              left: -14vw;
+              float: left;
+            }
+
+            .def-fisica {
+              width: 10.2vw;
+              position: relative;
+              bottom: 38.6vh;
+              left: -23vw;
+              float: left;
+            }
+
+            .def-fisica-severa {
+              width: 10.2vw;
+              position: relative;
+              bottom: 28.4vh;
+              left: -33vw;
+              float: left;
+            }
+
+            .man-icon-purple {
+              width: 3.5vw;
+              position: relative;
+              top: 24.3vh;
+              left: -29vw;
+            }
+
+            .woman-icon-purple {
+              width: 4vw;
+              position: relative;
+              top: 35.3vh;
+              left: -33.7vw;
+            }
+
             &.ask-answers {
               margin-left: 0;
               width: 100%;
@@ -747,8 +809,13 @@
               margin-bottom: 7vh;
               label {
                 float: left;
-                float: left;
                 margin-right: 7vw;
+                clear: left;
+                margin-bottom: 7vh;
+
+                input {
+                  margin-right: 15vw;
+                }
               }
 
               .control-label {
@@ -769,14 +836,17 @@
                   margin-right: 5vw;
                   width: 100%;
                   display: flex;
+                  margin-bottom: 7vh;
                 }
 
                 input {
                   margin-top: .7vh;
+                  margin-right: 15vw;
 
                   &#public_kind_of_disability_cegueira,
                   &#public_kind_of_disability_deficincia_fsica_leve {
                     margin-left: 0vw;
+                    margin-right: 15vw;
                   }
                 }
               }
