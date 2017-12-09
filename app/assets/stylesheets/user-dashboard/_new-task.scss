@@ -355,11 +355,15 @@
               }
 
               .how-to-steps {
-                width: 16%;
+                width: 18%;
                 margin-left: 9%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                &:first-of-type {
+                  margin-left: 2%;
+                }
 
                 p {
                   text-align: center;
@@ -370,7 +374,7 @@
                 }
 
                 i {
-                  font-size: 2.4vw;
+                  font-size: 280%;
                   color: #FFF;
                   display: flex;
                   margin-top: 3vh;
@@ -383,7 +387,7 @@
 
               &.how-to-steps-tester {
                 .how-to-steps {
-                  margin-left: 15%;
+                  margin-left: 12%;
                 }
               }
             }

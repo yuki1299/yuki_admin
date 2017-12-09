@@ -30,7 +30,7 @@
           </li>
         <% else %>
           <li>
-            <%= link_to("Como Funciona", how_to_path %>
+            <%= link_to("Como Funciona", how_to_path) %>
           </li>
 
           <li>
@@ -57,55 +57,55 @@
     </div> 
 
     <div class="menu responsive-menu">
-      <div class="responsive-menu-button tester-menu-responsive">
+      <div class="responsive-menu-button">
         <p>
           MENU
         </p>
       </div>
       <ul class="nav-menu-responsive hidden">
         <% if current_user %>
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Dashboard", projects_path) %>
           </li>
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Configurações", edit_user_registration_path) %>
           </li>
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
           </li>
         <% elsif current_tester %>
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Dashboard", worker_projects_path) %>
           </li>
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Configurações", edit_tester_registration_path) %>
           </li>
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
           </li>
         <% else %>
-          <li class="tester-menu-responsive">
-            <%= link_to("Como Funciona", how_to_path %>
+          <li>
+            <%= link_to("Como Funciona", how_to_path) %>
           </li>
 
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Preço", prices_path) %>
           </li>
 
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Blog", blog_path) %>
           </li>
 
-          <li class="tester-menu-responsive">
+          <li>
             <%= link_to("Ajuda", help_path) %>
           </li>
           
           <div class="nav-buttons">
-            <button class="tester-menu-responsive">
+            <button>
               <%= link_to("Criar Conta", user_type_path) %>
             </button>
 
-            <button class="tester-menu-responsive">
+            <button>
               <%= link_to("Entrar", user_login_type_path) %>
             </button>
           </div>

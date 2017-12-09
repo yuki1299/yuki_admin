@@ -5,7 +5,7 @@
 
     <div class="new-project-buttons">
       <button class="back-button back-credit">  <%= link_to 'Voltar', :back, :class => "btn btn-primary btn-block btn-lg" %> </button>
-      <button class="back-button credit-button">  <%= link_to 'Comprar créditos', :back, :class => "btn btn-primary btn-block btn-lg" %> </button>
+      <button class="back-button credit-button">  <%= link_to 'Comprar créditos', prices_path, :class => "btn btn-primary btn-block btn-lg" %> </button>
       <button class="next-button">  <%= f.button :submit, :class => "btn btn-lg btn-primary btn-block", value: "Finalizar", 'data-disable-with' => "...", data: {confirm: "Deseja mesmo enviar este teste?"} %> </button>
     </div>
   <% end %>

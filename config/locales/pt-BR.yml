@@ -21,6 +21,20 @@
 
 pt-BR:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Favor preencha este campo"
+            password:
+              blank: "Favor preencha este campo"
+        tester:
+          attributes:
+            email:
+              blank: "Favor preencha este campo"
+            password:
+              blank: "Favor preencha este campo"
     state_machines:
       project:
         status:
