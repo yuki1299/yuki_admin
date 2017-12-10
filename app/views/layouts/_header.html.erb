@@ -12,21 +12,71 @@
           <li>
             <%= link_to("Dashboard", projects_path) %>
           </li>
-          <li>
-            <%= link_to("Configurações", edit_user_registration_path) %>
+
+          <li class="profile">
+            <%= link_to("Perfil", "javascript:void(0)", :class => "profile-button" ) %>
+            <div class="drop-menu-profile hidden">
+              <ul>
+                <li>
+                  <%= link_to("Configurações", edit_user_registration_path) %>
+                </li>
+
+                <li>
+                  <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+                </li>
+              </ul>
+            </div>
           </li>
+
           <li>
-            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+            <%= link_to("Como Funciona", how_to_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Preço", prices_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Blog", blog_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Ajuda", help_path) %>
           </li>
         <% elsif current_tester %>
           <li>
             <%= link_to("Dashboard", worker_projects_path) %>
           </li>
-          <li>
-            <%= link_to("Configurações", edit_tester_registration_path) %>
+
+          <li class="profile">
+            <%= link_to("Perfil", "javascript:void(0)", :class => "profile-button" ) %>
+            <div class="drop-menu-profile hidden">
+              <ul>
+                <li>
+                  <%= link_to("Configurações", edit_user_registration_path) %>
+                </li>
+
+                <li>
+                  <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+                </li>
+              </ul>
+            </div>
           </li>
+
           <li>
-            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+            <%= link_to("Como Funciona", how_to_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Preço", prices_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Blog", blog_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Ajuda", help_path) %>
           </li>
         <% else %>
           <li>
@@ -67,21 +117,71 @@
           <li>
             <%= link_to("Dashboard", projects_path) %>
           </li>
-          <li>
-            <%= link_to("Configurações", edit_user_registration_path) %>
+
+          <li class="profile">
+            <%= link_to("Perfil", "javascript:void(0)", :class => "profile-button" ) %>
+            <div class="drop-menu-profile hidden">
+              <ul>
+                <li>
+                  <%= link_to("Configurações", edit_user_registration_path) %>
+                </li>
+
+                <li>
+                  <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+                </li>
+              </ul>
+            </div>
           </li>
+
           <li>
-            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+            <%= link_to("Como Funciona", how_to_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Preço", prices_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Blog", blog_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Ajuda", help_path) %>
           </li>
         <% elsif current_tester %>
           <li>
             <%= link_to("Dashboard", worker_projects_path) %>
           </li>
-          <li>
-            <%= link_to("Configurações", edit_tester_registration_path) %>
+
+          <li class="profile">
+            <%= link_to("Perfil", "javascript:void(0)", :class => "profile-button" ) %>
+            <div class="drop-menu-profile hidden">
+              <ul>
+                <li>
+                  <%= link_to("Configurações", edit_user_registration_path) %>
+                </li>
+
+                <li>
+                  <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+                </li>
+              </ul>
+            </div>
           </li>
+
           <li>
-            <%= link_to("Sair", destroy_user_session_path, method: :delete) %>
+            <%= link_to("Como Funciona", how_to_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Preço", prices_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Blog", blog_path) %>
+          </li>
+
+          <li>
+            <%= link_to("Ajuda", help_path) %>
           </li>
         <% else %>
           <li>

@@ -36,6 +36,53 @@ nav {
       &:last-of-type {
         margin-right: 4.6vw;
       }
+
+      &.profile {
+        width: 4vw;
+        display: flex;
+        align-items: center;
+
+        .drop-menu-profile {
+          display: block;
+          background: linear-gradient(-90deg, #3e6db5, #48a8de);
+          position: relative;
+          padding: 25px 20px;
+          top: 13.6vh;
+          right: 5vw;
+          z-index: 999;
+
+          &.tester-profile {
+            background: linear-gradient(-90deg, #834098, #ec457f);
+          }
+          
+          ul {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            li {
+              @include omega;
+              clear: left;
+              float: left;
+              margin-bottom: 20px;
+              padding: 0;
+              margin-left: 0;
+
+              &:last-of-type {
+                margin-bottom: 0;
+              }
+
+              a {
+                color: #FFF;
+                font-weight: 200;
+              }
+            }
+          }
+
+          &.hidden {
+            display: none;
+          }
+        }
+      }
     }
 
     button {

@@ -50,6 +50,59 @@
             background: linear-gradient(-90deg, #3e6db5, #48a8de);
             border-top: solid 1px #FFF;
 
+            &.profile {
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+
+              .drop-menu-profile {
+                display: block;
+                background: linear-gradient(-90deg, #3e6db5, #48a8de);
+                position: relative;
+                padding: 0;
+                top: 0;
+                right: 0;
+                z-index: 999;
+                width: 100%;
+
+                &.tester-profile {
+                  background: linear-gradient(-90deg, #834098, #ec457f);
+                }
+                
+                ul {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: left;
+                  li {
+                    @include omega;
+                    clear: left;
+                    float: left;
+                    margin-bottom: 0;
+                    margin-top: 2vh;
+                    padding: 2vh 0;
+                    margin-left: 0;
+
+                    &:last-of-type {
+                      margin-bottom: 0;
+                      padding-bottom: 0;
+                      margin-top: 0;
+                    }
+
+                    a {
+                      color: #FFF;
+                      font-weight: 200;
+                    }
+                  }
+                }
+
+                &.hidden {
+                  display: none;
+                }
+              }
+            }
+
             &.tester-menu-responsive {
               background: linear-gradient(-90deg, #834098, #ec457f);
             }

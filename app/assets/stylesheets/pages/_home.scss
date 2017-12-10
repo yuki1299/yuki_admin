@@ -292,13 +292,22 @@
           @include omega;
         }
 
+        .post-blog-box {
+          height: 28vh;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
         figure {
           border: solid 1px #ebebeb;
           figcaption {
             padding: 1vw;
+            height: 20.4vh;
             h2,
             p {
-              color: $blue-text;
+              color: $blue;
             }
 
             h2 {

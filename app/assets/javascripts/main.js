@@ -36,6 +36,14 @@ $( document ).on('turbolinks:load', function() {
     $(this).parent().find(".nav-menu-responsive").slideToggle('slow');
   });
 
+  $(".responsive-menu .profile .profile-button").click(function(event) {
+    $(this).parent().find(".drop-menu-profile").slideToggle("hidden");
+  });
+
+  $(".menu .profile .profile-button").click(function(event) {
+    $(this).parent().find(".drop-menu-profile").toggleClass("hidden");
+  });
+
   $("#container-effect .button4").click(function(event){
     $(this).parents().find("body a").addClass('daltonism');
     $(this).parents().find("body p").addClass('daltonism');

@@ -65,6 +65,15 @@ li {
       color: $blue;
       margin-bottom: 0;
       margin-top: 2vh;
+      padding: 0 1vh;
+
+      a {
+        font-size: 1.27vw;
+      }
+
+      &:nth-of-type(2) {
+        margin-bottom: 2vh;
+      }
 
       &:last-of-type {
         margin-top: 0;
