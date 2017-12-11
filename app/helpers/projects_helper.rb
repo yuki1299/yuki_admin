@@ -18,16 +18,14 @@ module ProjectsHelper
     @project.asks.each do |ask|
       if ask.answers.present? 
         ask.answers.each do |answer| 
-          answer.tester == @tester
-          count = count + 1
+          count = count + 1  if answer.tester == @tester
         end
       end
     end
     @project.tasks.each do |task|
       if task.answers.present? 
         task.answers.each do |answer| 
-          answer.tester == @tester
-          count = count + 1
+          count = count + 1 if answer.tester == @tester
         end
       end
     end

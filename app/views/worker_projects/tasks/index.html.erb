@@ -96,7 +96,7 @@
           <% end %>
         </div>
         <button class="finish-answers-button">
-          <%= link_to("Enviar", finish_test_path(@project), method: :post)%>
+          <%= link_to("Enviar", finish_test_path(@project), method: :post, data: {confirm: "Você realmente finalizou este teste?"})%>
         </button>
       </div>
     </div>

@@ -43,8 +43,10 @@
         <h2 class="tasks-title-review">Respostas</h2>
       </div>
       <%task.answers.each do |answer|%>
-        <h2>Usuário:</h2><%= answer.tester.full_name%>
-        <h2>Resposta:</h2><%= answer.testers_answer%>
+        <h2>Usuário:</h2>
+        <p><%= answer.tester.full_name%></p>
+        <h2>Resposta:</h2>
+        <p><%= answer.testers_answer%></p>
       <%end%>
     <%end%>
   </div>
